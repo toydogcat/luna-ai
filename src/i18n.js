@@ -84,6 +84,10 @@ const resources = {
         aiYolo: {
           title: 'AI YOLO Vision',
           desc: 'Edge-computing real-time object detection engine directly running inside your browser.'
+        },
+        hoInfo: {
+          title: 'Taipei/Keelung Info Hub',
+          desc: 'Real-time lightweight dashboard prototype integrating weather, transport maps, and city pulse.'
         }
       },
       installation: {
@@ -207,6 +211,10 @@ const resources = {
         aiYolo: {
           title: 'AI 視覺追蹤系統',
           desc: '極度硬核的網頁邊緣運算！在瀏覽器端即時運行 YOLOv8 等模型，實現高幀率物件偵測。'
+        },
+        hoInfo: {
+          title: '北基生活動態儀錶板',
+          desc: '專屬生活資訊儀表板原型！整合雙北基隆即時氣象、捷運全圖與大眾運輸動態。'
         }
       },
       installation: {
