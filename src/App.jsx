@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Sparkles, ArrowRight, Zap, Globe, Users, MousePointerClick, Newspaper, Home, Languages, Heart, Code, Database, Eye, BookOpen, Scroll, Crown, Bomb, Grid3X3, Lock, Terminal, CheckCircle2, Smartphone, Shield, Library, Clapperboard, Fingerprint, ScanQrCode, Target, MapPin } from 'lucide-react';
+import { Sparkles, ArrowRight, Zap, Globe, Users, MousePointerClick, Newspaper, Home, Languages, Heart, Code, Database, Eye, BookOpen, Scroll, Crown, Bomb, Grid3X3, Lock, Terminal, CheckCircle2, Smartphone, Shield, Library, Clapperboard, Fingerprint, ScanQrCode, Target, MapPin, Braces } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { trackEvent } from './firebase';
 
@@ -56,6 +56,13 @@ const PROJECT_CATEGORIES = [
         translationKey: 'projects.aiOpendata',
         url: 'https://toydogcat.github.io/ai-opendata/',
         icon: <Database size={24} />
+      },
+      {
+        id: 'ai-vibe-c',
+        translationKey: 'projects.aiVibe',
+        url: 'https://github.com/toydogcat/ai-vibe-c',
+        icon: <Braces size={24} />,
+        isExternal: true
       }
     ]
   },
@@ -263,8 +270,16 @@ function App() {
     trackEvent('project_open', {
       project_id: project.id,
       project_name: projTitle,
-      project_url: project.url
+      project_url: project.url,
+      is_external: project.isExternal || false
     });
+
+    if (project.isExternal) {
+      // Redirect to new tab directly if external site (e.g. GitHub) blocks iframe
+      window.open(project.url, '_blank', 'noopener,noreferrer');
+      return;
+    }
+
     setActiveProject({
       ...project,
       resolvedTitle: projTitle

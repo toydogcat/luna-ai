@@ -88,6 +88,10 @@ const resources = {
         hoInfo: {
           title: 'Taipei/Keelung Info Hub',
           desc: 'Real-time lightweight dashboard prototype integrating weather, transport maps, and city pulse.'
+        },
+        aiVibe: {
+          title: 'AI Vibe Coding Masterclass',
+          desc: 'Direct GitHub repo learning path dedicated to collaborative AI orchestration and modern vibe coding.'
         }
       },
       installation: {
@@ -215,6 +219,10 @@ const resources = {
         hoInfo: {
           title: '北基生活動態儀錶板',
           desc: '專屬生活資訊儀表板原型！整合雙北基隆即時氣象、捷運全圖與大眾運輸動態。'
+        },
+        aiVibe: {
+          title: 'AI Vibe Coding 學習指南',
+          desc: '直通 GitHub 原始碼！深度拆解與 AI 協同作戰、用 Vibe 寫扣的極限編程流心法。'
         }
       },
       installation: {
