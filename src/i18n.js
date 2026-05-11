@@ -10,6 +10,10 @@ const resources = {
         analytics: 'Analytics',
         launch: 'Launch Console'
       },
+      categories: {
+        intelligence: '🧠 AI Intelligence',
+        tech: '💻 Data & Tech'
+      },
       hero: {
         badge: 'The Future Unified Ecosystem',
         headlineMain: 'Everything',
@@ -42,12 +46,10 @@ const resources = {
         title: 'Metrics Demo',
         heading: 'Real-time Portal Tracking',
         desc: 'Monitor portal click-through interactions across sub-modules.',
-        visitors: 'Unique Visitors',
-        actionHits: 'Action Hits',
-        frameLoad: 'Frame Load',
-        instant: 'Instant transition',
-        launchTrend: '+100% this launch',
-        clicked: 'Clicked cards'
+        totalViewsLabel: 'Total Views',
+        viewsUnit: 'times',
+        visitorsLabel: 'Visitors',
+        visitorsUnit: 'people'
       },
       viewer: {
         runningInside: 'Running within Luna Hub',
@@ -62,6 +64,10 @@ const resources = {
         projects: '專案集合',
         analytics: '數據中心',
         launch: '啟動控制台'
+      },
+      categories: {
+        intelligence: '🧠 智能應用中心',
+        tech: '📊 數據與技術'
       },
       hero: {
         badge: '未來整合生態系',
@@ -95,12 +101,10 @@ const resources = {
         title: '數據指標演示',
         heading: '即時入口追蹤',
         desc: '跨模組監控入口網頁的點擊轉化數據。',
-        visitors: '不重複訪客',
-        actionHits: '點擊交互',
-        frameLoad: '畫格載入',
-        instant: '秒速載入',
-        launchTrend: '本次啟動成長 100%',
-        clicked: '已點擊次數'
+        totalViewsLabel: '總瀏覽量',
+        viewsUnit: '次',
+        visitorsLabel: '訪客數',
+        visitorsUnit: '人'
       },
       viewer: {
         runningInside: '運作於 Luna 內部環境',

@@ -331,6 +331,82 @@ footer {
   border-top: 1px solid var(--border-glow);
 }
 
+.category-header {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #e2e8f0;
+  text-align: left;
+  border-left: 3px solid var(--secondary);
+  padding-left: 1rem;
+}
+
+/* SIMPLIFIED CAPSULE STATS - INSPIRED BY IMAGE */
+.capsule-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 1rem 0;
+}
+
+.stat-capsule {
+  display: flex;
+  align-items: center;
+  background: #f9f4ef; /* Inspired by image's beige background */
+  border: 2px solid #4a3728; /* Inspired by image brown border */
+  border-radius: 100px;
+  padding: 8px 24px 8px 12px;
+  font-family: 'Inter', system-ui, sans-serif;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.stat-capsule:hover {
+  transform: translateY(-3px);
+}
+
+.capsule-icon-wrap {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+}
+
+.icon-eye {
+  color: #FF7A5C; /* Match reference peach/orange eye */
+}
+
+.icon-heart {
+  color: #FF7A5C; /* Match reference heart color */
+}
+
+.capsule-label {
+  color: #4a3728;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-right: 12px;
+  background: rgba(0,0,0,0.05);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.capsule-val {
+  color: #4a3728;
+  font-size: 1.2rem;
+  font-weight: 800;
+  margin-right: 6px;
+}
+
+.capsule-unit {
+  color: #6e5647;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
 
 /* Projects Grid Section */
 .section-title {

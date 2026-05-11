@@ -1,33 +1,45 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Sparkles, ArrowRight, Zap, Globe, Users, MousePointerClick, Newspaper, Home, Languages, Heart, Code, Database } from 'lucide-react';
+import { Sparkles, ArrowRight, Zap, Globe, Users, MousePointerClick, Newspaper, Home, Languages, Heart, Code, Database, Eye } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { trackEvent } from './firebase';
 
-const PROJECTS = [
+const PROJECT_CATEGORIES = [
   {
-    id: 'ai-news',
-    translationKey: 'projects.aiNews',
-    url: 'https://toydogcat.github.io/ai-news/',
-    icon: <Newspaper size={24} />
+    id: 'intelligence',
+    translationKey: 'categories.intelligence',
+    projects: [
+      {
+        id: 'ai-news',
+        translationKey: 'projects.aiNews',
+        url: 'https://toydogcat.github.io/ai-news/',
+        icon: <Newspaper size={24} />
+      },
+      {
+        id: 'ai-lucky',
+        translationKey: 'projects.aiLucky',
+        url: 'https://toydogcat.github.io/ai-lucky/',
+        icon: <Heart size={24} />
+      }
+    ]
   },
   {
-    id: 'ai-lucky',
-    translationKey: 'projects.aiLucky',
-    url: 'https://toydogcat.github.io/ai-lucky/',
-    icon: <Heart size={24} />
-  },
-  {
-    id: 'ai-leetcode',
-    translationKey: 'projects.aiLeetcode',
-    url: 'https://toydogcat.github.io/ai-leetcode/',
-    icon: <Code size={24} />
-  },
-  {
-    id: 'ai-opendata',
-    translationKey: 'projects.aiOpendata',
-    url: 'https://toydogcat.github.io/ai-opendata/',
-    icon: <Database size={24} />
+    id: 'tech',
+    translationKey: 'categories.tech',
+    projects: [
+      {
+        id: 'ai-leetcode',
+        translationKey: 'projects.aiLeetcode',
+        url: 'https://toydogcat.github.io/ai-leetcode/',
+        icon: <Code size={24} />
+      },
+      {
+        id: 'ai-opendata',
+        translationKey: 'projects.aiOpendata',
+        url: 'https://toydogcat.github.io/ai-opendata/',
+        icon: <Database size={24} />
+      }
+    ]
   }
 ];
 
@@ -145,32 +157,48 @@ function App() {
             {t('hero.subheadline')}
           </motion.p>
 
-          {/* Projects Showcase Section */}
+          {/* Projects Showcase Section by Categories */}
           <motion.h2 variants={itemVariants} className="section-title">{t('projects.title')}</motion.h2>
           
-          <motion.div variants={itemVariants} className="projects-grid">
-            {PROJECTS.map(project => (
-              <div 
-                key={project.id} 
-                className="project-card"
-                onClick={() => openProject(project)}
+          <div style={{width: '100%', maxWidth: '1100px'}}>
+            {PROJECT_CATEGORIES.map(category => (
+              <motion.div 
+                key={category.id} 
+                variants={itemVariants}
+                style={{marginBottom: '3rem'}}
               >
-                <div className="project-icon">{project.icon}</div>
-                <h3 className="project-name">{t(`${project.translationKey}.title`)}</h3>
-                <p className="project-desc">{t(`${project.translationKey}.desc`)}</p>
-                <div style={{marginTop: '1rem', display: 'flex', alignItems:'center', gap:'5px', color: 'var(--secondary)', fontSize: '0.85rem', fontWeight: 'bold'}}>
-                  {t('projects.launchInside')} <ArrowRight size={14} />
+                <h3 className="category-header">{t(category.translationKey)}</h3>
+                <div className="projects-grid">
+                  {category.projects.map(project => (
+                    <div 
+                      key={project.id} 
+                      className="project-card"
+                      onClick={() => openProject(project)}
+                    >
+                      <div className="project-icon">{project.icon}</div>
+                      <h3 className="project-name">{t(`${project.translationKey}.title`)}</h3>
+                      <p className="project-desc">{t(`${project.translationKey}.desc`)}</p>
+                      <div style={{marginTop: '1rem', display: 'flex', alignItems:'center', gap:'5px', color: 'var(--secondary)', fontSize: '0.85rem', fontWeight: 'bold'}}>
+                        {t('projects.launchInside')} <ArrowRight size={14} />
+                      </div>
+                    </div>
+                  ))}
                 </div>
-              </div>
+              </motion.div>
             ))}
 
-            {/* Placeholder */}
-            <div className="project-card" style={{opacity: 0.5, cursor: 'default'}}>
-              <div className="project-icon"><Globe size={24}/></div>
-              <h3 className="project-name">{t('projects.comingSoon')}</h3>
-              <p className="project-desc">{t('projects.comingSoonDesc')}</p>
-            </div>
-          </motion.div>
+            {/* Placeholder Node */}
+            <motion.div variants={itemVariants} style={{marginBottom: '5rem', opacity: 0.6}}>
+               <h3 className="category-header" style={{opacity: 0.5}}>⚡ {t('projects.comingSoon')}</h3>
+               <div className="projects-grid">
+                  <div className="project-card" style={{cursor: 'default', background: 'rgba(255,255,255,0.02)'}}>
+                    <div className="project-icon" style={{background: 'rgba(255,255,255,0.05)', color: '#aaa'}}><Globe size={24}/></div>
+                    <h3 className="project-name" style={{color: '#aaa'}}>{t('projects.comingSoon')}</h3>
+                    <p className="project-desc">{t('projects.comingSoonDesc')}</p>
+                  </div>
+               </div>
+            </motion.div>
+          </div>
 
           {/* Metrics Section */}
           <motion.h2 variants={itemVariants} className="section-title">{t('metrics.title')}</motion.h2>
@@ -191,26 +219,31 @@ function App() {
               </div>
               <div className="mockup-body">
                 <h3 style={{ marginBottom: '1rem', color: '#fff' }}>{t('metrics.heading')}</h3>
-                <p style={{ color: 'var(--text-muted)', marginBottom: '2rem', fontSize: '0.9rem' }}>
+                <p style={{ color: 'var(--text-muted)', marginBottom: '2.5rem', fontSize: '0.9rem' }}>
                   {t('metrics.desc')}
                 </p>
-                <div className="stat-grid">
-                  <div className="stat-card" onClick={() => handleTrackedClick('mockup_card', { type: 'visitors' })}>
-                    <div className="stat-label"><Users size={16} style={{verticalAlign:'middle', marginRight:'5px'}}/> {t('metrics.visitors')}</div>
-                    <div className="stat-value">1,208</div>
-                    <div className="stat-trend">{t('metrics.launchTrend')}</div>
+                
+                {/* SIMPLIFIED STATS CAPSULES */}
+                <div className="capsule-container">
+                  <div className="stat-capsule">
+                    <div className="capsule-icon-wrap icon-eye">
+                      <Eye size={18} />
+                    </div>
+                    <span className="capsule-label">{t('metrics.totalViewsLabel')}</span>
+                    <span className="capsule-val">236,189</span>
+                    <span className="capsule-unit">{t('metrics.viewsUnit')}</span>
                   </div>
-                  <div className="stat-card" onClick={() => handleTrackedClick('mockup_card', { type: 'clicks' })}>
-                    <div className="stat-label"><MousePointerClick size={16} style={{verticalAlign:'middle', marginRight:'5px'}}/> {t('metrics.actionHits')}</div>
-                    <div className="stat-value">{10 + hoverCount}</div>
-                    <div className="stat-trend" style={{color: '#A78BFA'}}>{t('metrics.clicked')}: {hoverCount}</div>
-                  </div>
-                  <div className="stat-card" onClick={() => handleTrackedClick('mockup_card', { type: 'performance' })}>
-                    <div className="stat-label"><Zap size={16} style={{verticalAlign:'middle', marginRight:'5px'}}/> {t('metrics.frameLoad')}</div>
-                    <div className="stat-value">Sub-Sec</div>
-                    <div className="stat-trend">{t('metrics.instant')}</div>
+                  
+                  <div className="stat-capsule">
+                    <div className="capsule-icon-wrap icon-heart">
+                      <Heart size={18} fill="currentColor"/>
+                    </div>
+                    <span className="capsule-label">{t('metrics.visitorsLabel')}</span>
+                    <span className="capsule-val">2,026</span>
+                    <span className="capsule-unit">{t('metrics.visitorsUnit')}</span>
                   </div>
                 </div>
+
               </div>
             </div>
           </motion.div>
