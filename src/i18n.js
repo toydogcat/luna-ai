@@ -67,6 +67,10 @@ const resources = {
         aiAmulet: {
           title: 'Cyber-Daoist Talisman',
           desc: 'A mystical cyberpunk terminal compiling ancient runic patches into digital cosmic commands.'
+        },
+        aiBook: {
+          title: 'AI Smart Library',
+          desc: 'Dynamic interactive reading suite and curated book portal, optimizing flow immersion.'
         }
       },
       installation: {
@@ -170,6 +174,10 @@ const resources = {
         aiAmulet: {
           title: '賽博修仙・符咒編譯終端',
           desc: '將古老符咒視為對宇宙下達的 Command Line，融合太極代碼雨的賽博沈浸式終端。'
+        },
+        aiBook: {
+          title: 'AI 智慧看書區',
+          desc: '沉浸式數位閱讀環境與書籍典藏庫，專為優化極致專注閱讀體驗而生。'
         }
       },
       installation: {
