@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Sparkles, ArrowRight, Zap, Globe, Users, MousePointerClick, Newspaper, Home, Languages, Heart, Code, Database, Eye, BookOpen, Scroll, Crown, Bomb, Grid3X3, Lock, Terminal, CheckCircle2, Smartphone } from 'lucide-react';
+import { Sparkles, ArrowRight, Zap, Globe, Users, MousePointerClick, Newspaper, Home, Languages, Heart, Code, Database, Eye, BookOpen, Scroll, Crown, Bomb, Grid3X3, Lock, Terminal, CheckCircle2, Smartphone, Shield } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { trackEvent } from './firebase';
 
@@ -76,6 +76,15 @@ const PROJECT_CATEGORIES = [
         icon: <Grid3X3 size={24} />
       }
     ]
+  }
+];
+
+const STAGING_PROJECTS = [
+  {
+    id: 'ai-amulet',
+    translationKey: 'projects.aiAmulet',
+    url: 'https://toydogcat.github.io/ai-amulet/',
+    icon: <Shield size={24} color="var(--accent)" />
   }
 ];
 
@@ -352,7 +361,7 @@ function App() {
 
         {/* ================= STAGING ZONE ================= */}
         {activePage === 'staging' && (
-          <motion.div initial={{opacity:0, scale: 0.95}} animate={{opacity:1, scale: 1}} style={{width:'100%', maxWidth:'500px', display:'flex', flexDirection:'column', alignItems:'center'}}>
+          <motion.div initial={{opacity:0, scale: 0.95}} animate={{opacity:1, scale: 1}} style={{width:'100%', maxWidth: isUnlocked ? '1000px' : '500px', display:'flex', flexDirection:'column', alignItems:'center', margin: '0 auto'}}>
             {!isUnlocked ? (
               <div className="lock-box">
                 <div className="lock-ring"><Lock size={40} /></div>
@@ -374,14 +383,49 @@ function App() {
                 {pwError && <p className="error-glow">{t('staging.wrongPwd')}</p>}
               </div>
             ) : (
-              <motion.div initial={{opacity:0, y: 10}} animate={{opacity:1, y: 0}} className="protected-vault">
-                <div className="verified-icon"><CheckCircle2 size={48} color="var(--accent)" /></div>
-                <h2 style={{marginBottom:'1.5rem'}}>{t('staging.welcome')}</h2>
-                <div className="dev-log">
-                  <div className="log-line"><span className="log-badge new">UPDATING</span> {t('staging.item1')}</div>
-                  <div className="log-line"><span className="log-badge wip">WIP</span> {t('staging.item2')}</div>
-                  <div className="log-line"><span className="log-badge feature">FEATURE</span> {t('staging.item3')}</div>
-                  <div className="log-line" style={{opacity: 0.4}}>💡 Auto-update daemon active...</div>
+              <motion.div initial={{opacity:0, y: 10}} animate={{opacity:1, y: 0}} style={{width:'100%'}}>
+                {/* Header for Unlocked View */}
+                <div style={{textAlign: 'center', marginBottom: '3rem'}}>
+                  <div className="verified-icon"><CheckCircle2 size={48} color="var(--accent)" /></div>
+                  <h2 style={{marginBottom:'1.5rem'}}>{t('staging.welcome')}</h2>
+                </div>
+
+                {/* Two Column Layout for Logs & Actual Staging Projects */}
+                <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', width:'100%'}}>
+                  
+                  {/* Left Column: Experimental Tools to Launch */}
+                  <div>
+                    <h3 style={{color: 'var(--secondary)', marginBottom: '1rem', fontSize: '1.1rem', display:'flex', alignItems:'center', gap: '8px'}}>
+                      <Shield size={18}/> 🛠️ 測試中項目 (Experimental)
+                    </h3>
+                    <div className="projects-grid" style={{gridTemplateColumns: '1fr'}}>
+                      {STAGING_PROJECTS.map(project => (
+                        <div 
+                          key={project.id} 
+                          className="project-card" 
+                          style={{borderColor: 'rgba(124, 58, 237, 0.3)', background: 'rgba(124, 58, 237, 0.05)'}}
+                          onClick={() => openProject(project)}
+                        >
+                          <div className="project-icon" style={{background: 'rgba(124, 58, 237, 0.2)'}}>{project.icon}</div>
+                          <div style={{position: 'absolute', top: '10px', right: '10px', fontSize: '0.6rem', background: 'var(--accent)', color: '#000', padding: '2px 6px', borderRadius: '4px', fontWeight: 'bold'}}>ALPHA</div>
+                          <h3 className="project-name">{t(`${project.translationKey}.title`)}</h3>
+                          <p className="project-desc">{t(`${project.translationKey}.desc`)}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Right Column: The Backlog Dev Log */}
+                  <div>
+                    <h3 style={{color: 'var(--text-muted)', marginBottom: '1rem', fontSize: '1.1rem'}}>📈 研發備忘錄 (Dev Logs)</h3>
+                    <div className="dev-log" style={{height: 'fit-content'}}>
+                      <div className="log-line"><span className="log-badge new">UPDATING</span> {t('staging.item1')}</div>
+                      <div className="log-line"><span className="log-badge wip">WIP</span> {t('staging.item2')}</div>
+                      <div className="log-line"><span className="log-badge feature">FEATURE</span> {t('staging.item3')}</div>
+                      <div className="log-line" style={{opacity: 0.4}}>💡 Auto-update daemon active...</div>
+                    </div>
+                  </div>
+
                 </div>
               </motion.div>
             )}

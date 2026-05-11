@@ -63,6 +63,10 @@ const resources = {
         aiMagicCube: {
           title: 'AI Rubik\'s Cube',
           desc: 'Immersive spatial logic challenge. Rotate, solve, and master the legendary cube.'
+        },
+        aiAmulet: {
+          title: 'Cyber-Daoist Talisman',
+          desc: 'A mystical cyberpunk terminal compiling ancient runic patches into digital cosmic commands.'
         }
       },
       installation: {
@@ -162,6 +166,10 @@ const resources = {
         aiMagicCube: {
           title: 'AI 3D 魔術方塊',
           desc: '挑戰立體空間感！轉動、解謎，成為掌控方塊邏輯的大師。'
+        },
+        aiAmulet: {
+          title: '賽博修仙・符咒編譯終端',
+          desc: '將古老符咒視為對宇宙下達的 Command Line，融合太極代碼雨的賽博沈浸式終端。'
         }
       },
       installation: {
