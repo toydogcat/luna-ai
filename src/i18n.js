@@ -32,6 +32,10 @@ const resources = {
         aiLeetcode: {
           title: 'AI LeetCode Hub',
           desc: 'A comprehensive vault of algorithmic problem solving, covering Python and C++ architectures.'
+        },
+        aiOpendata: {
+          title: 'AI OpenData Explorer',
+          desc: 'Intelligent visualization and interactive control center for government open data.'
         }
       },
       metrics: {
@@ -81,6 +85,10 @@ const resources = {
         aiLeetcode: {
           title: 'AI LeetCode 程式人基地',
           desc: '專屬程式設計師的刷題筆記與詳解！提供 Python & C++ 雙語最優解法。'
+        },
+        aiOpendata: {
+          title: 'AI OpenData 智慧探索艙',
+          desc: '串接政府公開資料，透過視覺化與智慧分析解鎖巨量數據背後的洞察！'
         }
       },
       metrics: {

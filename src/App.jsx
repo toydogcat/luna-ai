@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Sparkles, ArrowRight, Zap, Globe, Users, MousePointerClick, Newspaper, Home, Languages, Heart, Code } from 'lucide-react';
+import { Sparkles, ArrowRight, Zap, Globe, Users, MousePointerClick, Newspaper, Home, Languages, Heart, Code, Database } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { trackEvent } from './firebase';
 
@@ -22,6 +22,12 @@ const PROJECTS = [
     translationKey: 'projects.aiLeetcode',
     url: 'https://toydogcat.github.io/ai-leetcode/',
     icon: <Code size={24} />
+  },
+  {
+    id: 'ai-opendata',
+    translationKey: 'projects.aiOpendata',
+    url: 'https://toydogcat.github.io/ai-opendata/',
+    icon: <Database size={24} />
   }
 ];
 
