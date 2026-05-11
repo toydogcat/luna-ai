@@ -76,11 +76,11 @@ const resources = {
         desc3: 'Tap the top-right menu button in Chrome, then select "Install App" from list.'
       },
       staging: {
-        title: '🔐 Classified Staging Zone',
-        unlockPrompt: 'Input daily verification key to decrypt (Format: YYYYMMDD)',
-        placeholder: 'Enter 8-digit code',
-        unlockBtn: 'Verify Identity',
-        wrongPwd: '❌ Invalid Code. Access Denied.',
+        title: '🔒 Restricted Area',
+        unlockPrompt: 'Level 4 clearance required. Enter security token.',
+        placeholder: '••••••••',
+        unlockBtn: 'Authenticate',
+        wrongPwd: '❌ Access Revoked. Contact Administrator.',
         welcome: '🚧 Experimental Phase: R&D Backlog',
         item1: '🔥 Gen-2 Intelligence Engine Refactoring',
         item2: '📊 Global Analytics Streaming Mesh Intercept',
@@ -175,11 +175,11 @@ const resources = {
         desc3: '點擊 Chrome 右上方選單按鈕，在清單中點選「安裝應用程式」即可。'
       },
       staging: {
-        title: '🔐 機密施工專區',
-        unlockPrompt: '請輸入今日密碼以解鎖訪問 (格式：YYYYMMDD)',
-        placeholder: '輸入8位數密碼',
-        unlockBtn: '驗證身分',
-        wrongPwd: '❌ 密碼錯誤，請確認今日日期。',
+        title: '🔒 限制存取區',
+        unlockPrompt: '此區段已加密，請輸入授權令牌以繼續。',
+        placeholder: '••••••••',
+        unlockBtn: '執行身分驗證',
+        wrongPwd: '❌ 權限不足，拒絕存取。',
         welcome: '🚧 實驗階段：開發中功能清單',
         item1: '🔥 下一代 AI 自動生成模組優化中',
         item2: '📊 全球用戶數據即時串流介面串接中',
