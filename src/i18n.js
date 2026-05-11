@@ -15,7 +15,8 @@ const resources = {
       categories: {
         intelligence: '🧠 AI Intelligence',
         tech: '💻 Data & Tech',
-        games: '🎮 Gaming Arcade'
+        games: '🎮 Gaming Arcade',
+        leisure: '🎭 Leisure Zone'
       },
       hero: {
         badge: 'The Future Unified Ecosystem',
@@ -71,6 +72,10 @@ const resources = {
         aiBook: {
           title: 'AI Smart Library',
           desc: 'Dynamic interactive reading suite and curated book portal, optimizing flow immersion.'
+        },
+        aiWar: {
+          title: 'AI WAR (Graphic Novel)',
+          desc: 'An immersive experimental graphic novel saga exploring human-AI resonance and cyber wars.'
         }
       },
       installation: {
@@ -122,7 +127,8 @@ const resources = {
       categories: {
         intelligence: '🧠 智能應用中心',
         tech: '📊 數據與技術',
-        games: '🎮 娛樂遊戲區'
+        games: '🎮 娛樂遊戲區',
+        leisure: '🎭 公開休閒區'
       },
       hero: {
         badge: '未來整合生態系',
@@ -178,6 +184,10 @@ const resources = {
         aiBook: {
           title: 'AI 智慧看書區',
           desc: '沉浸式數位閱讀環境與書籍典藏庫，專為優化極致專注閱讀體驗而生。'
+        },
+        aiWar: {
+          title: 'AI WAR (個人圖文小說)',
+          desc: '跨時代個人圖文創作實驗計畫！一場動人的賽博圖文漫畫，見證人機協作極限。'
         }
       },
       installation: {

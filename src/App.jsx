@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Sparkles, ArrowRight, Zap, Globe, Users, MousePointerClick, Newspaper, Home, Languages, Heart, Code, Database, Eye, BookOpen, Scroll, Crown, Bomb, Grid3X3, Lock, Terminal, CheckCircle2, Smartphone, Shield, Library } from 'lucide-react';
+import { Sparkles, ArrowRight, Zap, Globe, Users, MousePointerClick, Newspaper, Home, Languages, Heart, Code, Database, Eye, BookOpen, Scroll, Crown, Bomb, Grid3X3, Lock, Terminal, CheckCircle2, Smartphone, Shield, Library, Clapperboard } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { trackEvent } from './firebase';
 
@@ -74,6 +74,18 @@ const PROJECT_CATEGORIES = [
         translationKey: 'projects.aiMagicCube',
         url: 'https://toydogcat.github.io/ai-magic-cube/',
         icon: <Grid3X3 size={24} />
+      }
+    ]
+  },
+  {
+    id: 'leisure',
+    translationKey: 'categories.leisure',
+    items: [
+      {
+        id: 'ai-war',
+        translationKey: 'projects.aiWar',
+        url: 'https://toydogcat.github.io/ai-war/',
+        icon: <Clapperboard size={24} />
       }
     ]
   }
