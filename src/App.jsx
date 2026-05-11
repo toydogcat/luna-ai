@@ -1,41 +1,51 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Sparkles, ArrowRight, Zap, Globe, Users, MousePointerClick, Newspaper, X, Home } from 'lucide-react';
+import { Sparkles, ArrowRight, Zap, Globe, Users, MousePointerClick, Newspaper, Home, Languages } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { trackEvent } from './firebase';
 
 const PROJECTS = [
   {
     id: 'ai-news',
-    title: 'AI News',
-    desc: 'Comprehensive AI-driven news aggregation and analysis system.',
+    translationKey: 'projects.aiNews',
     url: 'https://toydogcat.github.io/ai-news/',
     icon: <Newspaper size={24} />
   }
 ];
 
 function App() {
+  const { t, i18n } = useTranslation();
   const [hoverCount, setHoverCount] = useState(0);
   const [activeProject, setActiveProject] = useState(null);
 
   // Track initial page view
   useEffect(() => {
-    trackEvent('page_view', { page_title: 'Luna AI Home' });
-  }, []);
+    trackEvent('page_view', { 
+      page_title: 'Luna AI Home',
+      locale: i18n.language 
+    });
+  }, [i18n.language]);
 
-  // Action Handler for tracking and launching
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+    trackEvent('change_language', { language: lng });
+  };
+
   const openProject = (project) => {
+    const projTitle = t(`${project.translationKey}.title`);
     trackEvent('project_open', {
       project_id: project.id,
-      project_name: project.title,
+      project_name: projTitle,
       project_url: project.url
     });
-    setActiveProject(project);
+    setActiveProject({
+      ...project,
+      resolvedTitle: projTitle
+    });
   };
 
   const closeProject = () => {
-    trackEvent('project_close', {
-      project_id: activeProject?.id
-    });
+    trackEvent('project_close', { project_id: activeProject?.id });
     setActiveProject(null);
   };
 
@@ -68,15 +78,49 @@ function App() {
       {/* Navigation */}
       <nav className="navbar">
         <div className="logo">Luna AI</div>
-        <div className="nav-links">
-          <a href="#" className="nav-item">Projects</a>
-          <a href="#" className="nav-item">Analytics</a>
+        <div className="nav-links" style={{display:'flex', alignItems:'center'}}>
+          <a href="#" className="nav-item">{t('nav.projects')}</a>
+          <a href="#" className="nav-item">{t('nav.analytics')}</a>
+          
+          {/* Language Switcher */}
+          <div style={{
+            display: 'flex', 
+            background: 'rgba(255,255,255,0.05)', 
+            borderRadius: '20px', 
+            padding: '2px',
+            marginLeft: '1rem',
+            border: '1px solid var(--border-glow)'
+          }}>
+            <button 
+              onClick={() => changeLanguage('zh')}
+              style={{
+                padding: '4px 10px',
+                fontSize: '0.75rem',
+                borderRadius: '15px',
+                background: i18n.language.startsWith('zh') ? 'var(--secondary)' : 'transparent',
+                color: '#FFF',
+                fontWeight: 600
+              }}
+            >中</button>
+            <button 
+              onClick={() => changeLanguage('en')}
+              style={{
+                padding: '4px 10px',
+                fontSize: '0.75rem',
+                borderRadius: '15px',
+                background: i18n.language.startsWith('en') ? 'var(--secondary)' : 'transparent',
+                color: '#FFF',
+                fontWeight: 600
+              }}
+            >EN</button>
+          </div>
         </div>
+        
         <button 
           className="btn-launch"
           onClick={() => handleTrackedClick('navbar_launch_btn')}
         >
-          Launch Console
+          {t('nav.launch')}
         </button>
       </nav>
 
@@ -90,19 +134,19 @@ function App() {
         >
           <motion.div variants={itemVariants} className="badge">
             <Sparkles size={14} />
-            The Future Unified Ecosystem
+            {t('hero.badge')}
           </motion.div>
           
           <motion.h1 variants={itemVariants} className="headline">
-            Everything <span>Luna</span>,<br /> All in One Place.
+            {i18n.language.startsWith('en') ? t('hero.headlineMain') : ''} <span>{i18n.language.startsWith('zh') ? t('hero.headlineMain') : 'Luna'}</span>,<br /> {t('hero.headlineSub')}
           </motion.h1>
 
           <motion.p variants={itemVariants} className="subheadline">
-            A centralized, performance-driven portal aggregating intelligent micro-services and projects into one seamless ecosystem.
+            {t('hero.subheadline')}
           </motion.p>
 
           {/* Projects Showcase Section */}
-          <motion.h2 variants={itemVariants} className="section-title">Our Projects</motion.h2>
+          <motion.h2 variants={itemVariants} className="section-title">{t('projects.title')}</motion.h2>
           
           <motion.div variants={itemVariants} className="projects-grid">
             {PROJECTS.map(project => (
@@ -112,24 +156,24 @@ function App() {
                 onClick={() => openProject(project)}
               >
                 <div className="project-icon">{project.icon}</div>
-                <h3 className="project-name">{project.title}</h3>
-                <p className="project-desc">{project.desc}</p>
+                <h3 className="project-name">{t(`${project.translationKey}.title`)}</h3>
+                <p className="project-desc">{t(`${project.translationKey}.desc`)}</p>
                 <div style={{marginTop: '1rem', display: 'flex', alignItems:'center', gap:'5px', color: 'var(--secondary)', fontSize: '0.85rem', fontWeight: 'bold'}}>
-                  Launch Inside <ArrowRight size={14} />
+                  {t('projects.launchInside')} <ArrowRight size={14} />
                 </div>
               </div>
             ))}
 
-            {/* Placeholder for coming soon */}
+            {/* Placeholder */}
             <div className="project-card" style={{opacity: 0.5, cursor: 'default'}}>
               <div className="project-icon"><Globe size={24}/></div>
-              <h3 className="project-name">Next Node</h3>
-              <p className="project-desc">Connecting intelligent nodes seamlessly. Future integration pending.</p>
+              <h3 className="project-name">{t('projects.comingSoon')}</h3>
+              <p className="project-desc">{t('projects.comingSoonDesc')}</p>
             </div>
           </motion.div>
 
-          {/* Interactive Preview Mockup */}
-          <motion.h2 variants={itemVariants} className="section-title">Metrics Demo</motion.h2>
+          {/* Metrics Section */}
+          <motion.h2 variants={itemVariants} className="section-title">{t('metrics.title')}</motion.h2>
           
           <motion.div 
             variants={itemVariants}
@@ -146,25 +190,25 @@ function App() {
                 <div className="dot" style={{ background: '#10B981' }}></div>
               </div>
               <div className="mockup-body">
-                <h3 style={{ marginBottom: '1rem', color: '#fff' }}>Real-time Portal Tracking</h3>
+                <h3 style={{ marginBottom: '1rem', color: '#fff' }}>{t('metrics.heading')}</h3>
                 <p style={{ color: 'var(--text-muted)', marginBottom: '2rem', fontSize: '0.9rem' }}>
-                  Monitor portal click-through interactions across sub-modules.
+                  {t('metrics.desc')}
                 </p>
                 <div className="stat-grid">
                   <div className="stat-card" onClick={() => handleTrackedClick('mockup_card', { type: 'visitors' })}>
-                    <div className="stat-label"><Users size={16} style={{verticalAlign:'middle', marginRight:'5px'}}/> Unique Visitors</div>
+                    <div className="stat-label"><Users size={16} style={{verticalAlign:'middle', marginRight:'5px'}}/> {t('metrics.visitors')}</div>
                     <div className="stat-value">1,208</div>
-                    <div className="stat-trend">+100% this launch</div>
+                    <div className="stat-trend">{t('metrics.launchTrend')}</div>
                   </div>
                   <div className="stat-card" onClick={() => handleTrackedClick('mockup_card', { type: 'clicks' })}>
-                    <div className="stat-label"><MousePointerClick size={16} style={{verticalAlign:'middle', marginRight:'5px'}}/> Action Hits</div>
+                    <div className="stat-label"><MousePointerClick size={16} style={{verticalAlign:'middle', marginRight:'5px'}}/> {t('metrics.actionHits')}</div>
                     <div className="stat-value">{10 + hoverCount}</div>
-                    <div className="stat-trend" style={{color: '#A78BFA'}}>Clicked cards: {hoverCount}</div>
+                    <div className="stat-trend" style={{color: '#A78BFA'}}>{t('metrics.clicked')}: {hoverCount}</div>
                   </div>
                   <div className="stat-card" onClick={() => handleTrackedClick('mockup_card', { type: 'performance' })}>
-                    <div className="stat-label"><Zap size={16} style={{verticalAlign:'middle', marginRight:'5px'}}/> Frame Load</div>
+                    <div className="stat-label"><Zap size={16} style={{verticalAlign:'middle', marginRight:'5px'}}/> {t('metrics.frameLoad')}</div>
                     <div className="stat-value">Sub-Sec</div>
-                    <div className="stat-trend">Instant transition</div>
+                    <div className="stat-trend">{t('metrics.instant')}</div>
                   </div>
                 </div>
               </div>
@@ -174,7 +218,7 @@ function App() {
       </main>
 
       <footer>
-        <p>© {new Date().getFullYear()} Luna AI Dashboard. All projects tracked via Firebase Engine.</p>
+        <p>{t('footer', { year: new Date().getFullYear() })}</p>
       </footer>
 
       {/* FULLSCREEN OVERLAY IFRAME VIEWER */}
@@ -190,17 +234,19 @@ function App() {
             <div className="viewer-header">
               <div className="viewer-title">
                 <div style={{ color: 'var(--secondary)' }}>{activeProject.icon}</div>
-                <div style={{ fontSize: '1.1rem' }}>{activeProject.title}</div>
-                <span style={{fontSize: '0.75rem', color: 'var(--text-muted)', background: 'rgba(255,255,255,0.05)', padding: '2px 8px', borderRadius:'4px'}}>Running within Luna Hub</span>
+                <div style={{ fontSize: '1.1rem' }}>{activeProject.resolvedTitle}</div>
+                <span style={{fontSize: '0.75rem', color: 'var(--text-muted)', background: 'rgba(255,255,255,0.05)', padding: '2px 8px', borderRadius:'4px'}}>
+                  {t('viewer.runningInside')}
+                </span>
               </div>
               <button className="btn-close-viewer" onClick={closeProject}>
-                <Home size={16} /> Exit to Home
+                <Home size={16} /> {t('viewer.exit')}
               </button>
             </div>
             <iframe 
               src={activeProject.url} 
               className="iframe-container"
-              title={activeProject.title}
+              title={activeProject.resolvedTitle}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             />
