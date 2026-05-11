@@ -24,6 +24,10 @@ const resources = {
         aiNews: {
           title: 'AI News',
           desc: 'Comprehensive AI-driven news aggregation and analysis system.'
+        },
+        aiLucky: {
+          title: 'AI Lucky Diary',
+          desc: 'A warm and lovely handwritten-style diary system tracking daily small lucky moments.'
         }
       },
       metrics: {
@@ -65,6 +69,10 @@ const resources = {
         aiNews: {
           title: 'AI News 新聞中心',
           desc: '整合全球新聞大數據與自動分析引擎，提供頂尖雙語視角。'
+        },
+        aiLucky: {
+          title: '每日好運日記 ✨',
+          desc: '暖心可愛的手寫風格日記，伴您紀錄生活中的每一個美好小確幸 🐾'
         }
       },
       metrics: {
