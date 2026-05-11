@@ -44,6 +44,10 @@ const resources = {
         aiMath: {
           title: 'AI Math Stories',
           desc: 'An immersive narrative odyssey exploring 3000 years of calculus evolution and mathematical intuition.'
+        },
+        aiEasternWisdom: {
+          title: 'AI Eastern Wisdom',
+          desc: 'Deciphering ancient philosophy through modern lenses: Taoism, Sun Tzu, and timeless strategic insight.'
         }
       },
       metrics: {
@@ -103,6 +107,10 @@ const resources = {
         aiMath: {
           title: 'AI Math 數學愛好者故事',
           desc: '無窮的追尋：微積分三千年！一個帶您走進數學家直覺世界的奇幻小說與圖文故事集。'
+        },
+        aiEasternWisdom: {
+          title: 'AI Eastern Wisdom 東方智慧',
+          desc: '道法自然｜探索道德經、帛書德道經與古典智慧，以現代思維品讀永恆哲學。'
         }
       },
       metrics: {

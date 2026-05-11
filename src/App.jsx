@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Sparkles, ArrowRight, Zap, Globe, Users, MousePointerClick, Newspaper, Home, Languages, Heart, Code, Database, Eye, BookOpen } from 'lucide-react';
+import { Sparkles, ArrowRight, Zap, Globe, Users, MousePointerClick, Newspaper, Home, Languages, Heart, Code, Database, Eye, BookOpen, Scroll } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { trackEvent } from './firebase';
 
@@ -26,6 +26,12 @@ const PROJECT_CATEGORIES = [
         translationKey: 'projects.aiMath',
         url: 'https://toydogcat.github.io/ai-math/',
         icon: <BookOpen size={24} />
+      },
+      {
+        id: 'ai-eastern-wisdom',
+        translationKey: 'projects.aiEasternWisdom',
+        url: 'https://toydogcat.github.io/ai-eastern-wisdom/',
+        icon: <Scroll size={24} />
       }
     ]
   },
