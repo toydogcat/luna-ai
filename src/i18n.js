@@ -66,16 +66,14 @@ const resources = {
         }
       },
       installation: {
-        title: '📦 System Installation Guide',
-        subtitle: 'Step-by-step environmental deployment walkthrough',
-        step1: 'Step 1: Clone Repository',
-        step2: 'Step 2: Install Dependencies',
-        step3: 'Step 3: Local Dev Run',
-        step4: 'Step 4: Global Deployment',
-        desc1: 'Download core source code to your machine.',
-        desc2: 'Execute installation commands for requisite node packages.',
-        desc3: 'Boot instantaneous local developer runtime.',
-        desc4: 'Initiate high-density cloud release sequence.'
+        title: '📲 Mobile & Desktop Installation',
+        subtitle: 'Add this Web-App directly to your home screen without app stores!',
+        step1: '🖥️ Desktop / Computer',
+        step2: '🍏 Apple iOS (iPhone/iPad)',
+        step3: '🤖 Android Mobile',
+        desc1: 'Look at the address bar. Tap the (+) icon to install the dedicated desktop app instantly.',
+        desc2: 'Open in Safari, tap the bottom [Share] icon, then select "Add to Home Screen".',
+        desc3: 'Tap the top-right menu button in Chrome, then select "Install App" from list.'
       },
       staging: {
         title: '🔐 Classified Staging Zone',
@@ -167,16 +165,14 @@ const resources = {
         }
       },
       installation: {
-        title: '📦 核心架構安裝教學',
-        subtitle: '手把手引導您架設 Luna AI 入口網環境',
-        step1: '第一步：複製儲存庫 (Clone)',
-        step2: '第二步：安裝依賴套件 (Install)',
-        step3: '第三步：本地運行調試 (Dev)',
-        step4: '第四步：Firebase 全球發佈 (Deploy)',
-        desc1: '將專案源碼下載到您的本地電腦。',
-        desc2: '進入目錄並執行 NPM 安裝必要套件。',
-        desc3: '啟動本地開發伺服器查看效果。',
-        desc4: '透過 Firebase CLI 工具直接推送上線！'
+        title: '📲 將 APP 安裝至桌面',
+        subtitle: '無須透過應用商店！立刻將網頁轉換為專屬 App 隨時開啟',
+        step1: '🖥️ 電腦 / 桌上型裝置',
+        step2: '🍏 Apple iOS (iPhone/iPad)',
+        step3: '🤖 Android 安卓手機',
+        desc1: '注意瀏覽器上方網址列右側，點選 (+) 圖示即可安裝為獨立視窗版 App。',
+        desc2: '使用內建 Safari 開啟，點擊下方【分享】圖示，並點選「加入主畫面」。',
+        desc3: '點擊 Chrome 右上方選單按鈕，在清單中點選「安裝應用程式」即可。'
       },
       staging: {
         title: '🔐 機密施工專區',

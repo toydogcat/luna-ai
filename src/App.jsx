@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Sparkles, ArrowRight, Zap, Globe, Users, MousePointerClick, Newspaper, Home, Languages, Heart, Code, Database, Eye, BookOpen, Scroll, Crown, Bomb, Grid3X3, Lock, Terminal, CheckCircle2 } from 'lucide-react';
+import { Sparkles, ArrowRight, Zap, Globe, Users, MousePointerClick, Newspaper, Home, Languages, Heart, Code, Database, Eye, BookOpen, Scroll, Crown, Bomb, Grid3X3, Lock, Terminal, CheckCircle2, Smartphone } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { trackEvent } from './firebase';
 
@@ -312,37 +312,38 @@ function App() {
 
         {/* ================= INSTALLATION PAGE ================= */}
         {activePage === 'installation' && (
-          <motion.div initial={{opacity:0, y:20}} animate={{opacity:1, y:0}} style={{maxWidth: '900px', width:'100%', textAlign: 'left', display: 'flex', flexDirection: 'column', gap: '2rem', padding: '0 1rem'}}>
-            <h1 className="page-title" style={{fontSize: '2.5rem', fontWeight: 800, display:'flex', alignItems:'center'}}><Terminal style={{marginRight:'12px'}}/> {t('installation.title')}</h1>
-            <p className="subheadline" style={{margin: 0}}>{t('installation.subtitle')}</p>
+          <motion.div initial={{opacity:0, y:20}} animate={{opacity:1, y:0}} style={{maxWidth: '1100px', width:'100%', textAlign: 'center', display: 'flex', flexDirection: 'column', gap: '1.5rem', padding: '0 1rem'}}>
+            <h1 className="page-title" style={{fontSize: '2.5rem', fontWeight: 800, display:'flex', alignItems:'center', justifyContent: 'center'}}><Smartphone style={{marginRight:'12px'}}/> {t('installation.title')}</h1>
+            <p className="subheadline" style={{margin: '0 auto 2rem'}}>{t('installation.subtitle')}</p>
             
-            <div className="guide-grid">
-              <div className="guide-card">
-                <h3>1. {t('installation.step1')}</h3>
-                <p style={{color:'var(--text-muted)', fontSize:'0.9rem', marginBottom: '1rem'}}>{t('installation.desc1')}</p>
-                <div className="code-shell">
-                  <code>git clone git@github.com:toydogcat/luna-ai.git</code>
+            <div className="visual-guide-grid">
+              <div className="visual-card">
+                <div className="card-img-wrap">
+                  <img src="/guides/desktop.png" alt="Desktop Install Guide" className="visual-step-img" />
+                </div>
+                <div className="card-body">
+                  <h3>{t('installation.step1')}</h3>
+                  <p>{t('installation.desc1')}</p>
                 </div>
               </div>
-              <div className="guide-card">
-                <h3>2. {t('installation.step2')}</h3>
-                <p style={{color:'var(--text-muted)', fontSize:'0.9rem', marginBottom: '1rem'}}>{t('installation.desc2')}</p>
-                <div className="code-shell">
-                  <code>cd luna-ai && npm install</code>
+              
+              <div className="visual-card">
+                <div className="card-img-wrap">
+                  <img src="/guides/ios.png" alt="iOS Install Guide" className="visual-step-img" />
+                </div>
+                <div className="card-body">
+                  <h3>{t('installation.step2')}</h3>
+                  <p>{t('installation.desc2')}</p>
                 </div>
               </div>
-              <div className="guide-card">
-                <h3>3. {t('installation.step3')}</h3>
-                <p style={{color:'var(--text-muted)', fontSize:'0.9rem', marginBottom: '1rem'}}>{t('installation.desc3')}</p>
-                <div className="code-shell">
-                  <code>npm run dev</code>
+              
+              <div className="visual-card">
+                <div className="card-img-wrap">
+                  <img src="/guides/android.png" alt="Android Install Guide" className="visual-step-img" />
                 </div>
-              </div>
-              <div className="guide-card">
-                <h3>4. {t('installation.step4')}</h3>
-                <p style={{color:'var(--text-muted)', fontSize:'0.9rem', marginBottom: '1rem'}}>{t('installation.desc4')}</p>
-                <div className="code-shell">
-                  <code>npm run build && firebase deploy</code>
+                <div className="card-body">
+                  <h3>{t('installation.step3')}</h3>
+                  <p>{t('installation.desc3')}</p>
                 </div>
               </div>
             </div>
