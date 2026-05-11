@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Sparkles, ArrowRight, Zap, Globe, Users, MousePointerClick, Newspaper, Home, Languages, Heart, Code, Database, Eye, BookOpen, Scroll, Crown, Bomb, Grid3X3 } from 'lucide-react';
+import { Sparkles, ArrowRight, Zap, Globe, Users, MousePointerClick, Newspaper, Home, Languages, Heart, Code, Database, Eye, BookOpen, Scroll, Crown, Bomb, Grid3X3, Lock, Terminal, CheckCircle2 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { trackEvent } from './firebase';
 
@@ -83,6 +83,28 @@ function App() {
   const { t, i18n } = useTranslation();
   const [hoverCount, setHoverCount] = useState(0);
   const [activeProject, setActiveProject] = useState(null);
+  const [activePage, setActivePage] = useState('home'); // home | installation | staging
+  const [pwInput, setPwInput] = useState('');
+  const [pwError, setPwError] = useState(false);
+  const [isUnlocked, setIsUnlocked] = useState(false);
+
+  const checkPassword = () => {
+    // Current format YYYYMMDD in user timezone
+    const today = new Date();
+    const y = today.getFullYear();
+    const m = String(today.getMonth() + 1).padStart(2, '0');
+    const d = String(today.getDate()).padStart(2, '0');
+    const correctCode = `${y}${m}${d}`;
+    
+    if (pwInput === correctCode) {
+      setIsUnlocked(true);
+      setPwError(false);
+      trackEvent('staging_unlock_success', { code: 'verified' });
+    } else {
+      setPwError(true);
+      trackEvent('staging_unlock_fail', { code: 'failed' });
+    }
+  };
 
   // Track initial page view
   useEffect(() => {
@@ -143,12 +165,13 @@ function App() {
     <div className="app-container">
       {/* Navigation */}
       <nav className="navbar">
-        <div className="logo">Luna AI</div>
+        <div className="logo" onClick={() => setActivePage('home')} style={{cursor: 'pointer'}}>Luna AI</div>
         
         <div className="navbar-right">
           <div className="nav-links">
-            <a href="#" className="nav-item">{t('nav.projects')}</a>
-            <a href="#" className="nav-item">{t('nav.analytics')}</a>
+            <span onClick={() => setActivePage('home')} className={`nav-item ${activePage==='home'?'active-nav':''}`}>{t('nav.projects')}</span>
+            <span onClick={() => setActivePage('installation')} className={`nav-item ${activePage==='installation'?'active-nav':''}`}>{t('nav.installation')}</span>
+            <span onClick={() => setActivePage('staging')} className={`nav-item ${activePage==='staging'?'active-nav':''}`}>{t('nav.staging')}</span>
           </div>
           
           {/* Language Switcher */}
@@ -174,6 +197,7 @@ function App() {
 
       {/* Hero Section */}
       <main className="hero">
+        {activePage === 'home' && (
         <motion.div
           initial="hidden"
           animate="visible"
@@ -284,6 +308,84 @@ function App() {
             </div>
           </motion.div>
         </motion.div>
+        )}
+
+        {/* ================= INSTALLATION PAGE ================= */}
+        {activePage === 'installation' && (
+          <motion.div initial={{opacity:0, y:20}} animate={{opacity:1, y:0}} style={{maxWidth: '900px', width:'100%', textAlign: 'left', display: 'flex', flexDirection: 'column', gap: '2rem', padding: '0 1rem'}}>
+            <h1 className="page-title" style={{fontSize: '2.5rem', fontWeight: 800, display:'flex', alignItems:'center'}}><Terminal style={{marginRight:'12px'}}/> {t('installation.title')}</h1>
+            <p className="subheadline" style={{margin: 0}}>{t('installation.subtitle')}</p>
+            
+            <div className="guide-grid">
+              <div className="guide-card">
+                <h3>1. {t('installation.step1')}</h3>
+                <p style={{color:'var(--text-muted)', fontSize:'0.9rem', marginBottom: '1rem'}}>{t('installation.desc1')}</p>
+                <div className="code-shell">
+                  <code>git clone git@github.com:toydogcat/luna-ai.git</code>
+                </div>
+              </div>
+              <div className="guide-card">
+                <h3>2. {t('installation.step2')}</h3>
+                <p style={{color:'var(--text-muted)', fontSize:'0.9rem', marginBottom: '1rem'}}>{t('installation.desc2')}</p>
+                <div className="code-shell">
+                  <code>cd luna-ai && npm install</code>
+                </div>
+              </div>
+              <div className="guide-card">
+                <h3>3. {t('installation.step3')}</h3>
+                <p style={{color:'var(--text-muted)', fontSize:'0.9rem', marginBottom: '1rem'}}>{t('installation.desc3')}</p>
+                <div className="code-shell">
+                  <code>npm run dev</code>
+                </div>
+              </div>
+              <div className="guide-card">
+                <h3>4. {t('installation.step4')}</h3>
+                <p style={{color:'var(--text-muted)', fontSize:'0.9rem', marginBottom: '1rem'}}>{t('installation.desc4')}</p>
+                <div className="code-shell">
+                  <code>npm run build && firebase deploy</code>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        )}
+
+        {/* ================= STAGING ZONE ================= */}
+        {activePage === 'staging' && (
+          <motion.div initial={{opacity:0, scale: 0.95}} animate={{opacity:1, scale: 1}} style={{width:'100%', maxWidth:'500px', display:'flex', flexDirection:'column', alignItems:'center'}}>
+            {!isUnlocked ? (
+              <div className="lock-box">
+                <div className="lock-ring"><Lock size={40} /></div>
+                <h2 style={{marginBottom:'0.5rem'}}>{t('staging.title')}</h2>
+                <p style={{color: 'var(--text-muted)', fontSize:'0.9rem', marginBottom: '2rem', textAlign:'center'}}>{t('staging.unlockPrompt')}</p>
+                
+                <div className="auth-form">
+                  <input 
+                    type="password" 
+                    className="secure-input" 
+                    placeholder={t('staging.placeholder')}
+                    value={pwInput}
+                    onChange={(e) => setPwInput(e.target.value)}
+                    onKeyDown={(e) => e.key === 'Enter' && checkPassword()}
+                    autoFocus
+                  />
+                  <button onClick={checkPassword} className="btn-primary" style={{width:'100%'}}>{t('staging.unlockBtn')}</button>
+                </div>
+                {pwError && <p className="error-glow">{t('staging.wrongPwd')}</p>}
+              </div>
+            ) : (
+              <motion.div initial={{opacity:0, y: 10}} animate={{opacity:1, y: 0}} className="protected-vault">
+                <div className="verified-icon"><CheckCircle2 size={48} color="var(--accent)" /></div>
+                <h2 style={{marginBottom:'1.5rem'}}>{t('staging.welcome')}</h2>
+                <div className="dev-log">
+                  <div className="log-line"><span className="log-badge new">UPDATING</span> {t('staging.item1')}</div>
+                  <div className="log-line"><span className="log-badge wip">WIP</span> {t('staging.item2')}</div>
+                  <div className="log-line"><span className="log-badge feature">FEATURE</span> {t('staging.item3')}</div>
+                  <div className="log-line" style={{opacity: 0.4}}>💡 Auto-update daemon active...</div>
+                </div>
+              </motion.div>
+            )}
+          </motion.div>
+        )}
       </main>
 
       <footer>

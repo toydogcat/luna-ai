@@ -8,6 +8,8 @@ const resources = {
       nav: {
         projects: 'Projects',
         analytics: 'Analytics',
+        installation: 'Installation',
+        staging: 'Construction Zone',
         launch: 'Launch Console'
       },
       categories: {
@@ -63,6 +65,29 @@ const resources = {
           desc: 'Immersive spatial logic challenge. Rotate, solve, and master the legendary cube.'
         }
       },
+      installation: {
+        title: '📦 System Installation Guide',
+        subtitle: 'Step-by-step environmental deployment walkthrough',
+        step1: 'Step 1: Clone Repository',
+        step2: 'Step 2: Install Dependencies',
+        step3: 'Step 3: Local Dev Run',
+        step4: 'Step 4: Global Deployment',
+        desc1: 'Download core source code to your machine.',
+        desc2: 'Execute installation commands for requisite node packages.',
+        desc3: 'Boot instantaneous local developer runtime.',
+        desc4: 'Initiate high-density cloud release sequence.'
+      },
+      staging: {
+        title: '🔐 Classified Staging Zone',
+        unlockPrompt: 'Input daily verification key to decrypt (Format: YYYYMMDD)',
+        placeholder: 'Enter 8-digit code',
+        unlockBtn: 'Verify Identity',
+        wrongPwd: '❌ Invalid Code. Access Denied.',
+        welcome: '🚧 Experimental Phase: R&D Backlog',
+        item1: '🔥 Gen-2 Intelligence Engine Refactoring',
+        item2: '📊 Global Analytics Streaming Mesh Intercept',
+        item3: '🎮 Upcoming: AI Gomoku (Phase 1 Prep)'
+      },
       metrics: {
         title: 'Metrics Demo',
         heading: 'Real-time Portal Tracking',
@@ -84,6 +109,8 @@ const resources = {
       nav: {
         projects: '專案集合',
         analytics: '數據中心',
+        installation: '安裝教學',
+        staging: '施工專區',
         launch: '啟動控制台'
       },
       categories: {
@@ -138,6 +165,29 @@ const resources = {
           title: 'AI 3D 魔術方塊',
           desc: '挑戰立體空間感！轉動、解謎，成為掌控方塊邏輯的大師。'
         }
+      },
+      installation: {
+        title: '📦 核心架構安裝教學',
+        subtitle: '手把手引導您架設 Luna AI 入口網環境',
+        step1: '第一步：複製儲存庫 (Clone)',
+        step2: '第二步：安裝依賴套件 (Install)',
+        step3: '第三步：本地運行調試 (Dev)',
+        step4: '第四步：Firebase 全球發佈 (Deploy)',
+        desc1: '將專案源碼下載到您的本地電腦。',
+        desc2: '進入目錄並執行 NPM 安裝必要套件。',
+        desc3: '啟動本地開發伺服器查看效果。',
+        desc4: '透過 Firebase CLI 工具直接推送上線！'
+      },
+      staging: {
+        title: '🔐 機密施工專區',
+        unlockPrompt: '請輸入今日密碼以解鎖訪問 (格式：YYYYMMDD)',
+        placeholder: '輸入8位數密碼',
+        unlockBtn: '驗證身分',
+        wrongPwd: '❌ 密碼錯誤，請確認今日日期。',
+        welcome: '🚧 實驗階段：開發中功能清單',
+        item1: '🔥 下一代 AI 自動生成模組優化中',
+        item2: '📊 全球用戶數據即時串流介面串接中',
+        item3: '🎮 新增：AI 智能五子棋 (開發進度 45%)'
       },
       metrics: {
         title: '數據指標演示',
