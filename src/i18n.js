@@ -40,6 +40,10 @@ const resources = {
         aiOpendata: {
           title: 'AI OpenData Explorer',
           desc: 'Intelligent visualization and interactive control center for government open data.'
+        },
+        aiMath: {
+          title: 'AI Math Stories',
+          desc: 'An immersive narrative odyssey exploring 3000 years of calculus evolution and mathematical intuition.'
         }
       },
       metrics: {
@@ -95,6 +99,10 @@ const resources = {
         aiOpendata: {
           title: 'AI OpenData 智慧探索艙',
           desc: '串接政府公開資料，透過視覺化與智慧分析解鎖巨量數據背後的洞察！'
+        },
+        aiMath: {
+          title: 'AI Math 數學愛好者故事',
+          desc: '無窮的追尋：微積分三千年！一個帶您走進數學家直覺世界的奇幻小說與圖文故事集。'
         }
       },
       metrics: {
