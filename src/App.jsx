@@ -78,50 +78,32 @@ function App() {
       {/* Navigation */}
       <nav className="navbar">
         <div className="logo">Luna AI</div>
-        <div className="nav-links" style={{display:'flex', alignItems:'center'}}>
-          <a href="#" className="nav-item">{t('nav.projects')}</a>
-          <a href="#" className="nav-item">{t('nav.analytics')}</a>
+        
+        <div className="navbar-right">
+          <div className="nav-links">
+            <a href="#" className="nav-item">{t('nav.projects')}</a>
+            <a href="#" className="nav-item">{t('nav.analytics')}</a>
+          </div>
           
           {/* Language Switcher */}
-          <div style={{
-            display: 'flex', 
-            background: 'rgba(255,255,255,0.05)', 
-            borderRadius: '20px', 
-            padding: '2px',
-            marginLeft: '1rem',
-            border: '1px solid var(--border-glow)'
-          }}>
+          <div className="language-selector">
             <button 
               onClick={() => changeLanguage('zh')}
-              style={{
-                padding: '4px 10px',
-                fontSize: '0.75rem',
-                borderRadius: '15px',
-                background: i18n.language.startsWith('zh') ? 'var(--secondary)' : 'transparent',
-                color: '#FFF',
-                fontWeight: 600
-              }}
+              className={i18n.language.startsWith('zh') ? 'active' : ''}
             >中</button>
             <button 
               onClick={() => changeLanguage('en')}
-              style={{
-                padding: '4px 10px',
-                fontSize: '0.75rem',
-                borderRadius: '15px',
-                background: i18n.language.startsWith('en') ? 'var(--secondary)' : 'transparent',
-                color: '#FFF',
-                fontWeight: 600
-              }}
+              className={i18n.language.startsWith('en') ? 'active' : ''}
             >EN</button>
           </div>
+
+          <button 
+            className="btn-launch"
+            onClick={() => handleTrackedClick('navbar_launch_btn')}
+          >
+            {t('nav.launch')}
+          </button>
         </div>
-        
-        <button 
-          className="btn-launch"
-          onClick={() => handleTrackedClick('navbar_launch_btn')}
-        >
-          {t('nav.launch')}
-        </button>
       </nav>
 
       {/* Hero Section */}

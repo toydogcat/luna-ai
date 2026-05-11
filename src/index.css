@@ -85,9 +85,16 @@ button {
   z-index: 100;
 }
 
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
 .logo {
   font-size: 1.5rem;
   font-weight: 800;
+  white-space: nowrap;
   background: linear-gradient(135deg, #fff 0%, #9CA3AF 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -97,6 +104,28 @@ button {
 .nav-links {
   display: flex;
   gap: 2rem;
+}
+
+.language-selector {
+  display: flex;
+  background: rgba(255,255,255,0.05);
+  border-radius: 20px;
+  padding: 2px;
+  border: 1px solid var(--border-glow);
+}
+
+.language-selector button {
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  border-radius: 15px;
+  background: transparent;
+  color: #FFF;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.language-selector button.active {
+  background: var(--secondary);
 }
 
 .nav-item {
@@ -421,10 +450,26 @@ footer {
 }
 
 @media (max-width: 768px) {
+  .navbar {
+    padding: 0 1rem;
+  }
+  .logo {
+    font-size: 1.2rem;
+  }
   .nav-links {
-    display: none; /* Simplified for mobile demo */
+    display: none; /* Hides text links to preserve space on mobile */
+  }
+  .navbar-right {
+    gap: 0.5rem; /* Tighter gap on mobile */
+  }
+  .btn-launch {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.75rem;
   }
   .hero {
     padding-top: 6rem;
+  }
+  .headline {
+    font-size: 2.2rem;
   }
 }
