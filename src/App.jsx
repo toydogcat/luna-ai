@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Sparkles, ArrowRight, Zap, Globe, Users, MousePointerClick, Newspaper, Home, Languages, Heart } from 'lucide-react';
+import { Sparkles, ArrowRight, Zap, Globe, Users, MousePointerClick, Newspaper, Home, Languages, Heart, Code } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { trackEvent } from './firebase';
 
@@ -16,6 +16,12 @@ const PROJECTS = [
     translationKey: 'projects.aiLucky',
     url: 'https://toydogcat.github.io/ai-lucky/',
     icon: <Heart size={24} />
+  },
+  {
+    id: 'ai-leetcode',
+    translationKey: 'projects.aiLeetcode',
+    url: 'https://toydogcat.github.io/ai-leetcode/',
+    icon: <Code size={24} />
   }
 ];
 

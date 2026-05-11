@@ -28,6 +28,10 @@ const resources = {
         aiLucky: {
           title: 'AI Lucky Diary',
           desc: 'A warm and lovely handwritten-style diary system tracking daily small lucky moments.'
+        },
+        aiLeetcode: {
+          title: 'AI LeetCode Hub',
+          desc: 'A comprehensive vault of algorithmic problem solving, covering Python and C++ architectures.'
         }
       },
       metrics: {
@@ -73,6 +77,10 @@ const resources = {
         aiLucky: {
           title: '每日好運日記 ✨',
           desc: '暖心可愛的手寫風格日記，伴您紀錄生活中的每一個美好小確幸 🐾'
+        },
+        aiLeetcode: {
+          title: 'AI LeetCode 程式人基地',
+          desc: '專屬程式設計師的刷題筆記與詳解！提供 Python & C++ 雙語最優解法。'
         }
       },
       metrics: {
