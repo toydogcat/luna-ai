@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Sparkles, ArrowRight, Zap, Globe, Users, MousePointerClick, Newspaper, Home, Languages, Heart, Code, Database, Eye, BookOpen, Scroll, Crown, Bomb, Grid3X3, Lock, Terminal, CheckCircle2, Smartphone, Shield, Library, Clapperboard, Fingerprint } from 'lucide-react';
+import { Sparkles, ArrowRight, Zap, Globe, Users, MousePointerClick, Newspaper, Home, Languages, Heart, Code, Database, Eye, BookOpen, Scroll, Crown, Bomb, Grid3X3, Lock, Terminal, CheckCircle2, Smartphone, Shield, Library, Clapperboard, Fingerprint, ScanQrCode } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { trackEvent } from './firebase';
 
@@ -32,6 +32,12 @@ const PROJECT_CATEGORIES = [
         translationKey: 'projects.aiEasternWisdom',
         url: 'https://toydogcat.github.io/ai-eastern-wisdom/',
         icon: <Scroll size={24} />
+      },
+      {
+        id: 'ai-scan',
+        translationKey: 'projects.aiScan',
+        url: 'https://toydogcat.github.io/ai-scan/',
+        icon: <ScanQrCode size={24} />
       }
     ]
   },

@@ -76,6 +76,10 @@ const resources = {
         aiWar: {
           title: 'AI WAR (Graphic Novel)',
           desc: 'An immersive experimental graphic novel saga exploring human-AI resonance and cyber wars.'
+        },
+        aiScan: {
+          title: 'AI Scan Master',
+          desc: 'Real-time on-device computer vision suite for QR scanning and smart OCR text recognition.'
         }
       },
       installation: {
@@ -191,6 +195,10 @@ const resources = {
         aiWar: {
           title: 'AI WAR (個人圖文小說)',
           desc: '跨時代個人圖文創作實驗計畫！一場動人的賽博圖文漫畫，見證人機協作極限。'
+        },
+        aiScan: {
+          title: 'AI 智慧掃描大師',
+          desc: '瀏覽器端跑推論的即時掃描引擎！支援相機即時解析 QR Code、條碼與智慧 OCR 文字辨識。'
         }
       },
       installation: {
