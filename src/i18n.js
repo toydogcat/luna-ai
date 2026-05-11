@@ -80,6 +80,10 @@ const resources = {
         aiScan: {
           title: 'AI Scan Master',
           desc: 'Real-time on-device computer vision suite for QR scanning and smart OCR text recognition.'
+        },
+        aiYolo: {
+          title: 'AI YOLO Vision',
+          desc: 'Edge-computing real-time object detection engine directly running inside your browser.'
         }
       },
       installation: {
@@ -199,6 +203,10 @@ const resources = {
         aiScan: {
           title: 'AI 智慧掃描大師',
           desc: '瀏覽器端跑推論的即時掃描引擎！支援相機即時解析 QR Code、條碼與智慧 OCR 文字辨識。'
+        },
+        aiYolo: {
+          title: 'AI 視覺追蹤系統',
+          desc: '極度硬核的網頁邊緣運算！在瀏覽器端即時運行 YOLOv8 等模型，實現高幀率物件偵測。'
         }
       },
       installation: {

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Sparkles, ArrowRight, Zap, Globe, Users, MousePointerClick, Newspaper, Home, Languages, Heart, Code, Database, Eye, BookOpen, Scroll, Crown, Bomb, Grid3X3, Lock, Terminal, CheckCircle2, Smartphone, Shield, Library, Clapperboard, Fingerprint, ScanQrCode } from 'lucide-react';
+import { Sparkles, ArrowRight, Zap, Globe, Users, MousePointerClick, Newspaper, Home, Languages, Heart, Code, Database, Eye, BookOpen, Scroll, Crown, Bomb, Grid3X3, Lock, Terminal, CheckCircle2, Smartphone, Shield, Library, Clapperboard, Fingerprint, ScanQrCode, Target } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { trackEvent } from './firebase';
 
@@ -109,6 +109,12 @@ const STAGING_PROJECTS = [
     translationKey: 'projects.aiBook',
     url: 'https://toydogcat.github.io/ai-book/',
     icon: <Library size={24} color="var(--accent)" />
+  },
+  {
+    id: 'ai-yolo',
+    translationKey: 'projects.aiYolo',
+    url: 'https://toydogcat.github.io/ai-yolo/',
+    icon: <Target size={24} color="var(--accent)" />
   }
 ];
 
