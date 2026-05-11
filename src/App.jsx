@@ -80,7 +80,7 @@ const PROJECT_CATEGORIES = [
   {
     id: 'leisure',
     translationKey: 'categories.leisure',
-    items: [
+    projects: [
       {
         id: 'ai-war',
         translationKey: 'projects.aiWar',
