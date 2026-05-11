@@ -223,7 +223,7 @@ function App() {
     const d = String(today.getDate()).padStart(2, '0');
     const correctCode = `${y}${m}${d}`;
     
-    if (pwInput === correctCode) {
+    if (pwInput.trim() === correctCode) {
       setIsUnlocked(true);
       setPwError(false);
       trackEvent('staging_unlock_success', { code: 'verified' });
@@ -489,6 +489,8 @@ function App() {
                 <div className="auth-form">
                   <input 
                     type="password" 
+                    inputMode="numeric"
+                    pattern="[0-9]*"
                     className="secure-input" 
                     placeholder={t('staging.placeholder')}
                     value={pwInput}
@@ -600,6 +602,33 @@ function App() {
       <footer>
         <p>{t('footer', { year: new Date().getFullYear() })}</p>
       </footer>
+
+      {/* MOBILE BOTTOM BAR */}
+      <div className="mobile-bottom-nav">
+        <button 
+          className={`mobile-nav-item ${activePage === 'home' ? 'active' : ''}`}
+          onClick={() => { setActivePage('home'); window.scrollTo(0,0); }}
+        >
+          <Home size={20} />
+          <span>{t('nav.dashboard')}</span>
+        </button>
+        
+        <button 
+          className={`mobile-nav-item ${activePage === 'installation' ? 'active' : ''}`}
+          onClick={() => { setActivePage('installation'); window.scrollTo(0,0); }}
+        >
+          <Smartphone size={20} />
+          <span>{t('nav.install')}</span>
+        </button>
+        
+        <button 
+          className={`mobile-nav-item ${activePage === 'staging' ? 'active' : ''}`}
+          onClick={() => { setActivePage('staging'); window.scrollTo(0,0); }}
+        >
+          <Terminal size={20} />
+          <span>{t('nav.staging')}</span>
+        </button>
+      </div>
 
       {/* FULLSCREEN OVERLAY IFRAME VIEWER */}
       <AnimatePresence>
