@@ -12,7 +12,8 @@ const resources = {
       },
       categories: {
         intelligence: '🧠 AI Intelligence',
-        tech: '💻 Data & Tech'
+        tech: '💻 Data & Tech',
+        games: '🎮 Gaming Arcade'
       },
       hero: {
         badge: 'The Future Unified Ecosystem',
@@ -48,6 +49,18 @@ const resources = {
         aiEasternWisdom: {
           title: 'AI Eastern Wisdom',
           desc: 'Deciphering ancient philosophy through modern lenses: Taoism, Sun Tzu, and timeless strategic insight.'
+        },
+        aiChess: {
+          title: 'AI Chinese Chess',
+          desc: 'A sophisticated strategic deployment of traditional Chinese Chess gameplay.'
+        },
+        aiLandmine: {
+          title: 'AI Minesweeper',
+          desc: 'Classic logic-deduction puzzle revamped for pixel-perfect tactical clearance.'
+        },
+        aiMagicCube: {
+          title: 'AI Rubik\'s Cube',
+          desc: 'Immersive spatial logic challenge. Rotate, solve, and master the legendary cube.'
         }
       },
       metrics: {
@@ -75,7 +88,8 @@ const resources = {
       },
       categories: {
         intelligence: '🧠 智能應用中心',
-        tech: '📊 數據與技術'
+        tech: '📊 數據與技術',
+        games: '🎮 娛樂遊戲區'
       },
       hero: {
         badge: '未來整合生態系',
@@ -111,6 +125,18 @@ const resources = {
         aiEasternWisdom: {
           title: 'AI Eastern Wisdom 東方智慧',
           desc: '道法自然｜探索道德經、帛書德道經與古典智慧，以現代思維品讀永恆哲學。'
+        },
+        aiChess: {
+          title: 'AI 象棋王',
+          desc: '策略至上！沉浸在博大精深的東方棋術對決，展現精準佈局。'
+        },
+        aiLandmine: {
+          title: 'AI 經典踩地雷',
+          desc: '喚醒記憶的邏輯推演遊戲。每一步都是驚險的心理博弈！'
+        },
+        aiMagicCube: {
+          title: 'AI 3D 魔術方塊',
+          desc: '挑戰立體空間感！轉動、解謎，成為掌控方塊邏輯的大師。'
         }
       },
       metrics: {

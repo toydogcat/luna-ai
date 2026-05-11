@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Sparkles, ArrowRight, Zap, Globe, Users, MousePointerClick, Newspaper, Home, Languages, Heart, Code, Database, Eye, BookOpen, Scroll } from 'lucide-react';
+import { Sparkles, ArrowRight, Zap, Globe, Users, MousePointerClick, Newspaper, Home, Languages, Heart, Code, Database, Eye, BookOpen, Scroll, Crown, Bomb, Grid3X3 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { trackEvent } from './firebase';
 
@@ -50,6 +50,30 @@ const PROJECT_CATEGORIES = [
         translationKey: 'projects.aiOpendata',
         url: 'https://toydogcat.github.io/ai-opendata/',
         icon: <Database size={24} />
+      }
+    ]
+  },
+  {
+    id: 'games',
+    translationKey: 'categories.games',
+    projects: [
+      {
+        id: 'ai-chess',
+        translationKey: 'projects.aiChess',
+        url: 'https://toydogcat.github.io/ai-chess/',
+        icon: <Crown size={24} />
+      },
+      {
+        id: 'ai-landmine',
+        translationKey: 'projects.aiLandmine',
+        url: 'https://toydogcat.github.io/ai-landmine/',
+        icon: <Bomb size={24} />
+      },
+      {
+        id: 'ai-magic-cube',
+        translationKey: 'projects.aiMagicCube',
+        url: 'https://toydogcat.github.io/ai-magic-cube/',
+        icon: <Grid3X3 size={24} />
       }
     ]
   }
