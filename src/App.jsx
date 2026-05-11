@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Sparkles, ArrowRight, Zap, Globe, Users, MousePointerClick, Newspaper, Home, Languages, Heart, Code, Database, Eye, BookOpen, Scroll, Crown, Bomb, Grid3X3, Lock, Terminal, CheckCircle2, Smartphone, Shield, Library, Clapperboard } from 'lucide-react';
+import { Sparkles, ArrowRight, Zap, Globe, Users, MousePointerClick, Newspaper, Home, Languages, Heart, Code, Database, Eye, BookOpen, Scroll, Crown, Bomb, Grid3X3, Lock, Terminal, CheckCircle2, Smartphone, Shield, Library, Clapperboard, Fingerprint } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { trackEvent } from './firebase';
 
@@ -106,6 +106,73 @@ const STAGING_PROJECTS = [
   }
 ];
 
+// --- WEBAUTHN UTILS FOR LOCAL BIOMETRICS ---
+const bufferToBase64 = (buf) => btoa(String.fromCharCode.apply(null, new Uint8Array(buf)));
+const base64ToBuffer = (base64) => Uint8Array.from(atob(base64), c => c.charCodeAt(0)).buffer;
+
+async function registerLocalBiometrics() {
+  if (!window.PublicKeyCredential) return false;
+  const domain = window.location.hostname;
+  
+  // Standard WebAuthn Creation parameters
+  const createOptions = {
+    publicKey: {
+      challenge: window.crypto.getRandomValues(new Uint8Array(32)),
+      rp: { name: "Luna AI Dashboard", id: domain },
+      user: {
+        id: window.crypto.getRandomValues(new Uint8Array(16)),
+        name: "luna-operator",
+        displayName: "Luna Operator",
+      },
+      pubKeyCredParams: [{ type: "public-key", alg: -7 }, { type: "public-key", alg: -257 }], // ES256 and RS256
+      authenticatorSelection: {
+        authenticatorAttachment: "platform", // Restrict to onboard TouchID/FaceID
+        userVerification: "preferred"
+      },
+      timeout: 60000,
+    }
+  };
+
+  try {
+    const credential = await navigator.credentials.create(createOptions);
+    if (credential) {
+      const credIdStr = bufferToBase64(credential.rawId);
+      localStorage.setItem('luna_biometric_id', credIdStr);
+      return true;
+    }
+  } catch (e) {
+    console.warn("Biometrics Registration Cancelled or Failed:", e);
+  }
+  return false;
+}
+
+async function authenticateLocalBiometrics() {
+  const savedId = localStorage.getItem('luna_biometric_id');
+  if (!savedId || !window.PublicKeyCredential) return false;
+  const domain = window.location.hostname;
+
+  const getOptions = {
+    publicKey: {
+      challenge: window.crypto.getRandomValues(new Uint8Array(32)),
+      rpId: domain,
+      allowCredentials: [{
+        id: base64ToBuffer(savedId),
+        type: 'public-key'
+      }],
+      userVerification: "preferred",
+      timeout: 60000,
+    }
+  };
+
+  try {
+    const assertion = await navigator.credentials.get(getOptions);
+    return !!assertion; // Truthy means physical scan succeeded!
+  } catch (e) {
+    console.warn("Biometric Authentication Cancelled or Failed:", e);
+    return false;
+  }
+}
+
 function App() {
   const { t, i18n } = useTranslation();
   const [hoverCount, setHoverCount] = useState(0);
@@ -114,6 +181,33 @@ function App() {
   const [pwInput, setPwInput] = useState('');
   const [pwError, setPwError] = useState(false);
   const [isUnlocked, setIsUnlocked] = useState(false);
+  const [isBiometricAvailable, setIsBiometricAvailable] = useState(false);
+  const [hasBiometricEnrollment, setHasBiometricEnrollment] = useState(false);
+
+  useEffect(() => {
+    // Check device capability on init
+    if (window.PublicKeyCredential) {
+      setIsBiometricAvailable(true);
+      setHasBiometricEnrollment(!!localStorage.getItem('luna_biometric_id'));
+    }
+  }, []);
+
+  const handleBiometricLogin = async () => {
+    const success = await authenticateLocalBiometrics();
+    if (success) {
+      setIsUnlocked(true);
+      setPwError(false);
+      trackEvent('biometric_unlock_success', { type: 'touch_face' });
+    }
+  };
+
+  const handleBiometricEnroll = async () => {
+    const success = await registerLocalBiometrics();
+    if (success) {
+      setHasBiometricEnrollment(true);
+      alert("✨ 註冊成功！下次進入可直接使用生物辨識解鎖！");
+    }
+  };
 
   const checkPassword = () => {
     // Current format YYYYMMDD in user timezone
@@ -397,6 +491,26 @@ function App() {
                     autoFocus
                   />
                   <button onClick={checkPassword} className="btn-primary" style={{width:'100%'}}>{t('staging.unlockBtn')}</button>
+                  
+                  {hasBiometricEnrollment && (
+                    <button 
+                      onClick={handleBiometricLogin} 
+                      className="btn-outline" 
+                      style={{
+                        marginTop: '12px', 
+                        width:'100%', 
+                        borderColor: 'var(--secondary)', 
+                        color: 'var(--secondary)', 
+                        display:'flex', 
+                        alignItems:'center', 
+                        justifyContent:'center', 
+                        gap:'8px',
+                        background: 'rgba(0, 242, 254, 0.05)'
+                      }}
+                    >
+                      <Fingerprint size={18} /> {t('staging.biometricBtn')}
+                    </button>
+                  )}
                 </div>
                 {pwError && <p className="error-glow">{t('staging.wrongPwd')}</p>}
               </div>
@@ -406,6 +520,32 @@ function App() {
                 <div style={{textAlign: 'center', marginBottom: '3rem'}}>
                   <div className="verified-icon"><CheckCircle2 size={48} color="var(--accent)" /></div>
                   <h2 style={{marginBottom:'1.5rem'}}>{t('staging.welcome')}</h2>
+                  
+                  {isBiometricAvailable && !hasBiometricEnrollment && (
+                    <motion.div 
+                      initial={{opacity:0, scale:0.9}} 
+                      animate={{opacity:1, scale:1}} 
+                      transition={{delay: 0.5}}
+                      style={{
+                        background: 'rgba(255,255,255,0.05)', 
+                        border: '1px dashed rgba(255,255,255,0.2)',
+                        padding: '1rem', 
+                        borderRadius: '8px', 
+                        maxWidth: '500px', 
+                        margin: '0 auto 2rem',
+                        fontSize: '0.9rem'
+                      }}
+                    >
+                      <p style={{color: 'var(--text-muted)', marginBottom: '0.75rem'}}>{t('staging.biometricPrompt')}</p>
+                      <button 
+                        onClick={handleBiometricEnroll} 
+                        className="btn-secondary" 
+                        style={{fontSize:'0.8rem', padding:'6px 16px', display:'inline-flex', alignItems:'center', gap:'6px'}}
+                      >
+                        <Fingerprint size={14} /> {t('staging.biometricLink')}
+                      </button>
+                    </motion.div>
+                  )}
                 </div>
 
                 {/* Two Column Layout for Logs & Actual Staging Projects */}
