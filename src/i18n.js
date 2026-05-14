@@ -65,6 +65,10 @@ const resources = {
           title: 'AI Rubik\'s Cube',
           desc: 'Immersive spatial logic challenge. Rotate, solve, and master the legendary cube.'
         },
+        aiClicker: {
+          title: 'AI Settlement Pioneer',
+          desc: 'A premium clicker strategy RPG built with hand-gesture spellcasting AI mechanics.'
+        },
         aiAmulet: {
           title: 'Cyber-Daoist Talisman',
           desc: 'A mystical cyberpunk terminal compiling ancient runic patches into digital cosmic commands.'
@@ -195,6 +199,10 @@ const resources = {
         aiMagicCube: {
           title: 'AI 3D 魔術方塊',
           desc: '挑戰立體空間感！轉動、解謎，成為掌控方塊邏輯的大師。'
+        },
+        aiClicker: {
+          title: 'AI 殖民開拓者',
+          desc: '極致奢華的策略放置 RPG！融合手勢 AI 辨識進行魔法詠唱，建設繁榮的科技城邦。'
         },
         aiAmulet: {
           title: '賽博修仙・符咒編譯終端',

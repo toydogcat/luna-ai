@@ -87,6 +87,12 @@ const PROJECT_CATEGORIES = [
         translationKey: 'projects.aiMagicCube',
         url: 'https://toydogcat.github.io/ai-magic-cube/',
         icon: <Grid3X3 size={24} />
+      },
+      {
+        id: 'ai-clicker',
+        translationKey: 'projects.aiClicker',
+        url: 'https://toydogcat.github.io/ai-clicker/',
+        icon: <MousePointerClick size={24} />
       }
     ]
   },
