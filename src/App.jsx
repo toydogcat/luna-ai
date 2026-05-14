@@ -412,61 +412,13 @@ function App() {
                <h3 className="category-header" style={{opacity: 0.5}}>⚡ {t('projects.comingSoon')}</h3>
                <div className="projects-grid">
                   <div className="project-card" style={{cursor: 'default', background: 'rgba(255,255,255,0.02)'}}>
-                    <div className="project-icon" style={{background: 'rgba(255,255,255,0.05)', color: '#aaa'}}><Globe size={24}/></div>
-                    <h3 className="project-name" style={{color: '#aaa'}}>{t('projects.comingSoon')}</h3>
-                    <p className="project-desc">{t('projects.comingSoonDesc')}</p>
+                     <div className="project-icon" style={{background: 'rgba(255,255,255,0.05)', color: '#aaa'}}><Globe size={24}/></div>
+                     <h3 className="project-name" style={{color: '#aaa'}}>{t('projects.comingSoon')}</h3>
+                     <p className="project-desc">{t('projects.comingSoonDesc')}</p>
                   </div>
                </div>
             </motion.div>
           </div>
-
-          {/* Metrics Section */}
-          <motion.h2 variants={itemVariants} className="section-title">{t('metrics.title')}</motion.h2>
-          
-          <motion.div 
-            variants={itemVariants}
-            className="preview-container"
-            initial={{ rotateX: 10, scale: 0.98, opacity: 0 }}
-            animate={{ rotateX: 0, scale: 1, opacity: 1 }}
-            transition={{ delay: 0.6, duration: 0.8 }}
-            style={{marginBottom: '5rem'}}
-          >
-            <div className="mockup">
-              <div className="mockup-header">
-                <div className="dot" style={{ background: '#EF4444' }}></div>
-                <div className="dot" style={{ background: '#F59E0B' }}></div>
-                <div className="dot" style={{ background: '#10B981' }}></div>
-              </div>
-              <div className="mockup-body">
-                <h3 style={{ marginBottom: '1rem', color: '#fff' }}>{t('metrics.heading')}</h3>
-                <p style={{ color: 'var(--text-muted)', marginBottom: '2.5rem', fontSize: '0.9rem' }}>
-                  {t('metrics.desc')}
-                </p>
-                
-                {/* SIMPLIFIED STATS CAPSULES */}
-                <div className="capsule-container">
-                  <div className="stat-capsule">
-                    <div className="capsule-icon-wrap icon-eye">
-                      <Eye size={18} />
-                    </div>
-                    <span className="capsule-label">{t('metrics.totalViewsLabel')}</span>
-                    <span className="capsule-val">236,189</span>
-                    <span className="capsule-unit">{t('metrics.viewsUnit')}</span>
-                  </div>
-                  
-                  <div className="stat-capsule">
-                    <div className="capsule-icon-wrap icon-heart">
-                      <Heart size={18} fill="currentColor"/>
-                    </div>
-                    <span className="capsule-label">{t('metrics.visitorsLabel')}</span>
-                    <span className="capsule-val">2,026</span>
-                    <span className="capsule-unit">{t('metrics.visitorsUnit')}</span>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </motion.div>
         </motion.div>
         )}
 
@@ -633,6 +585,15 @@ function App() {
       </main>
 
       <footer>
+        <div className="footer-stats">
+          <span className="footer-stat-item">
+            <Eye size={12} /> {t('metrics.totalViewsLabel')} 236,189
+          </span>
+          <span className="footer-stat-divider">•</span>
+          <span className="footer-stat-item">
+            <Heart size={12} /> {t('metrics.visitorsLabel')} 2,026
+          </span>
+        </div>
         <p>{t('footer', { year: new Date().getFullYear() })}</p>
       </footer>
 

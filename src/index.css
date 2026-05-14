@@ -505,6 +505,26 @@ footer {
   border-top: 1px solid var(--border-glow);
 }
 
+.footer-stats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.35);
+  margin-bottom: 0.75rem;
+}
+
+.footer-stat-item {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.footer-stat-divider {
+  color: rgba(255, 255, 255, 0.15);
+}
+
 .category-header {
   font-size: 1.3rem;
   font-weight: 700;
