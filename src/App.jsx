@@ -38,6 +38,12 @@ const PROJECT_CATEGORIES = [
         translationKey: 'projects.aiScan',
         url: 'https://toydogcat.github.io/ai-scan/',
         icon: <ScanQrCode size={24} />
+      },
+      {
+        id: 'ai-sch-exam',
+        translationKey: 'projects.aiSchExam',
+        url: 'https://toydogcat.github.io/ai-sch-exam/',
+        icon: <Library size={24} />
       }
     ]
   },
@@ -93,6 +99,12 @@ const PROJECT_CATEGORIES = [
         translationKey: 'projects.aiClicker',
         url: 'https://toydogcat.github.io/ai-clicker/',
         icon: <MousePointerClick size={24} />
+      },
+      {
+        id: 'ai-gomoku',
+        translationKey: 'projects.aiGomoku',
+        url: 'https://toydogcat.github.io/ai-gomuko/',
+        icon: <Target size={24} />
       }
     ]
   },
@@ -105,6 +117,12 @@ const PROJECT_CATEGORIES = [
         translationKey: 'projects.aiWar',
         url: 'https://toydogcat.github.io/ai-war/',
         icon: <Clapperboard size={24} />
+      },
+      {
+        id: 'ai-exp-sch-exam',
+        translationKey: 'projects.aiExpSchExam',
+        url: 'https://toydogcat.github.io/ai-exp-sch-exam/',
+        icon: <Scroll size={24} />
       }
     ]
   }

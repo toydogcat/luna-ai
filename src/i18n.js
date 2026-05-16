@@ -96,6 +96,18 @@ const resources = {
         aiVibe: {
           title: 'AI Vibe Coding Masterclass',
           desc: 'Direct GitHub repo learning path dedicated to collaborative AI orchestration and modern vibe coding.'
+        },
+        aiGomoku: {
+          title: 'AI Gomoku Master',
+          desc: 'Strategic five-in-a-row challenge. Experience the peak of board game intelligence.'
+        },
+        aiSchExam: {
+          title: 'AI Exam Hub',
+          desc: 'Next-generation adaptive assessment system. Master your knowledge through intelligent testing.'
+        },
+        aiExpSchExam: {
+          title: 'Exam Odyssey Blog',
+          desc: 'Personal insights, strategies, and reflections on the modern educational assessment journey.'
         }
       },
       installation: {
@@ -120,7 +132,7 @@ const resources = {
         welcome: '🚧 Experimental Phase: R&D Backlog',
         item1: '🔥 Gen-2 Intelligence Engine Refactoring',
         item2: '📊 Global Analytics Streaming Mesh Intercept',
-        item3: '🎮 Upcoming: AI Gomoku (Phase 1 Prep)'
+        item3: '✅ RELEASED: AI Gomoku Master (v1.0)'
       },
       metrics: {
         title: 'Metrics Demo',
@@ -231,6 +243,18 @@ const resources = {
         aiVibe: {
           title: 'AI Vibe Coding 學習指南',
           desc: '直通 GitHub 原始碼！深度拆解與 AI 協同作戰、用 Vibe 寫扣的極限編程流心法。'
+        },
+        aiGomoku: {
+          title: 'AI 智能五子棋',
+          desc: '策略巔峰！在黑白博弈中挑戰最強智能演算法，成就棋壇大師。'
+        },
+        aiSchExam: {
+          title: 'AI 線上測驗系統',
+          desc: '新一代智慧適應性測驗！精準評估知識掌握度，開啟數位學習新篇章。'
+        },
+        aiExpSchExam: {
+          title: '測驗心得部落格',
+          desc: '深度紀錄考試心得與備考策略，分享在測驗之路上的成長與思考。'
         }
       },
       installation: {
@@ -255,7 +279,7 @@ const resources = {
         welcome: '🚧 實驗階段：開發中功能清單',
         item1: '🔥 下一代 AI 自動生成模組優化中',
         item2: '📊 全球用戶數據即時串流介面串接中',
-        item3: '🎮 新增：AI 智能五子棋 (開發進度 45%)'
+        item3: '✅ 已發布：AI 智能五子棋 (正式版 v1.0)'
       },
       metrics: {
         title: '數據指標演示',
