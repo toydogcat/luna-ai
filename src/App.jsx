@@ -105,6 +105,12 @@ const PROJECT_CATEGORIES = [
         translationKey: 'projects.aiGomoku',
         url: 'https://toydogcat.github.io/ai-gomuko/',
         icon: <Target size={24} />
+      },
+      {
+        id: 'ai-cipher-mind',
+        translationKey: 'projects.aiCipherMind',
+        url: 'https://toydogcat.github.io/ai-cipher-mind/',
+        icon: <Lock size={24} />
       }
     ]
   },

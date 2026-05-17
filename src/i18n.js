@@ -101,6 +101,10 @@ const resources = {
           title: 'AI Gomoku Master',
           desc: 'Strategic five-in-a-row challenge. Experience the peak of board game intelligence.'
         },
+        aiCipherMind: {
+          title: 'AI Cipher Mind (1A2B)',
+          desc: 'Decipher the secret code! A classic logical deduction and number-guessing challenge.'
+        },
         aiSchExam: {
           title: 'AI Exam Hub',
           desc: 'Next-generation adaptive assessment system. Master your knowledge through intelligent testing.'
@@ -247,6 +251,10 @@ const resources = {
         aiGomoku: {
           title: 'AI 智能五子棋',
           desc: '策略巔峰！在黑白博弈中挑戰最強智能演算法，成就棋壇大師。'
+        },
+        aiCipherMind: {
+          title: 'AI 猜數字 (1A2B)',
+          desc: '破譯神秘密碼！經典邏輯推演與猜數字博弈，考驗您的腦力極限。'
         },
         aiSchExam: {
           title: 'AI 線上測驗系統',
