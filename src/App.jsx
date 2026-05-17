@@ -668,7 +668,7 @@ function App() {
               src={activeProject.url} 
               className="iframe-container"
               title={activeProject.resolvedTitle}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; camera"
               allowFullScreen
             />
           </motion.div>
