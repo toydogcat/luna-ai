@@ -45,6 +45,10 @@ const resources = {
           title: 'AI OpenData Explorer',
           desc: 'Intelligent visualization and interactive control center for government open data.'
         },
+        aiStatisticsAct: {
+          title: 'AI Statistical Analysis Platform',
+          desc: 'An online smart psychometrics and statistical analysis dashboard for thesis and research writers.'
+        },
         aiMath: {
           title: 'AI Math Stories',
           desc: 'An immersive narrative odyssey exploring 3000 years of calculus evolution and mathematical intuition.'
@@ -195,6 +199,10 @@ const resources = {
         aiOpendata: {
           title: 'AI OpenData 智慧探索艙',
           desc: '串接政府公開資料，透過視覺化與智慧分析解鎖巨量數據背後的洞察！'
+        },
+        aiStatisticsAct: {
+          title: '線上智慧統計分析平台',
+          desc: '專為論文與研究寫作者打造的線上智慧統計分析與心理計量平台，提供一鍵式資料分析與智慧詮釋。'
         },
         aiMath: {
           title: 'AI Math 數學愛好者故事',
