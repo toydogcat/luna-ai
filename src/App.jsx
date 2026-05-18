@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Sparkles, ArrowRight, Zap, Globe, Users, MousePointerClick, Newspaper, Home, Languages, Heart, Code, Database, Eye, BookOpen, Scroll, Crown, Bomb, Grid3X3, Lock, Terminal, CheckCircle2, Smartphone, Shield, Library, Clapperboard, Fingerprint, ScanQrCode, Target, MapPin, Braces, BarChart2 } from 'lucide-react';
+import { Sparkles, ArrowRight, Zap, Globe, Users, MousePointerClick, Newspaper, Home, Languages, Heart, Code, Database, Eye, BookOpen, Scroll, Crown, Bomb, Grid3X3, Lock, Terminal, CheckCircle2, Smartphone, Shield, Library, Clapperboard, Fingerprint, ScanQrCode, Target, MapPin, Braces, BarChart2, Swords } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { trackEvent } from './firebase';
 
@@ -117,6 +117,12 @@ const PROJECT_CATEGORIES = [
         translationKey: 'projects.aiCipherMind',
         url: 'https://toydogcat.github.io/ai-cipher-mind/',
         icon: <Lock size={24} />
+      },
+      {
+        id: 'ai-beyblade',
+        translationKey: 'projects.aiBeyblade',
+        url: 'https://toydogcat.github.io/ai-beyblade/',
+        icon: <Swords size={24} />
       }
     ]
   },

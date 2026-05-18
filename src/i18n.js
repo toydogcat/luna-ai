@@ -109,6 +109,10 @@ const resources = {
           title: 'AI Cipher Mind (1A2B)',
           desc: 'Decipher the secret code! A classic logical deduction and number-guessing challenge.'
         },
+        aiBeyblade: {
+          title: 'AI Beyblade Simulator',
+          desc: 'An immersive digital battle top simulator. Launch, spin, and smash through target nodes!'
+        },
         aiSchExam: {
           title: 'AI Exam Hub',
           desc: 'Next-generation adaptive assessment system. Master your knowledge through intelligent testing.'
@@ -263,6 +267,10 @@ const resources = {
         aiCipherMind: {
           title: 'AI 猜數字 (1A2B)',
           desc: '破譯神秘密碼！經典邏輯推演與猜數字博弈，考驗您的腦力極限。'
+        },
+        aiBeyblade: {
+          title: 'AI 戰鬥陀螺模擬器',
+          desc: '極具爽快感的數位戰鬥陀螺模擬器！發射、高速旋轉、撞擊並粉碎一切障礙！'
         },
         aiSchExam: {
           title: 'AI 線上測驗系統',
