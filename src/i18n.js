@@ -30,6 +30,14 @@ const resources = {
         launchInside: 'Launch Inside',
         comingSoon: 'Next Node',
         comingSoonDesc: 'Connecting intelligent nodes seamlessly. Future integration pending.',
+        chatPartner: {
+          title: 'AI English Partner',
+          desc: 'Practice English conversation with an intelligent AI partner anytime, anywhere.'
+        },
+        lawyerHelp: {
+          title: 'AI Taiwan Lawyer Assistant',
+          desc: 'Legal consultation assistant specialized in Taiwan laws, providing quick legal references.'
+        },
         simTraffic: {
           title: 'Traffic Simulator',
           desc: 'Real-time city traffic flow simulation to observe vehicle dynamics and signal impacts.'

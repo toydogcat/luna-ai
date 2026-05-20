@@ -10,6 +10,18 @@ const PROJECT_CATEGORIES = [
     translationKey: 'categories.intelligence',
     projects: [
       {
+        id: 'chat-partner',
+        translationKey: 'projects.chatPartner',
+        url: 'https://toydogcat.github.io/chat-partner/',
+        icon: <MessageSquare size={24} />
+      },
+      {
+        id: 'lawyer-help',
+        translationKey: 'projects.lawyerHelp',
+        url: 'https://toydogcat.github.io/lawyer-help/',
+        icon: <Gavel size={24} />
+      },
+      {
         id: 'ai-news',
         translationKey: 'projects.aiNews',
         url: 'https://toydogcat.github.io/ai-news/',
