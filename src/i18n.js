@@ -16,6 +16,7 @@ const resources = {
         intelligence: '🧠 AI Intelligence',
         tech: '💻 Data & Tech',
         games: '🎮 Gaming Arcade',
+        simulation: '🚥 Simulations',
         leisure: '🎭 Leisure Zone'
       },
       hero: {
@@ -29,6 +30,14 @@ const resources = {
         launchInside: 'Launch Inside',
         comingSoon: 'Next Node',
         comingSoonDesc: 'Connecting intelligent nodes seamlessly. Future integration pending.',
+        simTraffic: {
+          title: 'Traffic Simulator',
+          desc: 'Real-time city traffic flow simulation to observe vehicle dynamics and signal impacts.'
+        },
+        simCarAccident: {
+          title: 'Car Accident Simulator',
+          desc: 'Physics engine driven car accident simulation, analyzing collision mechanics and safety factors.'
+        },
         aiNews: {
           title: 'AI News',
           desc: 'Comprehensive AI-driven news aggregation and analysis system.'
@@ -179,6 +188,7 @@ const resources = {
         intelligence: '🧠 智能應用中心',
         tech: '📊 數據與技術',
         games: '🎮 娛樂遊戲區',
+        simulation: '🚥 模擬專區',
         leisure: '🎭 公開休閒區'
       },
       hero: {
@@ -192,6 +202,14 @@ const resources = {
         launchInside: '站內啟動',
         comingSoon: '下一個節點',
         comingSoonDesc: '無縫串接智能節點，未來整合敬請期待。',
+        simTraffic: {
+          title: '交通模擬器',
+          desc: '即時城市交通流模擬，觀察車流動態與號誌影響。'
+        },
+        simCarAccident: {
+          title: '車禍事故模擬',
+          desc: '物理引擎驅動的車禍事故模擬，分析碰撞力學與安全係數。'
+        },
         aiNews: {
           title: 'AI News 新聞中心',
           desc: '整合全球新聞大數據與自動分析引擎，提供頂尖雙語視角。'
