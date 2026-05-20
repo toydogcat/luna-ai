@@ -120,6 +120,10 @@ const resources = {
         aiExpSchExam: {
           title: 'Exam Odyssey Blog',
           desc: 'Personal insights, strategies, and reflections on the modern educational assessment journey.'
+        },
+        aiSudoku: {
+          title: 'AI Sudoku',
+          desc: 'Immersive digital Sudoku puzzle. Sharpen your mind with multiple difficulty levels and smart hints.'
         }
       },
       installation: {
@@ -279,6 +283,10 @@ const resources = {
         aiExpSchExam: {
           title: '測驗心得部落格',
           desc: '深度紀錄考試心得與備考策略，分享在測驗之路上的成長與思考。'
+        },
+        aiSudoku: {
+          title: 'AI 數獨遊戲',
+          desc: '經典數位腦力對決！提供多種難度與智慧提示，助您突破邏輯極限。'
         }
       },
       installation: {
