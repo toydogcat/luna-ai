@@ -10,18 +10,6 @@ const PROJECT_CATEGORIES = [
     translationKey: 'categories.intelligence',
     projects: [
       {
-        id: 'chat-partner',
-        translationKey: 'projects.chatPartner',
-        url: 'https://toydogcat.github.io/chat-partner/',
-        icon: <MessageSquare size={24} />
-      },
-      {
-        id: 'lawyer-help',
-        translationKey: 'projects.lawyerHelp',
-        url: 'https://toydogcat.github.io/lawyer-help/',
-        icon: <Gavel size={24} />
-      },
-      {
         id: 'ai-news',
         translationKey: 'projects.aiNews',
         url: 'https://toydogcat.github.io/ai-news/',
@@ -177,6 +165,37 @@ const PROJECT_CATEGORIES = [
         translationKey: 'projects.aiExpSchExam',
         url: 'https://toydogcat.github.io/ai-exp-sch-exam/',
         icon: <Scroll size={24} />
+      }
+    ]
+  },
+  {
+    id: 'aistudio',
+    translationKey: 'categories.aistudio',
+    projects: [
+      {
+        id: 'ai-studio-english',
+        translationKey: 'projects.aiStudioEnglish',
+        url: 'https://ai.studio/apps/6902ff22-d687-46ac-a71c-d2f1c818860b?fullscreenApplet=true',
+        icon: <CloudLightning size={24} />,
+        isExternal: true
+      }
+    ]
+  },
+  {
+    id: 'localExperimental',
+    translationKey: 'categories.localExperimental',
+    projects: [
+      {
+        id: 'chat-partner',
+        translationKey: 'projects.chatPartner',
+        url: 'https://toydogcat.github.io/chat-partner/',
+        icon: <MessageSquare size={24} />
+      },
+      {
+        id: 'lawyer-help',
+        translationKey: 'projects.lawyerHelp',
+        url: 'https://toydogcat.github.io/lawyer-help/',
+        icon: <Gavel size={24} />
       }
     ]
   }

@@ -30,13 +30,17 @@ const resources = {
         launchInside: 'Launch Inside',
         comingSoon: 'Next Node',
         comingSoonDesc: 'Connecting intelligent nodes seamlessly. Future integration pending.',
+        aiStudioEnglish: {
+          title: 'Cloud English Partner',
+          desc: 'High-performance cloud-based English conversation practice assistant.'
+        },
         chatPartner: {
-          title: 'AI English Partner',
-          desc: 'Practice English conversation with an intelligent AI partner anytime, anywhere.'
+          title: 'Local English Partner',
+          desc: '[WARNING: Small local model. Slow on mobile, logic limited. Tech demo only.] Practice English conversation.'
         },
         lawyerHelp: {
-          title: 'AI Taiwan Lawyer Assistant',
-          desc: 'Legal consultation assistant specialized in Taiwan laws, providing quick legal references.'
+          title: 'Local Lawyer Assistant',
+          desc: '[WARNING: Small local model. Slow on mobile, poor reasoning. Tech demo only.] Taiwan legal assistant.'
         },
         simTraffic: {
           title: 'Traffic Simulator',
@@ -197,7 +201,9 @@ const resources = {
         tech: '📊 數據與技術',
         games: '🎮 娛樂遊戲區',
         simulation: '🚥 模擬專區',
-        leisure: '🎭 公開休閒區'
+        leisure: '🎭 公開休閒區',
+        aistudio: '☁️ AI Studio 雲端應用',
+        localExperimental: '⚠️ 本地模型實驗區 (效能受限)'
       },
       hero: {
         badge: '未來整合生態系',
