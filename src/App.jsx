@@ -175,7 +175,7 @@ const PROJECT_CATEGORIES = [
       {
         id: 'ai-studio-english',
         translationKey: 'projects.aiStudioEnglish',
-        url: 'https://ai.studio/apps/6902ff22-d687-46ac-a71c-d2f1c818860b?fullscreenApplet=true',
+        url: 'https://toydogcat.github.io/chat-partner-gemini/',
         icon: <CloudLightning size={24} />,
         isExternal: true
       }

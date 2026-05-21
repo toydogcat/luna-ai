@@ -216,13 +216,17 @@ const resources = {
         launchInside: '站內啟動',
         comingSoon: '下一個節點',
         comingSoonDesc: '無縫串接智能節點，未來整合敬請期待。',
+        aiStudioEnglish: {
+          title: '雲端英文對話練習',
+          desc: '基於強大雲端模型的流暢英文口語對話服務，效能優異，適合實用練習。'
+        },
         chatPartner: {
-          title: 'AI 英文培聊',
-          desc: '隨時隨地的英語口語練習夥伴，提升您的對話流暢度。'
+          title: 'AI 英文培聊 (本地測試)',
+          desc: '【⚠️ 警示：採用本地小型模型，手機運行極為緩慢且對話能力有限，僅供技術實驗，不具實用性】。'
         },
         lawyerHelp: {
-          title: 'AI 台灣律師助手',
-          desc: '專為台灣法律設計的諮詢助手，提供快速的法條檢索與法律建議。'
+          title: 'AI 台灣律師助手 (本地測試)',
+          desc: '【⚠️ 警示：採用本地小型模型，邏輯推演極差且耗能，僅供技術展示，請勿用於真實法律諮詢】。'
         },
         simTraffic: {
           title: '交通模擬器',
