@@ -210,6 +210,14 @@ const resources = {
         launchInside: '站內啟動',
         comingSoon: '下一個節點',
         comingSoonDesc: '無縫串接智能節點，未來整合敬請期待。',
+        chatPartner: {
+          title: 'AI 英文培聊',
+          desc: '隨時隨地的英語口語練習夥伴，提升您的對話流暢度。'
+        },
+        lawyerHelp: {
+          title: 'AI 台灣律師助手',
+          desc: '專為台灣法律設計的諮詢助手，提供快速的法條檢索與法律建議。'
+        },
         simTraffic: {
           title: '交通模擬器',
           desc: '即時城市交通流模擬，觀察車流動態與號誌影響。'
