@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Sparkles, ArrowRight, Zap, Globe, Users, MousePointerClick, Newspaper, Home, Languages, Heart, Code, Database, Eye, BookOpen, Scroll, Crown, Bomb, Grid3X3, Grid, Lock, Terminal, CheckCircle2, Smartphone, Shield, Library, Clapperboard, Fingerprint, ScanQrCode, Target, MapPin, Braces, BarChart2, Swords, Car, Siren, MessageSquare, Gavel, CloudLightning, Trees } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { trackEvent } from './firebase';
+import EnglishPractice from './EnglishPractice';
 
 const PROJECT_CATEGORIES = [
   {
@@ -154,6 +155,13 @@ const PROJECT_CATEGORIES = [
         url: 'https://toydogcat.github.io/sim-ecosystem/',
         icon: <Trees size={24} />
       }
+      ,
+      {
+        id: 'sim-cfo',
+        translationKey: 'projects.simCFO',
+        url: 'https://toydogcat.github.io/sim-cfo-center/',
+        icon: <BarChart2 size={24} />
+      }
     ]
   },
   {
@@ -183,7 +191,7 @@ const PROJECT_CATEGORIES = [
         translationKey: 'projects.aiStudioEnglish',
         url: 'https://toydogcat.github.io/chat-partner-gemini/',
         icon: <CloudLightning size={24} />,
-        isExternal: true
+        isExternal: false
       }
     ]
   },
@@ -722,6 +730,7 @@ function App() {
       </div>
 
       {/* FULLSCREEN OVERLAY IFRAME VIEWER */}
+      <EnglishPractice />
       <AnimatePresence>
         {activeProject && (
           <motion.div 
