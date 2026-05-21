@@ -50,6 +50,10 @@ const resources = {
           title: 'Car Accident Simulator',
           desc: 'Physics engine driven car accident simulation, analyzing collision mechanics and safety factors.'
         },
+        simEcosystem: {
+          title: 'Ecosystem Simulator',
+          desc: 'Complex life-cycle simulation observing the balance and interactions within a biological ecosystem.'
+        },
         aiNews: {
           title: 'AI News',
           desc: 'Comprehensive AI-driven news aggregation and analysis system.'
@@ -235,6 +239,10 @@ const resources = {
         simCarAccident: {
           title: '車禍事故模擬',
           desc: '物理引擎驅動的車禍事故模擬，分析碰撞力學與安全係數。'
+        },
+        simEcosystem: {
+          title: '生態系模擬器',
+          desc: '複雜的生命週期模擬，觀察生物間的互動與生態平衡。'
         },
         aiNews: {
           title: 'AI News 新聞中心',
