@@ -54,6 +54,10 @@ const resources = {
           title: 'Ecosystem Simulator',
           desc: 'Complex life-cycle simulation observing the balance and interactions within a biological ecosystem.'
         },
+        simCFO: {
+          title: 'Strategic CFO: Market Intelligence',
+          desc: 'A high-fidelity business simulation focusing on financial transparency, risk management, and market trend sensing.'
+        },
         aiNews: {
           title: 'AI News',
           desc: 'Comprehensive AI-driven news aggregation and analysis system.'
@@ -243,6 +247,10 @@ const resources = {
         simEcosystem: {
           title: '生態系模擬器',
           desc: '複雜的生命週期模擬，觀察生物間的互動與生態平衡。'
+        },
+        simCFO: {
+          title: '首席財務官：戰略與市場情報',
+          desc: '高擬真經營模擬，專注於財務透明度、風險控管以及市場趨勢感知。'
         },
         aiNews: {
           title: 'AI News 新聞中心',
