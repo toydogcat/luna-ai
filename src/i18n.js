@@ -153,6 +153,14 @@ const resources = {
         aiSudoku: {
           title: 'AI Sudoku',
           desc: 'Immersive digital Sudoku puzzle. Sharpen your mind with multiple difficulty levels and smart hints.'
+        },
+        dailyDialogue: {
+          title: 'Daily Dialogue: Reading & Fluency',
+          desc: 'A daily curated reading platform focused on natural dialogue, linguistic flow, and essential vocabulary.'
+        },
+        simCycloid: {
+          title: 'Cycloid & Curve Simulator',
+          desc: 'A mathematical exploration of cycloids and complex curves, visualizing geometric beauty through parametric motion.'
         }
       },
       installation: {
@@ -347,6 +355,14 @@ const resources = {
         aiSudoku: {
           title: 'AI 數獨遊戲',
           desc: '經典數位腦力對決！提供多種難度與智慧提示，助您突破邏輯極限。'
+        },
+        dailyDialogue: {
+          title: '每日讀書：對話與語感',
+          desc: '每日精選對話閱讀平台，專注於自然語境、語感培養與核心詞彙累積。'
+        },
+        simCycloid: {
+          title: '擺線與曲線模擬器',
+          desc: '探索擺線與複雜曲線的數學之美，透過參數化運動視覺化幾何軌跡。'
         }
       },
       installation: {

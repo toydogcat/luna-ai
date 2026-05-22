@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Sparkles, ArrowRight, Zap, Globe, Users, MousePointerClick, Newspaper, Home, Languages, Heart, Code, Database, Eye, BookOpen, Scroll, Crown, Bomb, Grid3X3, Grid, Lock, Terminal, CheckCircle2, Smartphone, Shield, Library, Clapperboard, Fingerprint, ScanQrCode, Target, MapPin, Braces, BarChart2, Swords, Car, Siren, MessageSquare, Gavel, CloudLightning, Trees } from 'lucide-react';
+import { Sparkles, ArrowRight, Zap, Globe, Users, MousePointerClick, Newspaper, Home, Languages, Heart, Code, Database, Eye, BookOpen, Scroll, Crown, Bomb, Grid3X3, Grid, Lock, Terminal, CheckCircle2, Smartphone, Shield, Library, Clapperboard, Fingerprint, ScanQrCode, Target, MapPin, Braces, BarChart2, Swords, Car, Siren, MessageSquare, Gavel, CloudLightning, Trees, Activity } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { trackEvent } from './firebase';
 import EnglishPractice from './EnglishPractice';
@@ -161,6 +161,12 @@ const PROJECT_CATEGORIES = [
         translationKey: 'projects.simCFO',
         url: 'https://toydogcat.github.io/sim-cfo-center/',
         icon: <BarChart2 size={24} />
+      },
+      {
+        id: 'sim-cycloid',
+        translationKey: 'projects.simCycloid',
+        url: 'https://toydogcat.github.io/sim-cycloid/',
+        icon: <Activity size={24} />
       }
     ]
   },
@@ -179,6 +185,12 @@ const PROJECT_CATEGORIES = [
         translationKey: 'projects.aiExpSchExam',
         url: 'https://toydogcat.github.io/ai-exp-sch-exam/',
         icon: <Scroll size={24} />
+      },
+      {
+        id: 'daily-dialogue',
+        translationKey: 'projects.dailyDialogue',
+        url: 'https://toydogcat.github.io/daily-dialogue/',
+        icon: <BookOpen size={24} />
       }
     ]
   },
