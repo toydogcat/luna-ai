@@ -161,6 +161,10 @@ const resources = {
         simCycloid: {
           title: 'Cycloid & Curve Simulator',
           desc: 'A mathematical exploration of cycloids and complex curves, visualizing geometric beauty through parametric motion.'
+        },
+        cognitiveAssessment: {
+          title: 'AI Cognitive Assessment',
+          desc: 'Interactive cognitive screening tool featuring MMSE, MoCA, CDT, and CASI tests with Gemini-synthesized clinical reports.'
         }
       },
       installation: {
@@ -363,6 +367,10 @@ const resources = {
         simCycloid: {
           title: '擺線與曲線模擬器',
           desc: '探索擺線與複雜曲線的數學之美，透過參數化運動視覺化幾何軌跡。'
+        },
+        cognitiveAssessment: {
+          title: '認知功能輔助篩檢系統',
+          desc: '專業臨床輔照版。整合台灣本土 MMSE、MoCA、畫鐘測驗 (CDT) 與 CASI，並搭配 Gemini 智慧合成評估報告。'
         }
       },
       installation: {
