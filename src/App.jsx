@@ -331,6 +331,73 @@ function App() {
   const [isUnlocked, setIsUnlocked] = useState(false);
   const [isBiometricAvailable, setIsBiometricAvailable] = useState(false);
   const [hasBiometricEnrollment, setHasBiometricEnrollment] = useState(false);
+  const [isHeaderVisible, setIsHeaderVisible] = useState(true);
+
+  // Reset header visibility when active project changes
+  useEffect(() => {
+    setIsHeaderVisible(true);
+  }, [activeProject]);
+
+  // Bind mousemove to show header when mouse is close to top (fallback for cross-origin or local dev)
+  useEffect(() => {
+    if (!activeProject) return;
+    const handleParentMouseMove = (e) => {
+      if (e.clientY < 15) {
+        setIsHeaderVisible(true);
+      }
+    };
+    window.addEventListener('mousemove', handleParentMouseMove);
+    return () => {
+      window.removeEventListener('mousemove', handleParentMouseMove);
+    };
+  }, [activeProject]);
+
+  const handleIframeLoad = (e) => {
+    try {
+      const iframe = e.target;
+      const iframeWindow = iframe.contentWindow;
+      const iframeDoc = iframe.contentDocument || iframeWindow.document;
+      
+      let lastScrollY = 0;
+      const scrollThreshold = 10;
+      
+      const handleScroll = () => {
+        try {
+          const currentScrollY = iframeWindow.scrollY || iframeDoc.documentElement.scrollTop || iframeDoc.body.scrollTop;
+          
+          if (currentScrollY > 60 && currentScrollY > lastScrollY + scrollThreshold) {
+            setIsHeaderVisible(false);
+          } else if (currentScrollY < lastScrollY - scrollThreshold || currentScrollY <= 10) {
+            setIsHeaderVisible(true);
+          }
+          lastScrollY = currentScrollY;
+        } catch (err) {}
+      };
+
+      let touchStartY = 0;
+      const handleTouchStart = (evt) => {
+        touchStartY = evt.touches[0].clientY;
+      };
+      
+      const handleTouchMove = (evt) => {
+        try {
+          const touchY = evt.touches[0].clientY;
+          const currentScrollY = iframeWindow.scrollY || iframeDoc.documentElement.scrollTop || iframeDoc.body.scrollTop;
+          
+          if (currentScrollY <= 15 && touchY > touchStartY + 40) {
+            setIsHeaderVisible(true);
+          }
+        } catch (err) {}
+      };
+      
+      iframeDoc.addEventListener('scroll', handleScroll, { passive: true });
+      iframeDoc.addEventListener('touchstart', handleTouchStart, { passive: true });
+      iframeDoc.addEventListener('touchmove', handleTouchMove, { passive: true });
+      
+    } catch (err) {
+      console.warn("Could not bind events to iframe due to same-origin restriction:", err);
+    }
+  };
 
   useEffect(() => {
     // Check device capability on init
@@ -509,7 +576,7 @@ function App() {
                   {category.projects.map(project => (
                     <div 
                       key={project.id} 
-                      className="project-card"
+                      className={`project-card card-${category.id}`}
                       onClick={() => openProject(project)}
                     >
                       <div className="project-icon">{project.icon}</div>
@@ -742,7 +809,6 @@ function App() {
       </div>
 
       {/* FULLSCREEN OVERLAY IFRAME VIEWER */}
-      <EnglishPractice />
       <AnimatePresence>
         {activeProject && (
           <motion.div 
@@ -752,7 +818,16 @@ function App() {
             exit={{ opacity: 0, y: '100%' }}
             transition={{ type: 'spring', stiffness: 300, damping: 30 }}
           >
-            <div className="viewer-header">
+            <div className="top-edge-trigger" onMouseEnter={() => setIsHeaderVisible(true)} />
+            
+            {!isHeaderVisible && (
+              <div className="viewer-pull-tab" onClick={() => setIsHeaderVisible(true)}>
+                <div className="pull-tab-handle" />
+                <Home size={14} style={{ color: 'var(--secondary)' }} />
+              </div>
+            )}
+
+            <div className={`viewer-header ${isHeaderVisible ? '' : 'hidden'}`}>
               <div className="viewer-title">
                 <div style={{ color: 'var(--secondary)' }}>{activeProject.icon}</div>
                 <div style={{ fontSize: '1.1rem' }}>{activeProject.resolvedTitle}</div>
@@ -764,13 +839,21 @@ function App() {
                 <Home size={16} /> {t('viewer.exit')}
               </button>
             </div>
-            <iframe 
-              src={activeProject.url} 
-              className="iframe-container"
-              title={activeProject.resolvedTitle}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; camera; microphone"
-              allowFullScreen
-            />
+
+            <div className={`viewer-content-wrap ${isHeaderVisible ? '' : 'header-hidden'}`}>
+              {activeProject.id === 'ai-studio-english' ? (
+                <EnglishPractice />
+              ) : (
+                <iframe 
+                  src={activeProject.url} 
+                  className="iframe-container"
+                  title={activeProject.resolvedTitle}
+                  onLoad={handleIframeLoad}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; camera; microphone"
+                  allowFullScreen
+                />
+              )}
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

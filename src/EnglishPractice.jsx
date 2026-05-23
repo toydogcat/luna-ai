@@ -1,13 +1,22 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
+import { Mic, Send, MessageSquare, CloudLightning, ShieldAlert, Sparkles, Volume2 } from 'lucide-react';
 
 function EnglishPractice() {
-  const [open, setOpen] = useState(false);
+  const { t, i18n } = useTranslation();
   const [messages, setMessages] = useState([
     { sender: 'bot', text: "Hi! I'm your English practice partner. Press mic or type to start." }
   ]);
   const [input, setInput] = useState('');
   const [listening, setListening] = useState(false);
+  const [useCloud, setUseCloud] = useState(false);
   const recognitionRef = useRef(null);
+  const chatEndRef = useRef(null);
+
+  // Auto-scroll chat window to bottom
+  useEffect(() => {
+    chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }, [messages, useCloud]);
 
   useEffect(() => {
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -81,100 +90,108 @@ function EnglishPractice() {
     }, 600);
   };
 
-  const [useCloud, setUseCloud] = useState(false);
-
-  const styles = {
-    wrapper: { 
-      position: 'fixed', 
-      right: 20, 
-      bottom: 20, 
-      zIndex: 1200, 
-      display: 'flex', 
-      flexDirection: 'column', 
-      alignItems: 'flex-end',
-      pointerEvents: 'none' // Allow clicking through wrapper
-    },
-    toggle: { 
-      background: 'var(--accent)', 
-      color: '#000', 
-      border: 'none', 
-      padding: '10px 12px', 
-      borderRadius: 8, 
-      cursor: 'pointer', 
-      fontWeight: 700,
-      pointerEvents: 'auto' // Re-enable pointer events for the button
-    },
-    panel: { 
-      width: 360, 
-      maxWidth: 'calc(100vw - 40px)', 
-      maxHeight: 'calc(100vh - 100px)', // Ensure it doesn't overflow height
-      overflowY: 'auto', // Allow internal scrolling
-      background: 'rgba(10,10,10,0.95)', // Slightly more opaque for mobile readability
-      backdropFilter: 'blur(10px)',
-      border: '1px solid rgba(255,255,255,0.06)', 
-      padding: 12, 
-      borderRadius: 10, 
-      marginTop: 8, 
-      color: '#fff',
-      pointerEvents: 'auto', // Re-enable pointer events for the panel
-      boxShadow: '0 8px 32px rgba(0,0,0,0.4)'
-    },
-    header: { fontWeight: 700, marginBottom: 8 },
-    chat: { 
-      maxHeight: 'min(260px, 40vh)', // Adaptive height
-      overflowY: 'auto', 
-      display: 'flex', 
-      flexDirection: 'column', 
-      gap: 8, 
-      padding: 6 
-    },
-    userMsg: { alignSelf: 'flex-end', background: 'rgba(0,200,150,0.12)', padding: 8, borderRadius: 8, maxWidth: '85%' },
-    botMsg: { alignSelf: 'flex-start', background: 'rgba(255,255,255,0.04)', padding: 8, borderRadius: 8, maxWidth: '85%' },
-    controls: { display: 'flex', gap: 8, marginTop: 8, alignItems: 'center' },
-    mic: { padding: '8px 10px', borderRadius: 8, background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.04)', color: '#fff', cursor: 'pointer' },
-    input: { flex: 1, padding: 8, borderRadius: 8, border: '1px solid rgba(255,255,255,0.06)', background: 'transparent', color: '#fff' },
-    send: { padding: '8px 10px', borderRadius: 8, background: 'var(--accent)', border: 'none', color: '#000', cursor: 'pointer' }
-  };
-
   return (
-    <div style={styles.wrapper}>
-      <button style={styles.toggle} onClick={() => setOpen(o => !o)}>{open ? 'Close English Practice' : 'English Practice'}</button>
-      {open && (
-        <div style={styles.panel}>
-          <div style={{display:'flex', alignItems:'center', justifyContent:'space-between', gap: 8}}>
-            <div style={styles.header}>Cloud English Practice — Inline</div>
-            <div style={{display:'flex', gap:8}}>
-              <button onClick={() => setUseCloud(c => !c)} style={{padding:'6px 10px', borderRadius:8, cursor:'pointer'}}>{useCloud ? 'Use Local' : 'Use Cloud'}</button>
-            </div>
+    <div className="english-practice-container">
+      {/* Left Sidebar Panel */}
+      <div className="ep-left-panel">
+        <div>
+          <div className="ep-hero-title">
+            <Sparkles size={20} style={{ marginRight: 8, display: 'inline' }} />
+            English Partner
           </div>
-          {!useCloud ? (
-            <>
-              <div style={styles.chat} aria-live="polite">
-                {messages.map((m, i) => (
-                  <div key={i} style={m.sender === 'user' ? styles.userMsg : styles.botMsg}>
-                    <div style={{ fontSize: '0.9rem' }}>{m.text}</div>
-                  </div>
-                ))}
-              </div>
-              <div style={styles.controls}>
-                <button onClick={listening ? stopListen : startListen} style={styles.mic}>{listening ? 'Stop' : '🎤'}</button>
-                <input value={input} onChange={e => setInput(e.target.value)} placeholder="Type or use mic to speak (English)" style={styles.input} onKeyDown={(e) => e.key === 'Enter' && sendMessage()} />
-                <button onClick={sendMessage} style={styles.send}>Send</button>
-              </div>
-            </>
-          ) : (
-            <div style={{height: 'min(420px, 60vh)', width: '100%'}}>
-              <iframe
-                title="Cloud English Chat Partner"
-                src="https://toydogcat.github.io/chat-partner-gemini/"
-                style={{width: '100%', height: '100%', border: 'none', borderRadius: 8}}
-                allow="microphone; camera; autoplay; clipboard-write; encrypted-media"
-              />
-            </div>
-          )}
-          <div style={{ fontSize: '0.8rem', marginTop: 8, color: 'var(--text-muted)' }}>Note: You can switch to a cloud AI endpoint by modifying this component.</div>
+          <div className="ep-subtitle">
+            {i18n.language.startsWith('zh') 
+              ? '站內專屬英文口語對話與模擬練習空間' 
+              : 'Interactive English Practice space inside Luna AI'}
+          </div>
+
+          {/* Mode Switcher */}
+          <div className="ep-mode-switch">
+            <button 
+              className={`ep-mode-btn ${!useCloud ? 'active' : ''}`}
+              onClick={() => setUseCloud(false)}
+            >
+              <MessageSquare size={16} style={{ marginRight: 6, display: 'inline', verticalAlign: 'middle' }} />
+              Local AI
+            </button>
+            <button 
+              className={`ep-mode-btn ${useCloud ? 'active' : ''}`}
+              onClick={() => setUseCloud(true)}
+            >
+              <CloudLightning size={16} style={{ marginRight: 6, display: 'inline', verticalAlign: 'middle' }} />
+              Cloud AI
+            </button>
+          </div>
+
+          <div className="ep-instructions">
+            <h4>💡 {i18n.language.startsWith('zh') ? '練習小指南' : 'Practice Guidelines'}</h4>
+            <p>
+              {i18n.language.startsWith('zh') 
+                ? '1. 選擇 Local AI 可享有極速語音回饋，支援文字與即時語音朗讀。' 
+                : '1. Choose Local AI for quick feedback, text and speech readback.'}
+            </p>
+            <p style={{ marginTop: '0.5rem' }}>
+              {i18n.language.startsWith('zh') 
+                ? '2. 點選 Cloud AI 載入高階對話模型，體驗流暢深入的口語演練。' 
+                : '2. Switch to Cloud AI to load advanced models for more deep and structured role-play.'}
+            </p>
+          </div>
         </div>
-      )}
+
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--text-muted)', fontSize: '0.75rem' }}>
+          <Volume2 size={14} />
+          {i18n.language.startsWith('zh') ? '支援瀏覽器語音合成 (TTS)' : 'Powered by Browser Speech Synthesis'}
+        </div>
+      </div>
+
+      {/* Right Content / Chat Panel */}
+      <div className="ep-right-panel">
+        {!useCloud ? (
+          <>
+            {/* Local Chat Arena */}
+            <div className="ep-chat-box">
+              {messages.map((m, i) => (
+                <div key={i} className={`ep-msg-bubble ${m.sender}`}>
+                  <div>{m.text}</div>
+                </div>
+              ))}
+              <div ref={chatEndRef} />
+            </div>
+
+            {/* Local Input Bar */}
+            <div className="ep-input-area">
+              <button 
+                onClick={listening ? stopListen : startListen} 
+                className={`ep-btn-mic ${listening ? 'listening' : ''}`}
+                title={listening ? 'Stop listening' : 'Start speaking'}
+              >
+                <Mic size={20} />
+              </button>
+              <input 
+                value={input} 
+                onChange={e => setInput(e.target.value)} 
+                placeholder={i18n.language.startsWith('zh') ? "輸入文字或使用麥克風說英文..." : "Type or speak in English..."}
+                className="ep-input" 
+                onKeyDown={(e) => e.key === 'Enter' && sendMessage()} 
+              />
+              <button onClick={sendMessage} className="ep-btn-send">
+                <Send size={18} style={{ marginRight: 6, display: 'inline', verticalAlign: 'middle' }} />
+                {i18n.language.startsWith('zh') ? '傳送' : 'Send'}
+              </button>
+            </div>
+          </>
+        ) : (
+          /* Cloud AI Iframe Mode */
+          <div style={{ width: '100%', height: '100%', borderRadius: 16, overflow: 'hidden', border: '1px solid rgba(255,255,255,0.06)' }}>
+            <iframe
+              title="Cloud English Chat Partner"
+              src="https://toydogcat.github.io/chat-partner-gemini/"
+              style={{ width: '100%', height: '100%', border: 'none', background: '#050509' }}
+              allow="microphone; camera; autoplay; clipboard-write; encrypted-media"
+            />
+          </div>
+        )}
+      </div>
     </div>
   );
 }
