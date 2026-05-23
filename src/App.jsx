@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Sparkles, ArrowRight, Zap, Globe, Users, MousePointerClick, Newspaper, Home, Languages, Heart, Code, Database, Eye, BookOpen, Scroll, Crown, Bomb, Grid3X3, Grid, Lock, Terminal, CheckCircle2, Smartphone, Shield, Library, Clapperboard, Fingerprint, ScanQrCode, Target, MapPin, Braces, BarChart2, Swords, Car, Siren, MessageSquare, Gavel, CloudLightning, Trees, Activity } from 'lucide-react';
+import { Sparkles, ArrowRight, Zap, Globe, Users, MousePointerClick, Newspaper, Home, Languages, Heart, Code, Database, Eye, BookOpen, Scroll, Crown, Bomb, Grid3X3, Grid, Lock, Terminal, CheckCircle2, Smartphone, Shield, Library, Clapperboard, Fingerprint, ScanQrCode, Target, MapPin, Braces, BarChart2, Swords, Car, Siren, MessageSquare, Gavel, CloudLightning, Trees, Activity, ChevronUp } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { trackEvent } from './firebase';
 import EnglishPractice from './EnglishPractice';
@@ -351,6 +351,24 @@ function App() {
       window.removeEventListener('mousemove', handleParentMouseMove);
     };
   }, [activeProject]);
+
+  // Handle postMessage events from sub-apps for scroll sync
+  useEffect(() => {
+    const handleMessage = (e) => {
+      if (e.data && e.data.type === 'iframe_scroll') {
+        const { scrollY, direction } = e.data;
+        if (scrollY > 60 && direction === 'down') {
+          setIsHeaderVisible(false);
+        } else if (direction === 'up' || scrollY <= 10) {
+          setIsHeaderVisible(true);
+        }
+      }
+    };
+    window.addEventListener('message', handleMessage);
+    return () => {
+      window.removeEventListener('message', handleMessage);
+    };
+  }, []);
 
   const handleIframeLoad = (e) => {
     try {
@@ -835,9 +853,19 @@ function App() {
                   {t('viewer.runningInside')}
                 </span>
               </div>
-              <button className="btn-close-viewer" onClick={closeProject}>
-                <Home size={16} /> {t('viewer.exit')}
-              </button>
+              <div style={{ display: 'flex', gap: '10px' }}>
+                <button 
+                  className="btn-close-viewer" 
+                  style={{ background: 'rgba(255, 255, 255, 0.05)', color: 'var(--text-muted)' }}
+                  onClick={() => setIsHeaderVisible(false)}
+                  title={i18n.language.startsWith('zh') ? '隱藏上方導覽列以顯示全螢幕' : 'Hide navigation for fullscreen'}
+                >
+                  <ChevronUp size={16} /> {i18n.language.startsWith('zh') ? '收起導覽' : 'Collapse'}
+                </button>
+                <button className="btn-close-viewer" onClick={closeProject}>
+                  <Home size={16} /> {t('viewer.exit')}
+                </button>
+              </div>
             </div>
 
             <div className={`viewer-content-wrap ${isHeaderVisible ? '' : 'header-hidden'}`}>
