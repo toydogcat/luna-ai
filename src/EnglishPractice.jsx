@@ -84,11 +84,50 @@ function EnglishPractice() {
   const [useCloud, setUseCloud] = useState(false);
 
   const styles = {
-    wrapper: { position: 'fixed', right: 20, bottom: 20, zIndex: 1200, display: 'flex', flexDirection: 'column', alignItems: 'flex-end' },
-    toggle: { background: 'var(--accent)', color: '#000', border: 'none', padding: '10px 12px', borderRadius: 8, cursor: 'pointer', fontWeight: 700 },
-    panel: { width: 360, maxWidth: 'calc(100vw - 40px)', background: 'rgba(0,0,0,0.8)', border: '1px solid rgba(255,255,255,0.06)', padding: 12, borderRadius: 10, marginTop: 8, color: '#fff' },
+    wrapper: { 
+      position: 'fixed', 
+      right: 20, 
+      bottom: 20, 
+      zIndex: 1200, 
+      display: 'flex', 
+      flexDirection: 'column', 
+      alignItems: 'flex-end',
+      pointerEvents: 'none' // Allow clicking through wrapper
+    },
+    toggle: { 
+      background: 'var(--accent)', 
+      color: '#000', 
+      border: 'none', 
+      padding: '10px 12px', 
+      borderRadius: 8, 
+      cursor: 'pointer', 
+      fontWeight: 700,
+      pointerEvents: 'auto' // Re-enable pointer events for the button
+    },
+    panel: { 
+      width: 360, 
+      maxWidth: 'calc(100vw - 40px)', 
+      maxHeight: 'calc(100vh - 100px)', // Ensure it doesn't overflow height
+      overflowY: 'auto', // Allow internal scrolling
+      background: 'rgba(10,10,10,0.95)', // Slightly more opaque for mobile readability
+      backdropFilter: 'blur(10px)',
+      border: '1px solid rgba(255,255,255,0.06)', 
+      padding: 12, 
+      borderRadius: 10, 
+      marginTop: 8, 
+      color: '#fff',
+      pointerEvents: 'auto', // Re-enable pointer events for the panel
+      boxShadow: '0 8px 32px rgba(0,0,0,0.4)'
+    },
     header: { fontWeight: 700, marginBottom: 8 },
-    chat: { maxHeight: 260, overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: 8, padding: 6 },
+    chat: { 
+      maxHeight: 'min(260px, 40vh)', // Adaptive height
+      overflowY: 'auto', 
+      display: 'flex', 
+      flexDirection: 'column', 
+      gap: 8, 
+      padding: 6 
+    },
     userMsg: { alignSelf: 'flex-end', background: 'rgba(0,200,150,0.12)', padding: 8, borderRadius: 8, maxWidth: '85%' },
     botMsg: { alignSelf: 'flex-start', background: 'rgba(255,255,255,0.04)', padding: 8, borderRadius: 8, maxWidth: '85%' },
     controls: { display: 'flex', gap: 8, marginTop: 8, alignItems: 'center' },
@@ -124,7 +163,7 @@ function EnglishPractice() {
               </div>
             </>
           ) : (
-            <div style={{height: '420px', width: '100%'}}>
+            <div style={{height: 'min(420px, 60vh)', width: '100%'}}>
               <iframe
                 title="Cloud English Chat Partner"
                 src="https://toydogcat.github.io/chat-partner-gemini/"
