@@ -222,6 +222,7 @@ const resources = {
         games: '🎮 娛樂遊戲區',
         simulation: '🚥 模擬專區',
         leisure: '🎭 公開休閒區',
+        tools: '🛠️ 工具與生活',
         aistudio: '☁️ AI Studio 雲端應用',
         localExperimental: '⚠️ 本地模型實驗區 (效能受限)'
       },
@@ -236,6 +237,10 @@ const resources = {
         launchInside: '站內啟動',
         comingSoon: '下一個節點',
         comingSoonDesc: '無縫串接智能節點，未來整合敬請期待。',
+        aiAlarmClock: {
+          title: 'AI 工具小鬧鐘',
+          desc: '極簡高效的網頁版小鬧鐘，助您精確掌握時間，提升生活效率。'
+        },
         aiStudioEnglish: {
           title: '雲端英文對話練習',
           desc: '基於強大雲端模型的流暢英文口語對話服務，效能優異，適合實用練習。'
