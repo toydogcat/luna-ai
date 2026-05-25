@@ -58,6 +58,14 @@ const resources = {
           title: 'Strategic CFO: Market Intelligence',
           desc: 'A high-fidelity business simulation focusing on financial transparency, risk management, and market trend sensing.'
         },
+        aiAlarmClock: {
+          title: 'AI Smart Alarm Clock',
+          desc: 'A minimal, high-efficiency web alarm clock helping you track time precisely and improve daily productivity.'
+        },
+        nfcShowInfo: {
+          title: 'NFC Show Info',
+          desc: 'Lightweight PWA utility to scan, inspect, and analyze NFC card payloads and tags in real-time.'
+        },
         aiNews: {
           title: 'AI News',
           desc: 'Comprehensive AI-driven news aggregation and analysis system.'
@@ -376,6 +384,10 @@ const resources = {
         cognitiveAssessment: {
           title: '認知功能輔助篩檢系統',
           desc: '專業臨床輔照版。整合台灣本土 MMSE、MoCA、畫鐘測驗 (CDT) 與 CASI，並搭配 Gemini 智慧合成評估報告。'
+        },
+        nfcShowInfo: {
+          title: 'NFC 顯示資訊',
+          desc: '網頁端 NFC 讀取與資訊顯示小工具，輕鬆掃描並解析 NFC 卡片的原始資料與 Payload。'
         }
       },
       installation: {
