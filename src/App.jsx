@@ -191,6 +191,12 @@ const PROJECT_CATEGORIES = [
         translationKey: 'projects.simCycloid',
         url: 'https://toydogcat.github.io/sim-cycloid/',
         icon: <Activity size={24} />
+      },
+      {
+        id: 'sim-trust-evolution',
+        translationKey: 'projects.simTrustEvolution',
+        url: 'https://toydogcat.github.io/sim-trust-evolution/',
+        icon: <Users size={24} />
       }
     ]
   },
