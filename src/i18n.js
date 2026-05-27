@@ -126,6 +126,10 @@ const resources = {
           title: 'AI Scan Master',
           desc: 'Real-time on-device computer vision suite for QR scanning and smart OCR text recognition.'
         },
+        aiUiLayout: {
+          title: 'AI UI Layout Analysis',
+          desc: 'Advanced AI-driven interface auditing tool for professional UI layout optimization and UX suggestions.'
+        },
         aiYolo: {
           title: 'AI YOLO Vision',
           desc: 'Edge-computing real-time object detection engine directly running inside your browser.'
@@ -165,6 +169,10 @@ const resources = {
         dailyDialogue: {
           title: 'Daily Dialogue: Reading & Fluency',
           desc: 'A daily curated reading platform focused on natural dialogue, linguistic flow, and essential vocabulary.'
+        },
+        oldToThousands: {
+          title: 'Nostalgic 2000s: Back to the Future',
+          desc: 'A digital time capsule and aesthetic journey back to the golden era of the early 2000s.'
         },
         simCycloid: {
           title: 'Cycloid & Curve Simulator',
@@ -341,6 +349,10 @@ const resources = {
           title: 'AI 智慧掃描大師',
           desc: '瀏覽器端跑推論的即時掃描引擎！支援相機即時解析 QR Code、條碼與智慧 OCR 文字辨識。'
         },
+        aiUiLayout: {
+          title: 'AI UI 佈局分析專家',
+          desc: '利用進階 AI 技術深度分析網頁 UI 佈局，提供專業的視覺平衡、UX 優化與佈局調整建議。'
+        },
         aiYolo: {
           title: 'AI 視覺追蹤系統',
           desc: '極度硬核的網頁邊緣運算！在瀏覽器端即時運行 YOLOv8 等模型，實現高幀率物件偵測。'
@@ -379,7 +391,11 @@ const resources = {
         },
         dailyDialogue: {
           title: '每日讀書：對話與語感',
-          desc: '每日精選對話閱讀平台，專注於自然語境、語感培養與核心詞彙累積。'
+          desc: '每日精選對話閱讀 platform，專注於自然語境、語感培養與核心詞彙累積。'
+        },
+        oldToThousands: {
+          title: '千禧年懷舊時光機',
+          desc: '穿越時空的數位膠囊，帶您重溫 2000 年代初期的經典美學與純真情懷。'
         },
         simCycloid: {
           title: '擺線與曲線模擬器',

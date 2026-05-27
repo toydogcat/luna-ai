@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Sparkles, ArrowRight, Zap, Globe, Brain, Users, MousePointerClick, Newspaper, Home, Languages, Heart, Code, Database, Eye, BookOpen, Scroll, Crown, Bomb, Grid3X3, Grid, Lock, Terminal, CheckCircle2, Smartphone, Shield, Library, Clapperboard, Fingerprint, ScanQrCode, Target, MapPin, Braces, BarChart2, Swords, Car, Siren, MessageSquare, Gavel, CloudLightning, Trees, Activity, ChevronUp, AlarmClock, Radio } from 'lucide-react';
+import { Sparkles, ArrowRight, Zap, Globe, Brain, Users, MousePointerClick, Newspaper, Home, Languages, Heart, Code, Database, Eye, BookOpen, Scroll, Crown, Bomb, Grid3X3, Grid, Lock, Terminal, CheckCircle2, Smartphone, Shield, Library, Clapperboard, Fingerprint, ScanQrCode, Target, MapPin, Braces, BarChart2, Swords, Car, Siren, MessageSquare, Gavel, CloudLightning, Trees, Activity, ChevronUp, AlarmClock, Radio, Layout, History } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { trackEvent } from './firebase';
 import EnglishPractice from './EnglishPractice';
@@ -39,6 +39,12 @@ const PROJECT_CATEGORIES = [
         translationKey: 'projects.aiScan',
         url: 'https://toydogcat.github.io/ai-scan/',
         icon: <ScanQrCode size={24} />
+      },
+      {
+        id: 'ai-ui-layout',
+        translationKey: 'projects.aiUiLayout',
+        url: 'https://toydogcat.github.io/ai-ui-layout/',
+        icon: <Layout size={24} />
       },
       {
         id: 'ai-sch-exam',
@@ -227,6 +233,12 @@ const PROJECT_CATEGORIES = [
         translationKey: 'projects.dailyDialogue',
         url: 'https://toydogcat.github.io/daily-dialogue/',
         icon: <BookOpen size={24} />
+      },
+      {
+        id: 'old-to-thousands',
+        translationKey: 'projects.oldToThousands',
+        url: 'https://toydogcat.github.io/old2thousands/',
+        icon: <History size={24} />
       }
     ]
   },
