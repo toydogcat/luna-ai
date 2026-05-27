@@ -389,6 +389,10 @@ const resources = {
           title: '信任的演化',
           desc: '一個關於博弈論的互動式指南，探索我們為什麼以及如何相互信任。'
         },
+        simFireworks: {
+          title: '模擬煙火',
+          desc: '極具視覺震撼的數位煙火模擬器，展現絢麗色彩與物理碰撞的璀璨盛宴。'
+        },
         cognitiveAssessment: {
           title: '認知功能輔助篩檢系統',
           desc: '專業臨床輔照版。整合台灣本土 MMSE、MoCA、畫鐘測驗 (CDT) 與 CASI，並搭配 Gemini 智慧合成評估報告。'
@@ -452,3 +456,4 @@ i18n
   });
 
 export default i18n;
+i18n;

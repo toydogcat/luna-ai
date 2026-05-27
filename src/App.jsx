@@ -197,6 +197,12 @@ const PROJECT_CATEGORIES = [
         translationKey: 'projects.simTrustEvolution',
         url: 'https://toydogcat.github.io/sim-trust-evolution/',
         icon: <Users size={24} />
+      },
+      {
+        id: 'sim-fireworks',
+        translationKey: 'projects.simFireworks',
+        url: 'https://toydogcat.github.io/sim-fireworks/',
+        icon: <Sparkles size={24} />
       }
     ]
   },
