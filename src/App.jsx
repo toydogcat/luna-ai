@@ -562,8 +562,8 @@ function App() {
   // Pre-calculate date values to avoid race conditions and Hydration issues
   const today = new Date();
   const currentYear = today.getFullYear();
-  const currentMonth = String(today.getMonth() + 1).padStart(2, '0');
-  const currentDay = String(today.getDate()).padStart(2, '0');
+  const currentMonthNum = today.getMonth() + 1;
+  const currentDayNum = today.getDate();
   const visitorsHint = currentYear + currentMonthNum + currentDayNum;
   const mockTotalViews = Math.floor(Date.now() / 100000);
 
