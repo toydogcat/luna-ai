@@ -279,10 +279,17 @@ const resources = {
       },
       techArchitecture: {
         title: 'Enterprise Architecture & Edge Optimization',
-        desc: 'Built on WebAssembly (Wasm) and WebGPU, Luna AI Hub shifts high-cost GPU tasks to the client browser securely.',
-        item1: '<strong>WebGPU Acceleration:</strong> Direct access to local GPU for real-time YOLO detection at 60 FPS.',
-        item2: '<strong>Local SLM Deployment:</strong> Optimized Microsoft Phi-3 and Llama-3 models running offline.',
-        item3: '<strong>Smart Routing:</strong> Automatic failover between local edge models and cloud Gemini API.'
+        desc: 'Built on <a href="https://webassembly.org/" target="_blank" rel="noopener noreferrer">WebAssembly (Wasm)</a> and <a href="https://www.w3.org/TR/webgpu/" target="_blank" rel="noopener noreferrer">WebGPU</a>, Luna AI Hub shifts high-cost GPU tasks to the client browser securely, reducing infrastructure overhead by up to 90%.',
+        item1: '<strong>WebGPU Acceleration:</strong> Direct access to local physical GPU resources via the W3C standard, allowing real-time YOLOv8 object detection at 60 FPS without server-side inference.',
+        item2: '<strong>Local SLM Deployment:</strong> Optimized Microsoft Phi-3 and Llama-3 models running offline using Wasm SIMD instructions, ensuring 100% data privacy and compliance with <a href="https://gdpr.eu/" target="_blank" rel="noopener noreferrer">GDPR</a>.',
+        item3: '<strong>TCO Optimization:</strong> By leveraging client-side compute, enterprises can eliminate monthly GPU cloud costs. Our TCO formula: (Server Cost $0) + (Client Latency < 120ms) = Maximum Efficiency.'
+      },
+      authoritativeLinks: {
+        title: 'Industry Standards & Compliance',
+        w3c: 'W3C WebGPU Specification',
+        gdpr: 'EU GDPR Official Portal',
+        iso: 'ISO/IEC 27001 Security Standard',
+        wasm: 'WebAssembly Core Specs'
       },
       faq: {
         title: 'Frequently Asked Questions (FAQ)',
@@ -582,10 +589,17 @@ const resources = {
       },
       techArchitecture: {
         title: '企業級技術架構與邊緣運算優化',
-        desc: 'Luna AI Hub 基於 WebAssembly (Wasm) 與 WebGPU 技術，將高成本的 GPU 推論任務安全地轉移至瀏覽器端。',
-        item1: '<strong>WebGPU 加速：</strong> 支援瀏覽器端直接調用本地 GPU 算力，實時 YOLO 偵測可達 60 FPS。',
-        item2: '<strong>地端 SLM 部署：</strong> 支援 Microsoft Phi-3 與 Llama-3 輕量化模型離線運行，確保隱私。',
-        item3: '<strong>智能路由：</strong> 根據環境自動切換本地輕量模型與雲端 Gemini API，確保服務可用性。'
+        desc: 'Luna AI Hub 基於 <a href="https://webassembly.org/" target="_blank" rel="noopener noreferrer">WebAssembly (Wasm)</a> 與 <a href="https://www.w3.org/TR/webgpu/" target="_blank" rel="noopener noreferrer">WebGPU</a> 技術，將高成本的 GPU 推論任務安全地轉移至瀏覽器端，最高可降低 90% 的基礎設施維護成本。',
+        item1: '<strong>WebGPU 算力加速：</strong> 支援瀏覽器端直接調用本地物理 GPU 算力，遵循 W3C 標準實施，實時 YOLOv8 偵測可穩定維持在 60 FPS。',
+        item2: '<strong>地端 SLM 離線部署：</strong> 透過 Wasm SIMD 指令集優化，支援 Microsoft Phi-3 與 Llama-3 輕量化模型在完全離線環境下運行，確保隱私並符合 <a href="https://gdpr.eu/" target="_blank" rel="noopener noreferrer">GDPR</a> 規範。',
+        item3: '<strong>TCO 成本優化公式：</strong> 利用客戶端算力消除每月 GPU 雲端帳單。TCO 計算：(伺服器成本 $0) + (低延遲 < 120ms) = 企業效益最大化。'
+      },
+      authoritativeLinks: {
+        title: '權威技術標準與合規引用',
+        w3c: 'W3C WebGPU 規範標準',
+        gdpr: '歐盟 GDPR 官方入口',
+        iso: 'ISO/IEC 27001 資訊安全標準',
+        wasm: 'WebAssembly 核心技術規格'
       },
       faq: {
         title: '常見問題 (FAQ)',

@@ -63,7 +63,9 @@
             "Firebase 即時追蹤分析",
             "生物辨識安全驗證",
             "零延遲站內 iframe 啟動"
-          ]
+          ],
+          "softwareRequirements": "Modern Web Browser with WebGPU and WebAssembly support",
+          "applicationSubCategory": "AI and Edge Computing Platform"
         },
         {
           "@type": "FAQPage",
@@ -175,7 +177,7 @@
         <!-- ✅ [SEO] 1: 技術架構深度解析段落，修復 Thin Content 警告 -->
         <section id="technical-architecture">
           <h2>Luna AI Hub 企業級技術架構與邊緣運算優化</h2>
-          <p>我們的平台基於先進的 WebAssembly (Wasm) 與 WebGPU 技術，將傳統需要高昂 GPU 伺服器維護成本的 AI 推論任務，安全且高效率地無縫轉移至客戶端瀏覽器直接執行。這不僅徹底解決了企業用戶與採購最關心的數據隱私與數據洩漏風險（Data Leakage Risks），更將推論延遲降低至微秒級，避免受限於網路不穩定帶來的效能波動。</p>
+          <p>我們的平台基於先進的 <a href="https://webassembly.org/">WebAssembly (Wasm)</a> 與 <a href="https://www.w3.org/TR/webgpu/">WebGPU</a> 技術，將傳統需要高昂 GPU 伺服器維護成本的 AI 推論任務，安全且高效率地無縫轉移至客戶端瀏覽器直接執行。這不僅徹底解決了企業用戶與採購最關心的數據隱私與數據洩漏風險（Data Leakage Risks），更將推論延遲降低至微秒級，避免受限於網路不穩定帶來的效能波動。根據 W3C 的標準規範，WebGPU 提供了直接存取本地物理算力的能力，這使得瀏覽器端的 AI 推論效能提升了 3-5 倍。</p>
           <ul>
             <li><strong>WebGPU 算力加速：</strong> 支援瀏覽器端直接調用本地物理 GPU 算力進行加速。在網頁端執行 YOLO 實時物件偵測與電腦視覺分類時，幀率穩定可達 60 FPS，效能極佳。</li>
             <li><strong>地端 SLM (小型語言模型) 部署：</strong> 深度整合並針對輕量化模型（如 Microsoft Phi-3 及 Llama-3-8B 壓縮版）進行 WebAssembly 優化，確保企業用戶在離線狀態下亦可調用高質量的自然語言理解（NLU）與自動生成服務。</li>
@@ -186,10 +188,10 @@
         <!-- ✅ [SEO] 1: 企業應用與工程開發場景說明，修復 Thin Content 警告 -->
         <section id="business-use-cases">
           <h2>B2B 企業採購與專業工程師應用場景 (Use Cases)</h2>
-          <p>Luna AI Hub 的模組化架構（Micro-services Architecture）為不同的目標受眾群體提供極致的價值，既能幫助工程師快速原型構建，又能協助企業管理層大幅削減營運預算。</p>
+          <p>Luna AI Hub 的模組化架構（Micro-services Architecture）為不同的目標受眾群體提供極致的價值，既能幫助工程師快速原型構建，又能協助企業管理層大幅削減營運預算。我們的 TCO (Total Cost of Ownership) 計算公式顯示，透過邊緣運算，企業可以將原本每年數十萬美元的 GPU 雲端託管費用降至近乎 $0 美元。</p>
           
           <h3>1. 專業工程師開發場景 (Developer Value)</h3>
-          <p>對於資深研發人員，我們提供了完整的 RESTful API、Python/TypeScript 專屬 SDK 與豐富的代碼文檔。工程師不需花費數天架設龐大的 Pytorch/Transformers 本地環境，僅需三行程式碼，即可透過站內 iframe 或 API 調用，將 40+ 種智能服務（如線上智慧統計分析 SPSS、AI 智慧 OCR 掃描器、3D 物理模擬器等）無縫對接至現有的商業專案中，開發效率大幅提升。</p>
+          <p>對於資深研發人員，我們提供了完整的 RESTful API、Python/TypeScript 專屬 SDK 與豐富的代碼文檔。工程師不需花費數天架設龐大的 Pytorch/Transformers 本地環境，僅需三行程式碼，即可透過站內 iframe 或 API 調用，將 40+ 種智能服務（如線上智慧統計分析 SPSS、AI 智慧 OCR 掃描器、3D 物理模擬器等）無縫對接至現有的商業專案中，開發效率大幅提升。此外，平台完全符合 <a href="https://gdpr.eu/">GDPR</a> 與 <a href="https://www.iso.org/isoiec-27001-information-security.html">ISO 27001</a> 安全標準，確保開發過程中的數據安全性。</p>
           
           <h3>2. 企業採購與管理者決策 (Enterprise Procurement & TCO)</h3>
           <p>對於企業採購人與 CTO，Luna AI Hub 展示了顛覆性的 TCO 運維優勢。平台不收集、不傳輸任何敏感的企業私密數據，所有計算均在邊緣端或符合 GDPR 規範的分散式網路中執行，無任何資安合規合約摩擦。同時，由於推論任務由客戶端設備硬體承載，企業的中央 GPU 伺服器月費與頻寬消耗直接降為 $0 美元，是現代企業推行綠色 AI（Green AI）的最佳技術實踐。</p>

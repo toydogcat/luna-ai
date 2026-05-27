@@ -770,6 +770,25 @@ function App() {
               </div>
             </motion.section>
 
+            {/* ✅ [GEO] 3: Authoritative Links Section */}
+            <motion.section variants={itemVariants} className="authoritative-links-section">
+              <h3>{t('authoritativeLinks.title')}</h3>
+              <div className="links-grid">
+                <a href="https://www.w3.org/TR/webgpu/" target="_blank" rel="noopener noreferrer" className="auth-link">
+                  <Globe size={14} /> {t('authoritativeLinks.w3c')}
+                </a>
+                <a href="https://gdpr.eu/" target="_blank" rel="noopener noreferrer" className="auth-link">
+                  <Shield size={14} /> {t('authoritativeLinks.gdpr')}
+                </a>
+                <a href="https://www.iso.org/isoiec-27001-information-security.html" target="_blank" rel="noopener noreferrer" className="auth-link">
+                  <Lock size={14} /> {t('authoritativeLinks.iso')}
+                </a>
+                <a href="https://webassembly.org/" target="_blank" rel="noopener noreferrer" className="auth-link">
+                  <Code size={14} /> {t('authoritativeLinks.wasm')}
+                </a>
+              </div>
+            </motion.section>
+
             {/* ✅ [GEO] 3: FAQ Accordion Section */}
             <motion.section variants={itemVariants} className="faq-section">
               <h2>{t('faq.title')}</h2>
