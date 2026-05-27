@@ -1253,3 +1253,195 @@ footer {
   }
 }
 
+
+/* =========================================================
+   ✅ [GEO] 4: 技術規格與效能指標區塊 (Tech Specs Section)
+   ========================================================= */
+.tech-specs-section {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto 5rem;
+  padding: 0 0.5rem;
+}
+.tech-specs-section h2 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+  background: linear-gradient(to right, #fff, rgba(255,255,255,0.6));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+.tech-specs-section .section-subtitle {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+}
+.spec-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+.spec-card {
+  background: linear-gradient(145deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 1.75rem 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.spec-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.spec-card:hover::before { opacity: 1; }
+.spec-card:hover {
+  border-color: rgba(124, 58, 237, 0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.35);
+}
+.spec-value {
+  font-size: 2.4rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+.spec-label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  margin-bottom: 0.4rem;
+}
+.spec-desc {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+.spec-list {
+  list-style: none;
+  margin-top: 2rem;
+  background: linear-gradient(145deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.spec-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  color: #d1d5db;
+  line-height: 1.5;
+}
+.spec-list li::before {
+  content: '✦';
+  color: var(--accent);
+  font-size: 0.7rem;
+  flex-shrink: 0;
+  margin-top: 0.35rem;
+}
+.spec-list strong { color: #fff; font-weight: 700; }
+
+/* =========================================================
+   ✅ [GEO] 3: FAQ 常見問題折疊式 Accordion 區塊
+   ========================================================= */
+.faq-section {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 6rem;
+  padding: 0 0.5rem;
+}
+.faq-section h2 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+  background: linear-gradient(to right, #fff, rgba(255,255,255,0.6));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+.faq-section .section-subtitle {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+}
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+.faq-item {
+  background: linear-gradient(145deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.faq-item.open {
+  border-color: rgba(124, 58, 237, 0.35);
+  box-shadow: 0 6px 25px rgba(124, 58, 237, 0.1);
+}
+.faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.2s;
+}
+.faq-question:hover { background: rgba(255,255,255,0.02); }
+.faq-question h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  line-height: 1.4;
+  text-align: left;
+  flex: 1;
+}
+.faq-chevron {
+  color: var(--text-muted);
+  flex-shrink: 0;
+  margin-left: 1rem;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s;
+}
+.faq-item.open .faq-chevron {
+  transform: rotate(180deg);
+  color: var(--primary);
+}
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.faq-item.open .faq-answer { max-height: 400px; }
+.faq-answer p {
+  padding: 1rem 1.5rem 1.5rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+@media (max-width: 768px) {
+  .spec-grid { grid-template-columns: repeat(2, 1fr); }
+  .spec-value { font-size: 1.8rem; }
+  .faq-question h3 { font-size: 0.9rem; }
+  .tech-specs-section, .faq-section { padding: 0; }
+}

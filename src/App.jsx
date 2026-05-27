@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Sparkles, ArrowRight, Zap, Globe, Brain, Users, MousePointerClick, Newspaper, Home, Languages, Heart, Code, Database, Eye, BookOpen, Scroll, Crown, Bomb, Grid3X3, Grid, Lock, Terminal, CheckCircle2, Smartphone, Shield, Library, Clapperboard, Fingerprint, ScanQrCode, Target, MapPin, Braces, BarChart2, Swords, Car, Siren, MessageSquare, Gavel, CloudLightning, Trees, Activity, ChevronUp, AlarmClock, Radio, Layout, History } from 'lucide-react';
+import { Sparkles, ArrowRight, Zap, Globe, Brain, Users, MousePointerClick, Newspaper, Home, Languages, Heart, Code, Database, Eye, BookOpen, Scroll, Crown, Bomb, Grid3X3, Grid, Lock, Terminal, CheckCircle2, Smartphone, Shield, Library, Clapperboard, Fingerprint, ScanQrCode, Target, MapPin, Braces, BarChart2, Swords, Car, Siren, MessageSquare, Gavel, CloudLightning, Trees, Activity, ChevronUp, AlarmClock, Radio, Layout, History, ChevronDown } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { trackEvent } from './firebase';
 import EnglishPractice from './EnglishPractice';
@@ -380,6 +380,7 @@ function App() {
   const [isBiometricAvailable, setIsBiometricAvailable] = useState(false);
   const [hasBiometricEnrollment, setHasBiometricEnrollment] = useState(false);
   const [isHeaderVisible, setIsHeaderVisible] = useState(true);
+  const [openFaq, setOpenFaq] = useState(null);
 
   // Reset header visibility when active project changes
   useEffect(() => {
@@ -676,6 +677,66 @@ function App() {
                   </div>
                </div>
             </motion.div>
+
+            {/* ✅ [GEO] 4: Technical Specifications Section */}
+            <motion.section variants={itemVariants} className="tech-specs-section">
+              <h2>{t('technicalSpecs.title')}</h2>
+              <p className="section-subtitle">{t('technicalSpecs.subtitle')}</p>
+              
+              <div className="spec-grid">
+                <div className="spec-card">
+                  <div className="spec-value">{t('technicalSpecs.uptime.value')}</div>
+                  <div className="spec-label">{t('technicalSpecs.uptime.label')}</div>
+                  <p className="spec-desc">{t('technicalSpecs.uptime.desc')}</p>
+                </div>
+                <div className="spec-card">
+                  <div className="spec-value">{t('technicalSpecs.latency.value')}</div>
+                  <div className="spec-label">{t('technicalSpecs.latency.label')}</div>
+                  <p className="spec-desc">{t('technicalSpecs.latency.desc')}</p>
+                </div>
+                <div className="spec-card">
+                  <div className="spec-value">{t('technicalSpecs.security.value')}</div>
+                  <div className="spec-label">{t('technicalSpecs.security.label')}</div>
+                  <p className="spec-desc">{t('technicalSpecs.security.desc')}</p>
+                </div>
+                <div className="spec-card">
+                  <div className="spec-value">{t('technicalSpecs.scalability.value')}</div>
+                  <div className="spec-label">{t('technicalSpecs.scalability.label')}</div>
+                  <p className="spec-desc">{t('technicalSpecs.scalability.desc')}</p>
+                </div>
+              </div>
+
+              <ul className="spec-list">
+                <h4 style={{marginBottom: '0.5rem', color: 'var(--secondary)'}}>{t('technicalSpecs.listTitle')}</h4>
+                <li dangerouslySetInnerHTML={{ __html: t('technicalSpecs.item1') }}></li>
+                <li dangerouslySetInnerHTML={{ __html: t('technicalSpecs.item2') }}></li>
+                <li dangerouslySetInnerHTML={{ __html: t('technicalSpecs.item3') }}></li>
+              </ul>
+            </motion.section>
+
+            {/* ✅ [GEO] 3: FAQ Accordion Section */}
+            <motion.section variants={itemVariants} className="faq-section">
+              <h2>{t('faq.title')}</h2>
+              <p className="section-subtitle">{t('faq.subtitle')}</p>
+              
+              <div className="faq-list">
+                {[1, 2, 3, 4].map((num) => (
+                  <div 
+                    key={num} 
+                    className={`faq-item ${openFaq === num ? 'open' : ''}`}
+                    onClick={() => setOpenFaq(openFaq === num ? null : num)}
+                  >
+                    <div className="faq-question">
+                      <h3>{t(`faq.q${num}`)}</h3>
+                      <ChevronDown size={20} className="faq-chevron" />
+                    </div>
+                    <div className="faq-answer">
+                      <p>{t(`faq.a${num}`)}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </motion.section>
           </div>
         </motion.div>
         )}

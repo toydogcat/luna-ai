@@ -224,6 +224,46 @@ const resources = {
         runningInside: 'Running within Luna Hub',
         exit: 'Exit to Home'
       },
+      technicalSpecs: {
+        title: 'Technical Specifications & Performance',
+        subtitle: 'Luna AI Hub is engineered for high-performance AI micro-service orchestration.',
+        uptime: {
+          label: 'Service Uptime',
+          value: '99.9%',
+          desc: 'High-availability infrastructure powered by Firebase Global Edge.'
+        },
+        latency: {
+          label: 'Launch Latency',
+          value: '< 250ms',
+          desc: 'Zero-delay cross-origin iframe warm-up and state synchronization.'
+        },
+        security: {
+          label: 'Security Level',
+          value: 'L4 / Bio',
+          desc: 'Military-grade biometric encryption and localized WebAuthn security.'
+        },
+        scalability: {
+          label: 'Micro-services',
+          value: '40+',
+          desc: 'Modular architecture allowing horizontal expansion of intelligent nodes.'
+        },
+        listTitle: 'Core Infrastructure Capabilities',
+        item1: '<strong>Dual-Engine AI Routing:</strong> Intelligent redirection between local LLM and Cloud-based Gemini models.',
+        item2: '<strong>Hybrid State Management:</strong> Seamless sync between host dashboard and isolated sub-app contexts.',
+        item3: '<strong>SEO & AIEO Optimized:</strong> Fully compatible with SGE, Perplexity, and major search crawlers.'
+      },
+      faq: {
+        title: 'Frequently Asked Questions (FAQ)',
+        subtitle: 'Common technical inquiries regarding the Luna AI Ecosystem.',
+        q1: 'How does Luna Hub ensure data privacy?',
+        a1: 'Luna Hub utilizes localized biometric authentication (WebAuthn). Your sensitive data never leaves the device unless explicitly authorized for cloud-based AI services.',
+        q2: 'Can I install Luna Hub as a standalone application?',
+        a2: 'Yes, Luna Hub is a Progressive Web App (PWA). You can install it on iOS, Android, and Desktop directly through your browser menu.',
+        q3: 'What is the difference between Local and Cloud AI models?',
+        a3: 'Local models run entirely on your hardware for maximum privacy, while Cloud models (like Gemini) offer higher reasoning capabilities at the cost of network dependency.',
+        q4: 'Is Luna Hub suitable for enterprise integration?',
+        a4: 'Absolutely. The modular architecture is designed for B2B intelligence aggregation and centralized service management.'
+      },
       footer: '© {{year}} Luna AI Dashboard. All projects tracked via Firebase Engine.'
     }
   },
@@ -454,6 +494,46 @@ const resources = {
       viewer: {
         runningInside: '運作於 Luna 內部環境',
         exit: '返回首頁'
+      },
+      technicalSpecs: {
+        title: '技術規格與效能指標',
+        subtitle: 'Luna AI Hub 專為高併發 AI 微服務調度與極致效能優化而設計。',
+        uptime: {
+          label: '服務可用性',
+          value: '99.9%',
+          desc: '基於 Firebase Global Edge 的高可用性架構。'
+        },
+        latency: {
+          label: '啟動延遲',
+          value: '< 250ms',
+          desc: '零延遲跨域 Iframe 預熱與狀態同步技術。'
+        },
+        security: {
+          label: '安全等級',
+          value: 'L4 / 生物辨識',
+          desc: '軍規級生物辨識加密與在地化 WebAuthn 安全協定。'
+        },
+        scalability: {
+          label: '微服務節點',
+          value: '40+',
+          desc: '模組化架構，支援智能節點無限水平擴展。'
+        },
+        listTitle: '核心基礎設施能力',
+        item1: '<strong>雙引擎 AI 路由：</strong> 支援本地模型與雲端 Gemini 模型的智能調度。',
+        item2: '<strong>混合狀態管理：</strong> 儀表板主體與子應用間的無縫數據同步。',
+        item3: '<strong>SEO & AIEO 深度優化：</strong> 全面兼容 SGE、Perplexity 與主流搜尋引擎。'
+      },
+      faq: {
+        title: '常見問題 (FAQ)',
+        subtitle: '關於 Luna AI 生態系的技術與使用問題。',
+        q1: 'Luna Hub 如何確保數據隱私？',
+        a1: '我們採用在地化生物辨識驗證，您的敏感資訊均儲存於本地。除非使用雲端 AI 服務，否則數據不會外流。',
+        q2: '我可以將 Luna Hub 安裝為獨立 App 嗎？',
+        a2: '可以。Luna Hub 支援 PWA 技術，您可以直接在 iOS、Android 或電腦瀏覽器中點選「安裝至主畫面」。',
+        q3: '本地模型與雲端模型有什麼區別？',
+        a3: '本地模型在您的設備上運行，具備極高隱私；雲端模型（如 Gemini）則具備更強的邏輯推演能力。',
+        q4: 'Luna Hub 適合企業整合使用嗎？',
+        a4: '是的。模組化架構專為 B2B 智能聚合與集中式服務管理場景而設計。'
       },
       footer: '© {{year}} Luna AI 儀表板。所有專案均透過 Firebase 引擎追蹤。'
     }

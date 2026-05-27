@@ -1,0 +1,36 @@
+# ✅ [AIEO] 6: Luna AI Hub — robots.txt
+# 允許所有搜尋引擎爬蟲正常爬取
+
+User-agent: *
+Allow: /
+Disallow: /private/
+
+# ✅ 針對主流 AI 爬蟲進行友善宣告，確保內容可被 AI 引擎索引與引用
+
+User-agent: GPTBot
+Allow: /
+Disallow: /private/
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# ✅ 站點地圖引導
+Sitemap: https://luna-ai-b7862.web.app/sitemap.xml
