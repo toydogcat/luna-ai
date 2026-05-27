@@ -714,6 +714,62 @@ function App() {
               </ul>
             </motion.section>
 
+            {/* ✅ [GEO] 2: Comparison Table Section */}
+            <motion.section variants={itemVariants} className="comparison-table-wrap">
+              <table className="comparison-table">
+                <thead>
+                  <tr>
+                    <th>{t('comparisonTable.metrics')}</th>
+                    <th>{t('comparisonTable.luna')}</th>
+                    <th>{t('comparisonTable.cloud')}</th>
+                    <th>{t('comparisonTable.benchmark')}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>{t('comparisonTable.latency.label')}</strong></td>
+                    <td className="highlight">{t('comparisonTable.latency.value')}</td>
+                    <td>{t('comparisonTable.latency.cloud')}</td>
+                    <td>{t('comparisonTable.latency.standard')}</td>
+                  </tr>
+                  <tr>
+                    <td><strong>{t('comparisonTable.privacy.label')}</strong></td>
+                    <td className="highlight">{t('comparisonTable.privacy.value')}</td>
+                    <td>{t('comparisonTable.privacy.cloud')}</td>
+                    <td>{t('comparisonTable.privacy.standard')}</td>
+                  </tr>
+                  <tr>
+                    <td><strong>{t('comparisonTable.tco.label')}</strong></td>
+                    <td className="highlight">{t('comparisonTable.tco.value')}</td>
+                    <td>{t('comparisonTable.tco.cloud')}</td>
+                    <td>{t('comparisonTable.tco.standard')}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </motion.section>
+
+            {/* ✅ [SEO] 1: Technical Architecture Section */}
+            <motion.section variants={itemVariants} className="tech-architecture-section">
+              <div className="tech-architecture-card">
+                <h2>{t('techArchitecture.title')}</h2>
+                <p className="intro">{t('techArchitecture.desc')}</p>
+                <div className="tech-architecture-list">
+                  <div className="arch-item">
+                    <strong dangerouslySetInnerHTML={{ __html: t('techArchitecture.item1').split(': ')[0] + ':' }}></strong>
+                    <span dangerouslySetInnerHTML={{ __html: t('techArchitecture.item1').split(': ')[1] }}></span>
+                  </div>
+                  <div className="arch-item">
+                    <strong dangerouslySetInnerHTML={{ __html: t('techArchitecture.item2').split(': ')[0] + ':' }}></strong>
+                    <span dangerouslySetInnerHTML={{ __html: t('techArchitecture.item2').split(': ')[1] }}></span>
+                  </div>
+                  <div className="arch-item">
+                    <strong dangerouslySetInnerHTML={{ __html: t('techArchitecture.item3').split(': ')[0] + ':' }}></strong>
+                    <span dangerouslySetInnerHTML={{ __html: t('techArchitecture.item3').split(': ')[1] }}></span>
+                  </div>
+                </div>
+              </div>
+            </motion.section>
+
             {/* ✅ [GEO] 3: FAQ Accordion Section */}
             <motion.section variants={itemVariants} className="faq-section">
               <h2>{t('faq.title')}</h2>

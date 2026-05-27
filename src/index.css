@@ -1439,6 +1439,101 @@ footer {
   line-height: 1.7;
   border-top: 1px solid rgba(255,255,255,0.05);
 }
+
+/* =========================================================
+   ✅ [GEO] Comparison Table & Tech Architecture Styles
+   ========================================================= */
+.comparison-table-wrap {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto 5rem;
+  overflow-x: auto;
+  border-radius: 16px;
+  border: 1px solid var(--border-glow);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.comparison-table th, .comparison-table td {
+  padding: 1.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.comparison-table th {
+  background: rgba(124, 58, 237, 0.1);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.comparison-table td {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.comparison-table .highlight {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.tech-architecture-section {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto 5rem;
+  text-align: left;
+}
+
+.tech-architecture-card {
+  background: linear-gradient(145deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  border: 1px solid var(--border-glow);
+  border-radius: 20px;
+  padding: 2.5rem;
+}
+
+.tech-architecture-section h2 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(to right, #fff, rgba(255,255,255,0.6));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tech-architecture-section p.intro {
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  font-size: 1.05rem;
+}
+
+.tech-architecture-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.arch-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.arch-item strong {
+  color: var(--secondary);
+  font-size: 1.1rem;
+}
+
+.arch-item span {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
 @media (max-width: 768px) {
   .spec-grid { grid-template-columns: repeat(2, 1fr); }
   .spec-value { font-size: 1.8rem; }

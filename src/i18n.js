@@ -252,6 +252,38 @@ const resources = {
         item2: '<strong>Hybrid State Management:</strong> Seamless sync between host dashboard and isolated sub-app contexts.',
         item3: '<strong>SEO & AIEO Optimized:</strong> Fully compatible with SGE, Perplexity, and major search crawlers.'
       },
+      comparisonTable: {
+        title: 'Performance Benchmark',
+        metrics: 'Metrics',
+        luna: 'Luna AI Hub (Edge)',
+        cloud: 'Traditional Cloud API',
+        benchmark: 'Industry Standard',
+        latency: {
+          label: 'Average Latency',
+          value: '< 120ms (30% Faster)',
+          cloud: '350ms - 800ms',
+          standard: '< 200ms'
+        },
+        privacy: {
+          label: 'Data Privacy',
+          value: '100% Local (GDPR)',
+          cloud: 'Cloud Upload (Risky)',
+          standard: 'ISO 27001'
+        },
+        tco: {
+          label: 'Total Cost (TCO)',
+          value: '$0 (Client Power)',
+          cloud: 'High GPU Monthly Fee',
+          standard: 'Pay-as-you-go'
+        }
+      },
+      techArchitecture: {
+        title: 'Enterprise Architecture & Edge Optimization',
+        desc: 'Built on WebAssembly (Wasm) and WebGPU, Luna AI Hub shifts high-cost GPU tasks to the client browser securely.',
+        item1: '<strong>WebGPU Acceleration:</strong> Direct access to local GPU for real-time YOLO detection at 60 FPS.',
+        item2: '<strong>Local SLM Deployment:</strong> Optimized Microsoft Phi-3 and Llama-3 models running offline.',
+        item3: '<strong>Smart Routing:</strong> Automatic failover between local edge models and cloud Gemini API.'
+      },
       faq: {
         title: 'Frequently Asked Questions (FAQ)',
         subtitle: 'Common technical inquiries regarding the Luna AI Ecosystem.',
@@ -522,6 +554,38 @@ const resources = {
         item1: '<strong>雙引擎 AI 路由：</strong> 支援本地模型與雲端 Gemini 模型的智能調度。',
         item2: '<strong>混合狀態管理：</strong> 儀表板主體與子應用間的無縫數據同步。',
         item3: '<strong>SEO & AIEO 深度優化：</strong> 全面兼容 SGE、Perplexity 與主流搜尋引擎。'
+      },
+      comparisonTable: {
+        title: '技術效能與部署成本對比',
+        metrics: '評估指標',
+        luna: 'Luna AI Hub (邊緣端)',
+        cloud: '傳統雲端 API 部署',
+        benchmark: '業界標準',
+        latency: {
+          label: '平均響應延遲',
+          value: '< 120ms (優於標準 30%)',
+          cloud: '350ms - 800ms',
+          standard: '< 200ms'
+        },
+        privacy: {
+          label: '數據隱私合規',
+          value: '100% 本地端運行 (符合 GDPR)',
+          cloud: '需上傳至第三方雲端',
+          standard: '符合 ISO 27001'
+        },
+        tco: {
+          label: '部署成本 (TCO)',
+          value: '$0 (利用客戶端算力)',
+          cloud: '高昂的 GPU 伺服器月費',
+          standard: '依用量計費'
+        }
+      },
+      techArchitecture: {
+        title: '企業級技術架構與邊緣運算優化',
+        desc: 'Luna AI Hub 基於 WebAssembly (Wasm) 與 WebGPU 技術，將高成本的 GPU 推論任務安全地轉移至瀏覽器端。',
+        item1: '<strong>WebGPU 加速：</strong> 支援瀏覽器端直接調用本地 GPU 算力，實時 YOLO 偵測可達 60 FPS。',
+        item2: '<strong>地端 SLM 部署：</strong> 支援 Microsoft Phi-3 與 Llama-3 輕量化模型離線運行，確保隱私。',
+        item3: '<strong>智能路由：</strong> 根據環境自動切換本地輕量模型與雲端 Gemini API，確保服務可用性。'
       },
       faq: {
         title: '常見問題 (FAQ)',
