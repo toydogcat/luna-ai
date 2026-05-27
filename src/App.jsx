@@ -559,6 +559,14 @@ function App() {
     visible: { opacity: 1, y: 0 }
   };
 
+  // Pre-calculate date values to avoid race conditions and Hydration issues
+  const today = new Date();
+  const currentYear = today.getFullYear();
+  const currentMonth = String(today.getMonth() + 1).padStart(2, '0');
+  const currentDay = String(today.getDate()).padStart(2, '0');
+  const visitorsHint = `${currentYear}${currentMonth}${currentDay}`;
+  const mockTotalViews = Math.floor(Date.now() / 100000);
+
   return (
     <div className="app-container">
       {/* Navigation */}
@@ -825,14 +833,14 @@ function App() {
       <footer>
         <div className="footer-stats">
           <span className="footer-stat-item">
-            <Eye size={12} /> {t('metrics.totalViewsLabel')} 236,189
+            <Eye size={12} /> {t('metrics.totalViewsLabel')} {mockTotalViews}
           </span>
           <span className="footer-stat-divider">•</span>
           <span className="footer-stat-item">
-            <Heart size={12} /> {t('metrics.visitorsLabel')} 2,026
+            <Heart size={12} /> {t('metrics.visitorsLabel')} {visitorsHint}
           </span>
         </div>
-        <p>{t('footer', { year: new Date().getFullYear() })}</p>
+        <p>{t('footer', { year: currentYear })}</p>
       </footer>
 
       {/* MOBILE BOTTOM BAR */}
