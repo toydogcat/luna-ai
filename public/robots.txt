@@ -1,36 +1,49 @@
 # ✅ [AIEO] 6: Luna AI Hub — robots.txt
-# 允許所有搜尋引擎爬蟲正常爬取
+# 允許所有搜尋引擎與 AI 爬蟲正常爬取，並引導至結構化 llms.txt 文件
 
 User-agent: *
 Allow: /
+Allow: /llms.txt
 Disallow: /private/
+Disallow: /api/private/
 
-# ✅ 針對主流 AI 爬蟲進行友善宣告，確保內容可被 AI 引擎索引與引用
+# ✅ 針對主流 AI 爬蟲進行最佳化宣告，設定抓取延遲保護伺服器
 
 User-agent: GPTBot
 Allow: /
+Allow: /llms.txt
 Disallow: /private/
+Disallow: /api/private/
+Crawl-delay: 1
 
 User-agent: ChatGPT-User
 Allow: /
+Allow: /llms.txt
 
 User-agent: ClaudeBot
 Allow: /
+Allow: /llms.txt
+Crawl-delay: 1
 
 User-agent: anthropic-ai
 Allow: /
+Allow: /llms.txt
 
 User-agent: PerplexityBot
 Allow: /
+Allow: /llms.txt
 
 User-agent: Google-Extended
 Allow: /
+Allow: /llms.txt
 
 User-agent: Googlebot
 Allow: /
+Allow: /llms.txt
 
 User-agent: Bingbot
 Allow: /
+Allow: /llms.txt
 
-# ✅ 站點地圖引導
+# ✅ 站點地圖與 AI 規格書引導
 Sitemap: https://luna-ai-b7862.web.app/sitemap.xml
