@@ -185,6 +185,14 @@ const resources = {
         cognitiveAssessment: {
           title: 'AI Cognitive Assessment',
           desc: 'Interactive cognitive screening tool featuring MMSE, MoCA, CDT, and CASI tests with Gemini-synthesized clinical reports.'
+        },
+        innerCompass: {
+          title: 'AI Inner Compass',
+          desc: 'Professional psychological assessment and personality auditing suite with deep AI-driven self-discovery insights.'
+        },
+        aiPptReport: {
+          title: 'AI Presentation Showcase',
+          desc: 'A professional static presentation suite showcasing AI-driven research, analytics, and project narratives.'
         }
       },
       installation: {
@@ -491,6 +499,14 @@ const resources = {
         cognitiveAssessment: {
           title: '認知功能輔助篩檢系統',
           desc: '專業臨床輔照版。整合台灣本土 MMSE、MoCA、畫鐘測驗 (CDT) 與 CASI，並搭配 Gemini 智慧合成評估報告。'
+        },
+        innerCompass: {
+          title: 'AI 心理測驗：心靈指南針',
+          desc: '專業級心理評測與人格分析套件，透過 AI 深度導引，探索潛意識與人格特質的內在羅盤。'
+        },
+        aiPptReport: {
+          title: 'AI PPT 智慧簡報展示',
+          desc: '專業級靜態簡報展示，呈現 AI 驅動的專案研究、數據分析與技術敘事成果。'
         },
         nfcShowInfo: {
           title: 'NFC 顯示資訊',

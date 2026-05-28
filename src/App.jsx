@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Sparkles, ArrowRight, Zap, Globe, Brain, Users, MousePointerClick, Newspaper, Home, Languages, Heart, Code, Database, Eye, BookOpen, Scroll, Crown, Bomb, Grid3X3, Grid, Lock, Terminal, CheckCircle2, Smartphone, Shield, Library, Clapperboard, Fingerprint, ScanQrCode, Target, MapPin, Braces, BarChart2, Swords, Car, Siren, MessageSquare, Gavel, CloudLightning, Trees, Activity, ChevronUp, AlarmClock, Radio, Layout, History, ChevronDown } from 'lucide-react';
+import { Sparkles, ArrowRight, Zap, Globe, Brain, Users, MousePointerClick, Newspaper, Home, Languages, Heart, Code, Database, Eye, BookOpen, Scroll, Crown, Bomb, Grid3X3, Grid, Lock, Terminal, CheckCircle2, Smartphone, Shield, Library, Clapperboard, Fingerprint, ScanQrCode, Target, MapPin, Braces, BarChart2, Swords, Car, Siren, MessageSquare, Gavel, CloudLightning, Trees, Activity, ChevronUp, AlarmClock, Radio, Layout, History, ChevronDown, Compass, Presentation } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { trackEvent } from './firebase';
 import EnglishPractice from './EnglishPractice';
@@ -57,6 +57,18 @@ const PROJECT_CATEGORIES = [
         translationKey: 'projects.cognitiveAssessment',
         url: 'https://toydogcat.github.io/ai-cognitive-assessment-/',
         icon: <Brain size={24} />
+      },
+      {
+        id: 'inner-compass',
+        translationKey: 'projects.innerCompass',
+        url: 'https://toydogcat.github.io/inner-compass/',
+        icon: <Compass size={24} />
+      },
+      {
+        id: 'ai-ppt-report',
+        translationKey: 'projects.aiPptReport',
+        url: 'https://toydogcat.github.io/ai-ppt-report/',
+        icon: <Presentation size={24} />
       }
     ]
   },
