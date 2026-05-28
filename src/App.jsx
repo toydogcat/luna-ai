@@ -3,7 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Sparkles, ArrowRight, Zap, Globe, Brain, Users, MousePointerClick, Newspaper, Home, Languages, Heart, Code, Database, Eye, BookOpen, Scroll, Crown, Bomb, Grid3X3, Grid, Lock, Terminal, CheckCircle2, Smartphone, Shield, Library, Clapperboard, Fingerprint, ScanQrCode, Target, MapPin, Braces, BarChart2, Swords, Car, Siren, MessageSquare, Gavel, CloudLightning, Trees, Activity, ChevronUp, AlarmClock, Radio, Layout, History, ChevronDown, Compass, Presentation, Stars } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { trackEvent } from './firebase';
-import EnglishPractice from './EnglishPractice';
+
+const EnglishPractice = React.lazy(() => import('./EnglishPractice'));
 
 const PROJECT_CATEGORIES = [
   {
@@ -724,8 +725,8 @@ function App() {
                 </div>
               </div>
 
+              <h4 style={{marginBottom: '0.5rem', color: 'var(--secondary)', textAlign: 'left', width: '100%', maxWidth: '1000px', margin: '2rem auto 0.5rem'}}>{t('technicalSpecs.listTitle')}</h4>
               <ul className="spec-list">
-                <h4 style={{marginBottom: '0.5rem', color: 'var(--secondary)'}}>{t('technicalSpecs.listTitle')}</h4>
                 <li dangerouslySetInnerHTML={{ __html: t('technicalSpecs.item1') }}></li>
                 <li dangerouslySetInnerHTML={{ __html: t('technicalSpecs.item2') }}></li>
                 <li dangerouslySetInnerHTML={{ __html: t('technicalSpecs.item3') }}></li>
@@ -790,7 +791,7 @@ function App() {
 
             {/* ✅ [GEO] 3: Authoritative Links Section */}
             <motion.section variants={itemVariants} className="authoritative-links-section">
-              <h3>{t('authoritativeLinks.title')}</h3>
+              <h2>{t('authoritativeLinks.title')}</h2>
               <div className="links-grid">
                 <a href="https://www.w3.org/TR/webgpu/" target="_blank" rel="noopener noreferrer" className="auth-link">
                   <Globe size={14} /> {t('authoritativeLinks.w3c')}
@@ -846,7 +847,7 @@ function App() {
                   <img src="/guides/desktop.png" alt="Desktop Install Guide" className="visual-step-img" />
                 </div>
                 <div className="card-body">
-                  <h3>{t('installation.step1')}</h3>
+                  <h2>{t('installation.step1')}</h2>
                   <p>{t('installation.desc1')}</p>
                 </div>
               </div>
@@ -856,7 +857,7 @@ function App() {
                   <img src="/guides/ios.png" alt="iOS Install Guide" className="visual-step-img" />
                 </div>
                 <div className="card-body">
-                  <h3>{t('installation.step2')}</h3>
+                  <h2>{t('installation.step2')}</h2>
                   <p>{t('installation.desc2')}</p>
                 </div>
               </div>
@@ -866,7 +867,7 @@ function App() {
                   <img src="/guides/android.png" alt="Android Install Guide" className="visual-step-img" />
                 </div>
                 <div className="card-body">
-                  <h3>{t('installation.step3')}</h3>
+                  <h2>{t('installation.step3')}</h2>
                   <p>{t('installation.desc3')}</p>
                 </div>
               </div>
@@ -1080,7 +1081,22 @@ function App() {
 
             <div className={`viewer-content-wrap ${isHeaderVisible ? '' : 'header-hidden'}`}>
               {activeProject.id === 'ai-studio-english' ? (
-                <EnglishPractice />
+                <React.Suspense fallback={
+                  <div style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    height: '100%',
+                    color: 'var(--text-muted)',
+                    gap: '1rem'
+                  }}>
+                    <Zap className="animate-pulse" style={{ color: 'var(--secondary)' }} size={32} />
+                    <span>Loading English Practice Space...</span>
+                  </div>
+                }>
+                  <EnglishPractice />
+                </React.Suspense>
               ) : (
                 <iframe 
                   src={activeProject.url} 

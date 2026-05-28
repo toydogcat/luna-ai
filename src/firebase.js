@@ -1,5 +1,4 @@
 import { initializeApp } from "firebase/app";
-import { getAnalytics, logEvent } from "firebase/analytics";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBzVI0lqfl4CyErZOHcke3ZJEqHyGM6DcQ",
@@ -11,9 +10,44 @@ const firebaseConfig = {
   measurementId: "G-VXC620RK6G"
 };
 
-// Initialize Firebase
+// Initialize Firebase App
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+
+let analyticsPromise = null;
+
+// Dynamically import and initialize Firebase Analytics when needed
+const getAnalyticsLazy = () => {
+  if (typeof window === 'undefined') return Promise.resolve(null);
+  
+  if (!analyticsPromise) {
+    analyticsPromise = import("firebase/analytics")
+      .then(({ getAnalytics }) => {
+        return getAnalytics(app);
+      })
+      .catch((err) => {
+        console.warn("Failed to load Firebase Analytics:", err);
+        return null;
+      });
+  }
+  return analyticsPromise;
+};
+
+// Pre-initialize analytics when the browser is idle to avoid impact on page load
+if (typeof window !== 'undefined') {
+  const initOnIdle = () => {
+    if ('requestIdleCallback' in window) {
+      window.requestIdleCallback(() => getAnalyticsLazy());
+    } else {
+      setTimeout(() => getAnalyticsLazy(), 3000);
+    }
+  };
+  
+  if (document.readyState === 'complete') {
+    initOnIdle();
+  } else {
+    window.addEventListener('load', initOnIdle);
+  }
+}
 
 /**
  * Utility to log custom events
@@ -21,8 +55,15 @@ const analytics = getAnalytics(app);
  * @param {object} params 
  */
 export const trackEvent = (eventName, params = {}) => {
-  logEvent(analytics, eventName, params);
+  getAnalyticsLazy().then((analytics) => {
+    if (analytics) {
+      import("firebase/analytics").then(({ logEvent }) => {
+        logEvent(analytics, eventName, params);
+      });
+    }
+  });
   console.log(`[Analytics Logged]: ${eventName}`, params);
 };
 
-export default analytics;
+export default app;
+
