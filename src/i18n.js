@@ -182,6 +182,10 @@ const resources = {
           title: 'The Evolution of Trust',
           desc: 'An interactive guide to the game theory of why & how we trust each other.'
         },
+        sim3dCosmos: {
+          title: '3D Cosmos Simulator',
+          desc: 'An immersive 3D space odyssey. Explore the vastness of the cosmos and stellar formations in real-time.'
+        },
         cognitiveAssessment: {
           title: 'AI Cognitive Assessment',
           desc: 'Interactive cognitive screening tool featuring MMSE, MoCA, CDT, and CASI tests with Gemini-synthesized clinical reports.'
@@ -491,6 +495,10 @@ const resources = {
         simTrustEvolution: {
           title: '信任的演化',
           desc: '一個關於博弈論的互動式指南，探索我們為什麼以及如何相互信任。'
+        },
+        sim3dCosmos: {
+          title: '3D 星空模擬器',
+          desc: '沈浸式的 3D 宇宙之旅。即時探索浩瀚星空、恆星演化與壯麗的宇宙星雲。'
         },
         simFireworks: {
           title: '模擬煙火',
