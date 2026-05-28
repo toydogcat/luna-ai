@@ -166,6 +166,10 @@ const resources = {
           title: 'AI Sudoku',
           desc: 'Immersive digital Sudoku puzzle. Sharpen your mind with multiple difficulty levels and smart hints.'
         },
+        stackingElimination: {
+          title: 'Stacking Elimination Master',
+          desc: 'A high-intensity spatial puzzle challenge. Stack, align, and eliminate blocks in this ultimate test of reflexes and logic.'
+        },
         dailyDialogue: {
           title: 'Daily Dialogue: Reading & Fluency',
           desc: 'A daily curated reading platform focused on natural dialogue, linguistic flow, and essential vocabulary.'
@@ -479,6 +483,10 @@ const resources = {
         aiSudoku: {
           title: 'AI 數獨遊戲',
           desc: '經典數位腦力對決！提供多種難度與智慧提示，助您突破邏輯極限。'
+        },
+        stackingElimination: {
+          title: '極限堆疊消除王',
+          desc: '充滿挑戰的空間解謎遊戲！在極速下降中精準堆疊並消除方塊，挑戰您的反應與策略極限。'
         },
         dailyDialogue: {
           title: '每日讀書：對話與語感',
