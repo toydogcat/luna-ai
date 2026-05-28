@@ -509,7 +509,7 @@ footer {
   align-items: center;
   gap: 1rem;
   font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.35);
+  color: #9CA3AF; /* Increased contrast for accessibility (was rgba 0.35) */
   margin-bottom: 0.75rem;
 }
 

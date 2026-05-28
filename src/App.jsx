@@ -725,7 +725,9 @@ function App() {
                 </div>
               </div>
 
-              <h4 style={{marginBottom: '0.5rem', color: 'var(--secondary)', textAlign: 'left', width: '100%', maxWidth: '1000px', margin: '2rem auto 0.5rem'}}>{t('technicalSpecs.listTitle')}</h4>
+              <div style={{textAlign: 'left', width: '100%', maxWidth: '1000px', margin: '2rem auto 0.5rem'}}>
+                <h4 style={{marginBottom: '0.5rem', color: 'var(--secondary)'}}>{t('technicalSpecs.listTitle')}</h4>
+              </div>
               <ul className="spec-list">
                 <li dangerouslySetInnerHTML={{ __html: t('technicalSpecs.item1') }}></li>
                 <li dangerouslySetInnerHTML={{ __html: t('technicalSpecs.item2') }}></li>
