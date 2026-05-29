@@ -169,6 +169,10 @@ const resources = {
           title: 'Stacking Elimination Master',
           desc: 'A high-intensity spatial puzzle challenge. Stack, align, and eliminate blocks in this ultimate test of reflexes and logic.'
         },
+        brickBreaking: {
+          title: 'Classic Brick Breaker',
+          desc: 'A nostalgic arcade experience. Destroy all bricks with your paddle and ball while mastering power-ups and physics.'
+        },
         dailyDialogue: {
           title: 'Daily Dialogue: Reading & Fluency',
           desc: 'A daily curated reading platform focused on natural dialogue, linguistic flow, and essential vocabulary.'
@@ -485,6 +489,10 @@ const resources = {
         stackingElimination: {
           title: '極限堆疊消除王',
           desc: '充滿挑戰的空間解謎遊戲！在極速下降中精準堆疊並消除方塊，挑戰您的反應與策略極限。'
+        },
+        brickBreaking: {
+          title: '經典打磚塊',
+          desc: '重溫街機經典！控制彈板擊碎所有磚塊，體驗物理反彈與道具收集的爽快感。'
         },
         dailyDialogue: {
           title: '每日讀書：對話與語感',

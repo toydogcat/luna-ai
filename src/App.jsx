@@ -179,6 +179,12 @@ const PROJECT_CATEGORIES = [
         translationKey: 'projects.stackingElimination',
         url: 'https://toydogcat.github.io/stacking-elimination-game/',
         icon: <Layers size={24} />
+      },
+      {
+        id: 'brick-breaking',
+        translationKey: 'projects.brickBreaking',
+        url: 'https://toydogcat.github.io/brick-breaking-game/',
+        icon: <Grid3X3 size={24} />
       }
     ]
   },
