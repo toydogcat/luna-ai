@@ -173,6 +173,10 @@ const resources = {
           title: 'Classic Brick Breaker',
           desc: 'A nostalgic arcade experience. Destroy all bricks with your paddle and ball while mastering power-ups and physics.'
         },
+        unoMultiplayer: {
+          title: 'UNO Multiplayer: Card Master',
+          desc: 'Real-time multiplayer UNO experience. Challenge players worldwide or friends in this fast-paced classic card game.'
+        },
         dailyDialogue: {
           title: 'Daily Dialogue: Reading & Fluency',
           desc: 'A daily curated reading platform focused on natural dialogue, linguistic flow, and essential vocabulary.'
@@ -493,6 +497,10 @@ const resources = {
         brickBreaking: {
           title: '經典打磚塊',
           desc: '重溫街機經典！控制彈板擊碎所有磚塊，體驗物理反彈與道具收集的爽快感。'
+        },
+        unoMultiplayer: {
+          title: 'UNO 多人線上對戰',
+          desc: '即時連線的多人 UNO 體驗！與全球玩家或好友展開腦力激盪，享受極速出牌的桌遊快感。'
         },
         dailyDialogue: {
           title: '每日讀書：對話與語感',

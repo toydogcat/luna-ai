@@ -185,6 +185,12 @@ const PROJECT_CATEGORIES = [
         translationKey: 'projects.brickBreaking',
         url: 'https://toydogcat.github.io/brick-breaking-game/',
         icon: <Grid3X3 size={24} />
+      },
+      {
+        id: 'uno-multiplayer',
+        translationKey: 'projects.unoMultiplayer',
+        url: 'https://toydogcat.github.io/uno-multi-game/',
+        icon: <Users size={24} />
       }
     ]
   },
