@@ -6,10 +6,9 @@ const resources = {
   en: {
     translation: {
       nav: {
+        home: 'LA Home',
         projects: 'Projects',
-        analytics: 'Analytics',
         installation: 'Installation',
-        staging: 'Construction Zone',
         launch: 'Launch Console'
       },
       categories: {
@@ -325,10 +324,9 @@ const resources = {
   zh: {
     translation: {
       nav: {
+        home: 'LA首頁',
         projects: '專案集合',
-        analytics: '數據中心',
         installation: '安裝教學',
-        staging: '施工專區',
         launch: '啟動控制台'
       },
       categories: {

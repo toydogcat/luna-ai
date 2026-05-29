@@ -613,9 +613,9 @@ function App() {
         
         <div className="navbar-right">
           <div className="nav-links">
-            <span onClick={() => setActivePage('home')} className={`nav-item ${activePage==='home'?'active-nav':''}`}>{t('nav.projects')}</span>
+            <span onClick={() => setActivePage('home')} className={`nav-item ${activePage==='home'?'active-nav':''}`}>{t('nav.home')}</span>
+            <span onClick={() => setActivePage('projects')} className={`nav-item ${activePage==='projects'?'active-nav':''}`}>{t('nav.projects')}</span>
             <span onClick={() => setActivePage('installation')} className={`nav-item ${activePage==='installation'?'active-nav':''}`}>{t('nav.installation')}</span>
-            <span onClick={() => setActivePage('staging')} className={`nav-item ${activePage==='staging'?'active-nav':''}`}>{t('nav.staging')}</span>
           </div>
           
           {/* Language Switcher */}
@@ -661,18 +661,153 @@ function App() {
             {t('hero.subheadline')}
           </motion.p>
 
-          {/* Projects Showcase Section by Categories */}
-          <motion.h2 variants={itemVariants} className="section-title">{t('projects.title')}</motion.h2>
-          
-          <div style={{width: '100%', maxWidth: '1100px'}}>
-            {PROJECT_CATEGORIES.map(category => (
+          {/* ✅ [GEO] 4: Technical Specifications Section (Moved Up) */}
+          <motion.section variants={itemVariants} className="tech-specs-section">
+            <h2>{t('technicalSpecs.title')}</h2>
+            <p className="section-subtitle">{t('technicalSpecs.subtitle')}</p>
+            
+            <div className="spec-grid">
+              <div className="spec-card">
+                <div className="spec-value">{t('technicalSpecs.uptime.value')}</div>
+                <div className="spec-label">{t('technicalSpecs.uptime.label')}</div>
+                <p className="spec-desc">{t('technicalSpecs.uptime.desc')}</p>
+              </div>
+              <div className="spec-card">
+                <div className="spec-value">{t('technicalSpecs.latency.value')}</div>
+                <div className="spec-label">{t('technicalSpecs.latency.label')}</div>
+                <p className="spec-desc">{t('technicalSpecs.latency.desc')}</p>
+              </div>
+              <div className="spec-card">
+                <div className="spec-value">{t('technicalSpecs.security.value')}</div>
+                <div className="spec-label">{t('technicalSpecs.security.label')}</div>
+                <p className="spec-desc">{t('technicalSpecs.security.desc')}</p>
+              </div>
+              <div className="spec-card">
+                <div className="spec-value">{t('technicalSpecs.scalability.value')}</div>
+                <div className="spec-label">{t('technicalSpecs.scalability.label')}</div>
+                <p className="spec-desc">{t('technicalSpecs.scalability.desc')}</p>
+              </div>
+            </div>
+
+            <div style={{textAlign: 'left', width: '100%', maxWidth: '1000px', margin: '2rem auto 0.5rem'}}>
+              <h4 style={{marginBottom: '0.5rem', color: 'var(--secondary)'}}>{t('technicalSpecs.listTitle')}</h4>
+            </div>
+            <ul className="spec-list">
+              <li dangerouslySetInnerHTML={{ __html: t('technicalSpecs.item1') }}></li>
+              <li dangerouslySetInnerHTML={{ __html: t('technicalSpecs.item2') }}></li>
+              <li dangerouslySetInnerHTML={{ __html: t('technicalSpecs.item3') }}></li>
+            </ul>
+          </motion.section>
+
+          {/* ✅ [GEO] 2: Comparison Table Section */}
+          <motion.section variants={itemVariants} className="comparison-table-wrap">
+            <table className="comparison-table">
+              <thead>
+                <tr>
+                  <th>{t('comparisonTable.metrics')}</th>
+                  <th>{t('comparisonTable.luna')}</th>
+                  <th>{t('comparisonTable.cloud')}</th>
+                  <th>{t('comparisonTable.benchmark')}</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>{t('comparisonTable.latency.label')}</strong></td>
+                  <td className="highlight">{t('comparisonTable.latency.value')}</td>
+                  <td>{t('comparisonTable.latency.cloud')}</td>
+                  <td>{t('comparisonTable.latency.standard')}</td>
+                </tr>
+                <tr>
+                  <td><strong>{t('comparisonTable.privacy.label')}</strong></td>
+                  <td className="highlight">{t('comparisonTable.privacy.value')}</td>
+                  <td>{t('comparisonTable.privacy.cloud')}</td>
+                  <td>{t('comparisonTable.privacy.standard')}</td>
+                </tr>
+                <tr>
+                  <td><strong>{t('comparisonTable.tco.label')}</strong></td>
+                  <td className="highlight">{t('comparisonTable.tco.value')}</td>
+                  <td>{t('comparisonTable.tco.cloud')}</td>
+                  <td>{t('comparisonTable.tco.standard')}</td>
+                </tr>
+              </tbody>
+            </table>
+          </motion.section>
+
+          {/* ✅ [SEO] 1: Technical Architecture Section */}
+          <motion.section variants={itemVariants} className="tech-architecture-section">
+            <div className="tech-architecture-card">
+              <h2>{t('techArchitecture.title')}</h2>
+              <p className="intro">{t('techArchitecture.desc')}</p>
+              <div className="tech-architecture-list">
+                <div className="arch-item">
+                  <strong dangerouslySetInnerHTML={{ __html: t('techArchitecture.item1').split(': ')[0] + ':' }}></strong>
+                  <span dangerouslySetInnerHTML={{ __html: t('techArchitecture.item1').split(': ')[1] }}></span>
+                </div>
+                <div className="arch-item">
+                  <strong dangerouslySetInnerHTML={{ __html: t('techArchitecture.item2').split(': ')[0] + ':' }}></strong>
+                  <span dangerouslySetInnerHTML={{ __html: t('techArchitecture.item2').split(': ')[1] }}></span>
+                </div>
+                <div className="arch-item">
+                  <strong dangerouslySetInnerHTML={{ __html: t('techArchitecture.item3').split(': ')[0] + ':' }}></strong>
+                  <span dangerouslySetInnerHTML={{ __html: t('techArchitecture.item3').split(': ')[1] }}></span>
+                </div>
+              </div>
+            </div>
+          </motion.section>
+
+          {/* ✅ [GEO] 3: Authoritative Links Section */}
+          <motion.section variants={itemVariants} className="authoritative-links-section">
+            <h2>{t('authoritativeLinks.title')}</h2>
+            <div className="links-grid">
+              <a href="https://www.w3.org/TR/webgpu/" target="_blank" rel="noopener noreferrer" className="auth-link">
+                <Globe size={14} /> {t('authoritativeLinks.w3c')}
+              </a>
+              <a href="https://gdpr.eu/" target="_blank" rel="noopener noreferrer" className="auth-link">
+                <Shield size={14} /> {t('authoritativeLinks.gdpr')}
+              </a>
+              <a href="https://www.iso.org/isoiec-27001-information-security.html" target="_blank" rel="noopener noreferrer" className="auth-link">
+                <Lock size={14} /> {t('authoritativeLinks.iso')}
+              </a>
+              <a href="https://webassembly.org/" target="_blank" rel="noopener noreferrer" className="auth-link">
+                <Code size={14} /> {t('authoritativeLinks.wasm')}
+              </a>
+            </div>
+          </motion.section>
+
+          {/* ✅ [GEO] 3: FAQ Accordion Section */}
+          <motion.section variants={itemVariants} className="faq-section">
+            <h2>{t('faq.title')}</h2>
+            <p className="section-subtitle">{t('faq.subtitle')}</p>
+            
+            <div className="faq-list">
+              {[1, 2, 3, 4].map((num) => (
+                <div 
+                  key={num} 
+                  className={`faq-item ${openFaq === num ? 'open' : ''}`}
+                  onClick={() => setOpenFaq(openFaq === num ? null : num)}
+                >
+                  <div className="faq-question">
+                    <h3>{t(`faq.q${num}`)}</h3>
+                    <ChevronDown size={20} className="faq-chevron" />
+                  </div>
+                  <div className="faq-answer">
+                    <p>{t(`faq.a${num}`)}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </motion.section>
+
+          {/* Projects Showcase Section - ONLY Intelligence Category on Home Page */}
+          <div style={{width: '100%', maxWidth: '1100px', marginTop: '4rem'}}>
+            <motion.h2 variants={itemVariants} className="section-title" style={{textAlign: 'center'}}>{t('categories.intelligence')}</motion.h2>
+            {PROJECT_CATEGORIES.filter(c => c.id === 'intelligence').map(category => (
               <motion.div 
                 key={category.id} 
                 variants={itemVariants}
                 style={{marginBottom: '3rem'}}
               >
-                <h3 className="category-header">{t(category.translationKey)}</h3>
-                <div className="projects-grid">
+                <div className="projects-grid" style={{margin: '0 auto'}}>
                   {category.projects.map(project => (
                     <div 
                       key={project.id} 
@@ -690,157 +825,55 @@ function App() {
                 </div>
               </motion.div>
             ))}
-
-            {/* Placeholder Node */}
-            <motion.div variants={itemVariants} style={{marginBottom: '5rem', opacity: 0.6}}>
-               <h3 className="category-header" style={{opacity: 0.5}}>⚡ {t('projects.comingSoon')}</h3>
-               <div className="projects-grid">
-                  <div className="project-card" style={{cursor: 'default', background: 'rgba(255,255,255,0.02)'}}>
-                     <div className="project-icon" style={{background: 'rgba(255,255,255,0.05)', color: '#aaa'}}><Globe size={24}/></div>
-                     <h3 className="project-name" style={{color: '#aaa'}}>{t('projects.comingSoon')}</h3>
-                     <p className="project-desc">{t('projects.comingSoonDesc')}</p>
-                  </div>
-               </div>
-            </motion.div>
-
-            {/* ✅ [GEO] 4: Technical Specifications Section */}
-            <motion.section variants={itemVariants} className="tech-specs-section">
-              <h2>{t('technicalSpecs.title')}</h2>
-              <p className="section-subtitle">{t('technicalSpecs.subtitle')}</p>
-              
-              <div className="spec-grid">
-                <div className="spec-card">
-                  <div className="spec-value">{t('technicalSpecs.uptime.value')}</div>
-                  <div className="spec-label">{t('technicalSpecs.uptime.label')}</div>
-                  <p className="spec-desc">{t('technicalSpecs.uptime.desc')}</p>
-                </div>
-                <div className="spec-card">
-                  <div className="spec-value">{t('technicalSpecs.latency.value')}</div>
-                  <div className="spec-label">{t('technicalSpecs.latency.label')}</div>
-                  <p className="spec-desc">{t('technicalSpecs.latency.desc')}</p>
-                </div>
-                <div className="spec-card">
-                  <div className="spec-value">{t('technicalSpecs.security.value')}</div>
-                  <div className="spec-label">{t('technicalSpecs.security.label')}</div>
-                  <p className="spec-desc">{t('technicalSpecs.security.desc')}</p>
-                </div>
-                <div className="spec-card">
-                  <div className="spec-value">{t('technicalSpecs.scalability.value')}</div>
-                  <div className="spec-label">{t('technicalSpecs.scalability.label')}</div>
-                  <p className="spec-desc">{t('technicalSpecs.scalability.desc')}</p>
-                </div>
-              </div>
-
-              <div style={{textAlign: 'left', width: '100%', maxWidth: '1000px', margin: '2rem auto 0.5rem'}}>
-                <h4 style={{marginBottom: '0.5rem', color: 'var(--secondary)'}}>{t('technicalSpecs.listTitle')}</h4>
-              </div>
-              <ul className="spec-list">
-                <li dangerouslySetInnerHTML={{ __html: t('technicalSpecs.item1') }}></li>
-                <li dangerouslySetInnerHTML={{ __html: t('technicalSpecs.item2') }}></li>
-                <li dangerouslySetInnerHTML={{ __html: t('technicalSpecs.item3') }}></li>
-              </ul>
-            </motion.section>
-
-            {/* ✅ [GEO] 2: Comparison Table Section */}
-            <motion.section variants={itemVariants} className="comparison-table-wrap">
-              <table className="comparison-table">
-                <thead>
-                  <tr>
-                    <th>{t('comparisonTable.metrics')}</th>
-                    <th>{t('comparisonTable.luna')}</th>
-                    <th>{t('comparisonTable.cloud')}</th>
-                    <th>{t('comparisonTable.benchmark')}</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><strong>{t('comparisonTable.latency.label')}</strong></td>
-                    <td className="highlight">{t('comparisonTable.latency.value')}</td>
-                    <td>{t('comparisonTable.latency.cloud')}</td>
-                    <td>{t('comparisonTable.latency.standard')}</td>
-                  </tr>
-                  <tr>
-                    <td><strong>{t('comparisonTable.privacy.label')}</strong></td>
-                    <td className="highlight">{t('comparisonTable.privacy.value')}</td>
-                    <td>{t('comparisonTable.privacy.cloud')}</td>
-                    <td>{t('comparisonTable.privacy.standard')}</td>
-                  </tr>
-                  <tr>
-                    <td><strong>{t('comparisonTable.tco.label')}</strong></td>
-                    <td className="highlight">{t('comparisonTable.tco.value')}</td>
-                    <td>{t('comparisonTable.tco.cloud')}</td>
-                    <td>{t('comparisonTable.tco.standard')}</td>
-                  </tr>
-                </tbody>
-              </table>
-            </motion.section>
-
-            {/* ✅ [SEO] 1: Technical Architecture Section */}
-            <motion.section variants={itemVariants} className="tech-architecture-section">
-              <div className="tech-architecture-card">
-                <h2>{t('techArchitecture.title')}</h2>
-                <p className="intro">{t('techArchitecture.desc')}</p>
-                <div className="tech-architecture-list">
-                  <div className="arch-item">
-                    <strong dangerouslySetInnerHTML={{ __html: t('techArchitecture.item1').split(': ')[0] + ':' }}></strong>
-                    <span dangerouslySetInnerHTML={{ __html: t('techArchitecture.item1').split(': ')[1] }}></span>
-                  </div>
-                  <div className="arch-item">
-                    <strong dangerouslySetInnerHTML={{ __html: t('techArchitecture.item2').split(': ')[0] + ':' }}></strong>
-                    <span dangerouslySetInnerHTML={{ __html: t('techArchitecture.item2').split(': ')[1] }}></span>
-                  </div>
-                  <div className="arch-item">
-                    <strong dangerouslySetInnerHTML={{ __html: t('techArchitecture.item3').split(': ')[0] + ':' }}></strong>
-                    <span dangerouslySetInnerHTML={{ __html: t('techArchitecture.item3').split(': ')[1] }}></span>
-                  </div>
-                </div>
-              </div>
-            </motion.section>
-
-            {/* ✅ [GEO] 3: Authoritative Links Section */}
-            <motion.section variants={itemVariants} className="authoritative-links-section">
-              <h2>{t('authoritativeLinks.title')}</h2>
-              <div className="links-grid">
-                <a href="https://www.w3.org/TR/webgpu/" target="_blank" rel="noopener noreferrer" className="auth-link">
-                  <Globe size={14} /> {t('authoritativeLinks.w3c')}
-                </a>
-                <a href="https://gdpr.eu/" target="_blank" rel="noopener noreferrer" className="auth-link">
-                  <Shield size={14} /> {t('authoritativeLinks.gdpr')}
-                </a>
-                <a href="https://www.iso.org/isoiec-27001-information-security.html" target="_blank" rel="noopener noreferrer" className="auth-link">
-                  <Lock size={14} /> {t('authoritativeLinks.iso')}
-                </a>
-                <a href="https://webassembly.org/" target="_blank" rel="noopener noreferrer" className="auth-link">
-                  <Code size={14} /> {t('authoritativeLinks.wasm')}
-                </a>
-              </div>
-            </motion.section>
-
-            {/* ✅ [GEO] 3: FAQ Accordion Section */}
-            <motion.section variants={itemVariants} className="faq-section">
-              <h2>{t('faq.title')}</h2>
-              <p className="section-subtitle">{t('faq.subtitle')}</p>
-              
-              <div className="faq-list">
-                {[1, 2, 3, 4].map((num) => (
-                  <div 
-                    key={num} 
-                    className={`faq-item ${openFaq === num ? 'open' : ''}`}
-                    onClick={() => setOpenFaq(openFaq === num ? null : num)}
-                  >
-                    <div className="faq-question">
-                      <h3>{t(`faq.q${num}`)}</h3>
-                      <ChevronDown size={20} className="faq-chevron" />
-                    </div>
-                    <div className="faq-answer">
-                      <p>{t(`faq.a${num}`)}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </motion.section>
           </div>
         </motion.div>
+        )}
+
+        {/* ================= PROJECT COLLECTION PAGE ================= */}
+        {activePage === 'projects' && (
+          <motion.div initial="hidden" animate="visible" variants={containerVariants} style={{width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+            <motion.h1 variants={itemVariants} className="section-title" style={{fontSize: '2.5rem', marginBottom: '3rem'}}>{t('nav.projects')}</motion.h1>
+            
+            <div style={{width: '100%', maxWidth: '1100px'}}>
+              {PROJECT_CATEGORIES.filter(c => c.id !== 'intelligence').map(category => (
+                <motion.div 
+                  key={category.id} 
+                  variants={itemVariants}
+                  style={{marginBottom: '3rem'}}
+                >
+                  <h3 className="category-header">{t(category.translationKey)}</h3>
+                  <div className="projects-grid">
+                    {category.projects.map(project => (
+                      <div 
+                        key={project.id} 
+                        className={`project-card card-${category.id}`}
+                        onClick={() => openProject(project)}
+                      >
+                        <div className="project-icon">{project.icon}</div>
+                        <h3 className="project-name">{t(`${project.translationKey}.title`)}</h3>
+                        <p className="project-desc">{t(`${project.translationKey}.desc`)}</p>
+                        <div style={{marginTop: '1rem', display: 'flex', alignItems:'center', gap:'5px', color: 'var(--secondary)', fontSize: '0.85rem', fontWeight: 'bold'}}>
+                          {t('projects.launchInside')} <ArrowRight size={14} />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+              ))}
+
+              {/* Placeholder Node Moved Here */}
+              <motion.div variants={itemVariants} style={{marginBottom: '5rem', opacity: 0.6}}>
+                 <h3 className="category-header" style={{opacity: 0.5}}>⚡ {t('projects.comingSoon')}</h3>
+                 <div className="projects-grid">
+                    <div className="project-card" style={{cursor: 'default', background: 'rgba(255,255,255,0.02)'}}>
+                       <div className="project-icon" style={{background: 'rgba(255,255,255,0.05)', color: '#aaa'}}><Globe size={24}/></div>
+                       <h3 className="project-name" style={{color: '#aaa'}}>{t('projects.comingSoon')}</h3>
+                       <p className="project-desc">{t('projects.comingSoonDesc')}</p>
+                    </div>
+                 </div>
+              </motion.div>
+            </div>
+          </motion.div>
         )}
 
         {/* ================= INSTALLATION PAGE ================= */}
@@ -880,129 +913,131 @@ function App() {
                 </div>
               </div>
             </div>
-          </motion.div>
-        )}
 
-        {/* ================= STAGING ZONE ================= */}
-        {activePage === 'staging' && (
-          <motion.div initial={{opacity:0, scale: 0.95}} animate={{opacity:1, scale: 1}} style={{width:'100%', maxWidth: isUnlocked ? '1000px' : '500px', display:'flex', flexDirection:'column', alignItems:'center', margin: '0 auto'}}>
-            {!isUnlocked ? (
-              <div className="lock-box">
-                <div className="lock-ring"><Lock size={40} /></div>
-                <h2 style={{marginBottom:'0.5rem'}}>{t('staging.title')}</h2>
-                <p style={{color: 'var(--text-muted)', fontSize:'0.9rem', marginBottom: '2rem', textAlign:'center'}}>{t('staging.unlockPrompt')}</p>
-                
-                <div className="auth-form">
-                  <input 
-                    type="password" 
-                    inputMode="numeric"
-                    pattern="[0-9]*"
-                    className="secure-input" 
-                    placeholder={t('staging.placeholder')}
-                    value={pwInput}
-                    onChange={(e) => setPwInput(e.target.value)}
-                    onKeyDown={(e) => e.key === 'Enter' && checkPassword()}
-                    autoFocus
-                  />
-                  <button onClick={checkPassword} className="btn-primary" style={{width:'100%'}}>{t('staging.unlockBtn')}</button>
-                  
-                  {hasBiometricEnrollment && (
-                    <button 
-                      onClick={handleBiometricLogin} 
-                      className="btn-outline" 
-                      style={{
-                        marginTop: '12px', 
-                        width:'100%', 
-                        borderColor: 'var(--secondary)', 
-                        color: 'var(--secondary)', 
-                        display:'flex', 
-                        alignItems:'center', 
-                        justifyContent:'center', 
-                        gap:'8px',
-                        background: 'rgba(0, 242, 254, 0.05)'
-                      }}
-                    >
-                      <Fingerprint size={18} /> {t('staging.biometricBtn')}
-                    </button>
-                  )}
-                </div>
-                {pwError && <p className="error-glow">{t('staging.wrongPwd')}</p>}
-              </div>
-            ) : (
-              <motion.div initial={{opacity:0, y: 10}} animate={{opacity:1, y: 0}} style={{width:'100%'}}>
-                {/* Header for Unlocked View */}
-                <div style={{textAlign: 'center', marginBottom: '3rem'}}>
-                  <div className="verified-icon"><CheckCircle2 size={48} color="var(--accent)" /></div>
-                  <h2 style={{marginBottom:'1.5rem'}}>{t('staging.welcome')}</h2>
-                  
-                  {isBiometricAvailable && !hasBiometricEnrollment && (
-                    <motion.div 
-                      initial={{opacity:0, scale:0.9}} 
-                      animate={{opacity:1, scale:1}} 
-                      transition={{delay: 0.5}}
-                      style={{
-                        background: 'rgba(255,255,255,0.05)', 
-                        border: '1px dashed rgba(255,255,255,0.2)',
-                        padding: '1rem', 
-                        borderRadius: '8px', 
-                        maxWidth: '500px', 
-                        margin: '0 auto 2rem',
-                        fontSize: '0.9rem'
-                      }}
-                    >
-                      <p style={{color: 'var(--text-muted)', marginBottom: '0.75rem'}}>{t('staging.biometricPrompt')}</p>
-                      <button 
-                        onClick={handleBiometricEnroll} 
-                        className="btn-secondary" 
-                        style={{fontSize:'0.8rem', padding:'6px 16px', display:'inline-flex', alignItems:'center', gap:'6px'}}
-                      >
-                        <Fingerprint size={14} /> {t('staging.biometricLink')}
-                      </button>
-                    </motion.div>
-                  )}
-                </div>
-
-                {/* Two Column Layout for Logs & Actual Staging Projects */}
-                <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', width:'100%'}}>
-                  
-                  {/* Left Column: Experimental Tools to Launch */}
-                  <div>
-                    <h3 style={{color: 'var(--secondary)', marginBottom: '1rem', fontSize: '1.1rem', display:'flex', alignItems:'center', gap: '8px'}}>
-                      <Shield size={18}/> 🛠️ 測試中項目 (Experimental)
-                    </h3>
-                    <div className="projects-grid" style={{gridTemplateColumns: '1fr'}}>
-                      {STAGING_PROJECTS.map(project => (
-                        <div 
-                          key={project.id} 
-                          className="project-card" 
-                          style={{borderColor: 'rgba(124, 58, 237, 0.3)', background: 'rgba(124, 58, 237, 0.05)'}}
-                          onClick={() => openProject(project)}
+            {/* ================= STAGING ZONE (Moved to bottom of Installation) ================= */}
+            <div style={{marginTop: '5rem', width: '100%', borderTop: '1px solid var(--border-glow)', paddingTop: '5rem'}}>
+              <motion.div initial={{opacity:0, scale: 0.95}} whileInView={{opacity:1, scale: 1}} viewport={{once: true}} style={{width:'100%', maxWidth: isUnlocked ? '1000px' : '500px', display:'flex', flexDirection:'column', alignItems:'center', margin: '0 auto'}}>
+                {!isUnlocked ? (
+                  <div className="lock-box">
+                    <div className="lock-ring"><Lock size={40} /></div>
+                    <h2 style={{marginBottom:'0.5rem'}}>{t('staging.title')}</h2>
+                    <p style={{color: 'var(--text-muted)', fontSize:'0.9rem', marginBottom: '2rem', textAlign:'center'}}>{t('staging.unlockPrompt')}</p>
+                    
+                    <div className="auth-form">
+                      <input 
+                        type="password" 
+                        inputMode="numeric"
+                        pattern="[0-9]*"
+                        className="secure-input" 
+                        placeholder={t('staging.placeholder')}
+                        value={pwInput}
+                        onChange={(e) => setPwInput(e.target.value)}
+                        onKeyDown={(e) => e.key === 'Enter' && checkPassword()}
+                        autoFocus
+                      />
+                      <button onClick={checkPassword} className="btn-primary" style={{width:'100%'}}>{t('staging.unlockBtn')}</button>
+                      
+                      {hasBiometricEnrollment && (
+                        <button 
+                          onClick={handleBiometricLogin} 
+                          className="btn-outline" 
+                          style={{
+                            marginTop: '12px', 
+                            width:'100%', 
+                            borderColor: 'var(--secondary)', 
+                            color: 'var(--secondary)', 
+                            display:'flex', 
+                            alignItems:'center', 
+                            justifyContent:'center', 
+                            gap:'8px',
+                            background: 'rgba(0, 242, 254, 0.05)'
+                          }}
                         >
-                          <div className="project-icon" style={{background: 'rgba(124, 58, 237, 0.2)'}}>{project.icon}</div>
-                          <div style={{position: 'absolute', top: '10px', right: '10px', fontSize: '0.6rem', background: 'var(--accent)', color: '#000', padding: '2px 6px', borderRadius: '4px', fontWeight: 'bold'}}>ALPHA</div>
-                          <h3 className="project-name">{t(`${project.translationKey}.title`)}</h3>
-                          <p className="project-desc">{t(`${project.translationKey}.desc`)}</p>
+                          <Fingerprint size={18} /> {t('staging.biometricBtn')}
+                        </button>
+                      )}
+                    </div>
+                    {pwError && <p className="error-glow">{t('staging.wrongPwd')}</p>}
+                  </div>
+                ) : (
+                  <motion.div initial={{opacity:0, y: 10}} animate={{opacity:1, y: 0}} style={{width:'100%'}}>
+                    {/* Header for Unlocked View */}
+                    <div style={{textAlign: 'center', marginBottom: '3rem'}}>
+                      <div className="verified-icon"><CheckCircle2 size={48} color="var(--accent)" /></div>
+                      <h2 style={{marginBottom:'1.5rem'}}>{t('staging.welcome')}</h2>
+                      
+                      {isBiometricAvailable && !hasBiometricEnrollment && (
+                        <motion.div 
+                          initial={{opacity:0, scale:0.9}} 
+                          animate={{opacity:1, scale:1}} 
+                          transition={{delay: 0.5}}
+                          style={{
+                            background: 'rgba(255,255,255,0.05)', 
+                            border: '1px dashed rgba(255,255,255,0.2)',
+                            padding: '1rem', 
+                            borderRadius: '8px', 
+                            maxWidth: '500px', 
+                            margin: '0 auto 2rem',
+                            fontSize: '0.9rem'
+                          }}
+                        >
+                          <p style={{color: 'var(--text-muted)', marginBottom: '0.75rem'}}>{t('staging.biometricPrompt')}</p>
+                          <button 
+                            onClick={handleBiometricEnroll} 
+                            className="btn-secondary" 
+                            style={{fontSize:'0.8rem', padding:'6px 16px', display:'inline-flex', alignItems:'center', gap:'6px'}}
+                          >
+                            <Fingerprint size={14} /> {t('staging.biometricLink')}
+                          </button>
+                        </motion.div>
+                      )}
+                    </div>
+
+                    {/* Two Column Layout for Logs & Actual Staging Projects */}
+                    <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', width:'100%'}}>
+                      
+                      {/* Left Column: Experimental Tools to Launch */}
+                      <div>
+                        <h3 style={{color: 'var(--secondary)', marginBottom: '1rem', fontSize: '1.1rem', display:'flex', alignItems:'center', gap: '8px'}}>
+                          <Shield size={18}/> 🛠️ 測試中項目 (Experimental)
+                        </h3>
+                        <div className="projects-grid" style={{gridTemplateColumns: '1fr'}}>
+                          {STAGING_PROJECTS.map(project => (
+                            <div 
+                              key={project.id} 
+                              className="project-card" 
+                              style={{borderColor: 'rgba(124, 58, 237, 0.3)', background: 'rgba(124, 58, 237, 0.05)'}}
+                              onClick={() => openProject(project)}
+                            >
+                              <div className="project-icon" style={{background: 'rgba(124, 58, 237, 0.2)'}}>{project.icon}</div>
+                              <div style={{position: 'absolute', top: '10px', right: '10px', fontSize: '0.6rem', background: 'var(--accent)', color: '#000', padding: '2px 6px', borderRadius: '4px', fontWeight: 'bold'}}>ALPHA</div>
+                              <h3 className="project-name">{t(`${project.translationKey}.title`)}</h3>
+                              <p className="project-desc">{t(`${project.translationKey}.desc`)}</p>
+                            </div>
+                          ))}
                         </div>
-                      ))}
-                    </div>
-                  </div>
+                      </div>
 
-                  {/* Right Column: The Backlog Dev Log */}
-                  <div>
-                    <h3 style={{color: 'var(--text-muted)', marginBottom: '1rem', fontSize: '1.1rem'}}>📈 研發備忘錄 (Dev Logs)</h3>
-                    <div className="dev-log" style={{height: 'fit-content'}}>
-                      <div className="log-line"><span className="log-badge new">UPDATING</span> {t('staging.item1')}</div>
-                      <div className="log-line"><span className="log-badge wip">WIP</span> {t('staging.item2')}</div>
-                      <div className="log-line"><span className="log-badge feature">FEATURE</span> {t('staging.item3')}</div>
-                      <div className="log-line" style={{opacity: 0.4}}>💡 Auto-update daemon active...</div>
-                    </div>
-                  </div>
+                      {/* Right Column: The Backlog Dev Log */}
+                      <div>
+                        <h3 style={{color: 'var(--text-muted)', marginBottom: '1rem', fontSize: '1.1rem'}}>📈 研發備忘錄 (Dev Logs)</h3>
+                        <div className="dev-log" style={{height: 'fit-content'}}>
+                          <div className="log-line"><span className="log-badge new">UPDATING</span> {t('staging.item1')}</div>
+                          <div className="log-line"><span className="log-badge wip">WIP</span> {t('staging.item2')}</div>
+                          <div className="log-line"><span className="log-badge feature">FEATURE</span> {t('staging.item3')}</div>
+                          <div className="log-line" style={{opacity: 0.4}}>💡 Auto-update daemon active...</div>
+                        </div>
+                      </div>
 
-                </div>
+                    </div>
+                  </motion.div>
+                )}
               </motion.div>
-            )}
+            </div>
           </motion.div>
         )}
+
+        {/* ================= STAGING ZONE REMOVED FROM TOP LEVEL ================= */}
       </main>
 
       <footer>
@@ -1025,7 +1060,15 @@ function App() {
           onClick={() => { setActivePage('home'); window.scrollTo(0,0); }}
         >
           <Home size={20} />
-          <span>{t('nav.dashboard')}</span>
+          <span>{t('nav.home')}</span>
+        </button>
+
+        <button 
+          className={`mobile-nav-item ${activePage === 'projects' ? 'active' : ''}`}
+          onClick={() => { setActivePage('projects'); window.scrollTo(0,0); }}
+        >
+          <Grid size={20} />
+          <span>{t('nav.projects')}</span>
         </button>
         
         <button 
@@ -1033,15 +1076,7 @@ function App() {
           onClick={() => { setActivePage('installation'); window.scrollTo(0,0); }}
         >
           <Smartphone size={20} />
-          <span>{t('nav.install')}</span>
-        </button>
-        
-        <button 
-          className={`mobile-nav-item ${activePage === 'staging' ? 'active' : ''}`}
-          onClick={() => { setActivePage('staging'); window.scrollTo(0,0); }}
-        >
-          <Terminal size={20} />
-          <span>{t('nav.staging')}</span>
+          <span>{t('nav.installation')}</span>
         </button>
       </div>
 
