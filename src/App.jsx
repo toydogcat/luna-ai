@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Sparkles, ArrowRight, Zap, Globe, Brain, Users, MousePointerClick, Newspaper, Home, Languages, Heart, Code, Database, Eye, BookOpen, Scroll, Crown, Bomb, Grid3X3, Grid, Lock, Terminal, CheckCircle2, Smartphone, Shield, Library, Clapperboard, Fingerprint, ScanQrCode, Target, MapPin, Braces, BarChart2, Swords, Car, Siren, MessageSquare, Gavel, CloudLightning, Trees, Activity, ChevronUp, AlarmClock, Radio, Layout, History, ChevronDown, Compass, Presentation, Stars, Layers } from 'lucide-react';
+import { Sparkles, ArrowRight, Zap, Globe, Brain, Users, MousePointerClick, Newspaper, Home, Languages, Heart, Code, Database, Eye, BookOpen, Scroll, Crown, Bomb, Grid3X3, Grid, Lock, Terminal, CheckCircle2, Smartphone, Shield, Library, Clapperboard, Fingerprint, ScanQrCode, Target, MapPin, Braces, BarChart2, Swords, Car, Siren, MessageSquare, Gavel, CloudLightning, Trees, Activity, ChevronUp, AlarmClock, Radio, Layout, History, ChevronDown, Compass, Presentation, Stars, Layers, Moon, Spade, Dice5 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { trackEvent } from './firebase';
 
@@ -185,12 +185,36 @@ const PROJECT_CATEGORIES = [
         translationKey: 'projects.brickBreaking',
         url: 'https://toydogcat.github.io/brick-breaking-game/',
         icon: <Grid3X3 size={24} />
-      },
+      }
+    ]
+  },
+  {
+    id: 'multiplayer',
+    translationKey: 'categories.multiplayer',
+    projects: [
       {
         id: 'uno-multiplayer',
         translationKey: 'projects.unoMultiplayer',
         url: 'https://toydogcat.github.io/uno-multi-game/',
         icon: <Users size={24} />
+      },
+      {
+        id: 'werewolf-game',
+        translationKey: 'projects.werewolf',
+        url: 'https://toydogcat.github.io/werewolf-game/',
+        icon: <Moon size={24} />
+      },
+      {
+        id: 'poker-multi-game',
+        translationKey: 'projects.poker',
+        url: 'https://toydogcat.github.io/poker-multi-game/',
+        icon: <Spade size={24} />
+      },
+      {
+        id: 'mahjong-multi-game',
+        translationKey: 'projects.mahjong',
+        url: 'https://toydogcat.github.io/mahjong-multi-game/',
+        icon: <Dice5 size={24} />
       }
     ]
   },
@@ -749,7 +773,7 @@ function App() {
           <motion.section variants={itemVariants} className="tech-architecture-section">
             <div className="tech-architecture-card">
               <h2>{t('techArchitecture.title')}</h2>
-              <p className="intro">{t('techArchitecture.desc')}</p>
+              <p className="intro" dangerouslySetInnerHTML={{ __html: t('techArchitecture.desc') }}></p>
               <div className="tech-architecture-list">
                 <div className="arch-item">
                   <strong dangerouslySetInnerHTML={{ __html: t('techArchitecture.item1').split(': ')[0] + ':' }}></strong>

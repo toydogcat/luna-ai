@@ -15,6 +15,7 @@ const resources = {
         intelligence: '🧠 AI Intelligence',
         tech: '💻 Data & Tech',
         games: '🎮 Gaming Arcade',
+        multiplayer: '👥 Multiplayer Games',
         simulation: '🚥 Simulations',
         leisure: '🎭 Leisure Zone'
       },
@@ -176,6 +177,18 @@ const resources = {
         unoMultiplayer: {
           title: 'UNO Multiplayer: Card Master',
           desc: 'Real-time multiplayer UNO experience. Challenge players worldwide or friends in this fast-paced classic card game.'
+        },
+        werewolf: {
+          title: 'Werewolf: Night Falls',
+          desc: 'A classic game of social deduction and deception. Trust no one as you hunt for wolves or hide among the villagers.'
+        },
+        poker: {
+          title: 'Multiplayer Poker Hub',
+          desc: 'Immersive online poker room. Master your bluff, calculate the odds, and take the pot in this strategic card challenge.'
+        },
+        mahjong: {
+          title: 'Mahjong Multiplayer',
+          desc: 'The ultimate four-player traditional Mahjong experience. Form sequences, triplets, and pairs to claim victory.'
         },
         dailyDialogue: {
           title: 'Daily Dialogue: Reading & Fluency',
@@ -341,6 +354,7 @@ const resources = {
         intelligence: '🧠 智能應用中心',
         tech: '📊 數據與技術',
         games: '🎮 娛樂遊戲區',
+        multiplayer: '👥 多人連線區',
         simulation: '🚥 模擬專區',
         leisure: '🎭 公開休閒區',
         tools: '🛠️ 工具與生活',
@@ -501,6 +515,18 @@ const resources = {
         unoMultiplayer: {
           title: 'UNO 多人線上對戰',
           desc: '即時連線的多人 UNO 體驗！與全球玩家或好友展開腦力激盪，享受極速出牌的桌遊快感。'
+        },
+        werewolf: {
+          title: '狼人殺：天黑請閉眼',
+          desc: '經典社交推理遊戲。在謊言與真相中穿梭，找出潛伏的狼人，或是作為狼人守住你的秘密。'
+        },
+        poker: {
+          title: '多人線上撲克競技',
+          desc: '沈浸式的線上撲克室。考驗您的心理素質與牌技，在每一手牌中展現精準的心理戰。'
+        },
+        mahjong: {
+          title: '多人連線麻將',
+          desc: '正宗四人麻將體驗。在摸牌與出牌之間追求胡牌組合，享受方城之戰的無窮樂趣。'
         },
         dailyDialogue: {
           title: '每日讀書：對話與語感',
