@@ -221,6 +221,14 @@ const resources = {
         aiPptReport: {
           title: 'AI Presentation Showcase',
           desc: 'A professional static presentation suite showcasing AI-driven research, analytics, and project narratives.'
+        },
+        aiGlassQr: {
+          title: 'AI GlassQR: Optical Data Transfer',
+          desc: 'High-speed optical data transmission tool using dynamic visual patterns to securely transfer data between devices.'
+        },
+        aiHeartRate: {
+          title: 'AI Biometric Heart Monitor',
+          desc: 'Real-time contactless heart rate detection using advanced computer vision and camera-based pulse analysis.'
         }
       },
       installation: {
@@ -563,6 +571,14 @@ const resources = {
         aiPptReport: {
           title: 'AI PPT 智慧簡報展示',
           desc: '專業級靜態簡報展示，呈現 AI 驅動的專案研究、數據分析與技術敘事成果。'
+        },
+        aiGlassQr: {
+          title: 'AI GlassQR：光學數據傳輸',
+          desc: '高效能光學資料傳輸工具，利用動態視覺編碼技術在裝置間實現安全、非接觸式的數據交換。'
+        },
+        aiHeartRate: {
+          title: 'AI 視覺心率監測',
+          desc: '即時非接觸式心率偵測，結合進階電腦視覺技術，僅透過相機鏡頭即可精準分析生理脈搏。'
         },
         nfcShowInfo: {
           title: 'NFC 顯示資訊',
