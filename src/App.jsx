@@ -100,6 +100,12 @@ const PROJECT_CATEGORIES = [
         translationKey: 'projects.nfcShowInfo',
         url: 'https://toydogcat.github.io/nfc-show-info/',
         icon: <Radio size={24} />
+      },
+      {
+        id: 'file-drop',
+        translationKey: 'projects.fileDrop',
+        url: 'https://toydogcat.github.io/file-drop-webrtc/',
+        icon: <Share2 size={24} />
       }
     ]
   },
@@ -981,7 +987,6 @@ function App() {
                         value={pwInput}
                         onChange={(e) => setPwInput(e.target.value)}
                         onKeyDown={(e) => e.key === 'Enter' && checkPassword()}
-                        autoFocus
                       />
                       <button onClick={checkPassword} className="btn-primary" style={{width:'100%'}}>{t('staging.unlockBtn')}</button>
                       
@@ -1193,21 +1198,6 @@ function App() {
                   src={activeProject.url} 
                   className="iframe-container"
                   title={activeProject.resolvedTitle}
-                  onLoad={handleIframeLoad}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; camera; microphone"
-                  allowFullScreen
-                />
-              )}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
-  );
-}
-
-export default App;
-resolvedTitle}
                   onLoad={handleIframeLoad}
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; camera; microphone"
                   allowFullScreen

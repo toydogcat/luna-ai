@@ -229,6 +229,10 @@ const resources = {
         aiHeartRate: {
           title: 'AI Biometric Heart Monitor',
           desc: 'Real-time contactless heart rate detection using advanced computer vision and camera-based pulse analysis.'
+        },
+        fileDrop: {
+          title: 'File Drop: WebRTC P2P Transfer',
+          desc: 'Real-time multi-user file sharing tool powered by WebRTC. Serverless, secure, and fast peer-to-peer file transfer.'
         }
       },
       installation: {
