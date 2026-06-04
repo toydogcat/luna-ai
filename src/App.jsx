@@ -227,6 +227,12 @@ const PROJECT_CATEGORIES = [
         translationKey: 'projects.mahjong',
         url: 'https://toydogcat.github.io/mahjong-multi-game/',
         icon: <Dice5 size={24} />
+      },
+      {
+        id: 'file-drop-webrtc',
+        translationKey: 'projects.fileDrop',
+        url: 'https://toydogcat.github.io/file-drop-webrtc/',
+        icon: <Share2 size={24} />
       }
     ]
   },
