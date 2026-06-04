@@ -585,7 +585,7 @@ const resources = {
           desc: '網頁端 NFC 讀取與資訊顯示小工具，輕鬆掃描並解析 NFC 卡片的原始資料與 Payload。'
         },
         fileDrop: {
-          title: '多人檔案快傳 (WebRTC)',
+          title: '多人檔案快傳',
           desc: '基於 WebRTC 的即時多人檔案分享工具。免伺服器儲存，安全快速的點對點傳輸。'
         }
       },

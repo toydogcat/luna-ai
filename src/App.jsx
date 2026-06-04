@@ -227,12 +227,6 @@ const PROJECT_CATEGORIES = [
         translationKey: 'projects.mahjong',
         url: 'https://toydogcat.github.io/mahjong-multi-game/',
         icon: <Dice5 size={24} />
-      },
-      {
-        id: 'file-drop-webrtc',
-        translationKey: 'projects.fileDrop',
-        url: 'https://toydogcat.github.io/file-drop-webrtc/',
-        icon: <Share2 size={24} />
       }
     ]
   },
@@ -1199,6 +1193,21 @@ function App() {
                   src={activeProject.url} 
                   className="iframe-container"
                   title={activeProject.resolvedTitle}
+                  onLoad={handleIframeLoad}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; camera; microphone"
+                  allowFullScreen
+                />
+              )}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
+
+export default App;
+resolvedTitle}
                   onLoad={handleIframeLoad}
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; camera; microphone"
                   allowFullScreen
