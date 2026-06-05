@@ -560,6 +560,10 @@ const resources = {
           title: '3D 星空模擬器',
           desc: '沈浸式的 3D 宇宙之旅。即時探索浩瀚星空、恆星演化與壯麗的宇宙星雲。'
         },
+        simHourglass: {
+          title: '模擬沙漏',
+          desc: '極具療癒感的物理顆粒模擬沙漏，探索流體動力學與時間流動的視覺美學。'
+        },
         simFireworks: {
           title: '模擬煙火',
           desc: '極具視覺震撼的數位煙火模擬器，展現絢麗色彩與物理碰撞的璀璨盛宴。'
@@ -726,4 +730,5 @@ i18n
   });
 
 export default i18n;
+i18n;
 i18n;
