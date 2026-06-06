@@ -233,6 +233,10 @@ const resources = {
         fileDrop: {
           title: 'File Drop: WebRTC P2P Transfer',
           desc: 'Real-time multi-user file sharing tool powered by WebRTC. Serverless, secure, and fast peer-to-peer file transfer.'
+        },
+        publicAnnouncement: {
+          title: 'Public Announcements',
+          desc: 'A unified portal for real-time local updates, policy briefings, and community alerts.'
         }
       },
       installation: {
@@ -595,6 +599,10 @@ const resources = {
         fileDrop: {
           title: '多人檔案快傳',
           desc: '基於 WebRTC 的即時多人檔案分享工具。免伺服器儲存，安全快速的點對點傳輸。'
+        },
+        publicAnnouncement: {
+          title: '公告項目',
+          desc: '整合即時公告與重要資訊的通知中心，隨時掌握最新發布動態。'
         }
       },
       installation: {

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Sparkles, ArrowRight, Zap, Globe, Brain, Users, MousePointerClick, Newspaper, Home, Languages, Heart, Code, Database, Eye, BookOpen, Scroll, Crown, Bomb, Grid3X3, Grid, Lock, Terminal, CheckCircle2, Smartphone, Shield, Library, Clapperboard, Fingerprint, ScanQrCode, Target, MapPin, Braces, BarChart2, Swords, Car, Siren, MessageSquare, Gavel, CloudLightning, Trees, Activity, ChevronUp, AlarmClock, Hourglass, Radio, Layout, History, ChevronDown, Compass, Presentation, Stars, Layers, Moon, Spade, Dice5, HeartPulse, Share2 } from 'lucide-react';
+import { Sparkles, ArrowRight, Zap, Globe, Brain, Users, MousePointerClick, Newspaper, Home, Languages, Heart, Code, Database, Eye, BookOpen, Scroll, Crown, Bomb, Grid3X3, Grid, Lock, Terminal, CheckCircle2, Smartphone, Shield, Library, Clapperboard, Fingerprint, ScanQrCode, Target, MapPin, Braces, BarChart2, Swords, Car, Siren, MessageSquare, Gavel, CloudLightning, Trees, Activity, ChevronUp, AlarmClock, Hourglass, Radio, Layout, History, ChevronDown, Compass, Presentation, Stars, Layers, Moon, Spade, Dice5, HeartPulse, Share2, Megaphone } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { trackEvent } from './firebase';
 
@@ -324,6 +324,12 @@ const PROJECT_CATEGORIES = [
         translationKey: 'projects.oldToThousands',
         url: 'https://toydogcat.github.io/old2thousands/',
         icon: <History size={24} />
+      },
+      {
+        id: 'ai-amulet',
+        translationKey: 'projects.aiAmulet',
+        url: 'https://toydogcat.github.io/ai-amulet/',
+        icon: <Shield size={24} />
       }
     ]
   },
@@ -362,10 +368,10 @@ const PROJECT_CATEGORIES = [
 
 const STAGING_PROJECTS = [
   {
-    id: 'ai-amulet',
-    translationKey: 'projects.aiAmulet',
-    url: 'https://toydogcat.github.io/ai-amulet/',
-    icon: <Shield size={24} color="var(--accent)" />
+    id: 'public-announcement',
+    translationKey: 'projects.publicAnnouncement',
+    url: 'https://toydogcat.github.io/public-announcement/',
+    icon: <Megaphone size={24} color="var(--accent)" />
   },
   {
     id: 'ai-book',
