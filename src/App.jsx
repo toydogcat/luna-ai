@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Sparkles, ArrowRight, Zap, Globe, Brain, Users, MousePointerClick, Newspaper, Home, Languages, Heart, Code, Database, Eye, BookOpen, Scroll, Crown, Bomb, Grid3X3, Grid, Lock, Terminal, CheckCircle2, Smartphone, Shield, Library, Clapperboard, Fingerprint, ScanQrCode, Target, MapPin, Braces, BarChart2, Swords, Car, Siren, MessageSquare, Gavel, CloudLightning, Trees, Activity, ChevronUp, AlarmClock, Hourglass, Radio, Layout, History, ChevronDown, Compass, Presentation, Stars, Layers, Moon, Spade, Dice5, HeartPulse, Share2, Megaphone } from 'lucide-react';
+import { Sparkles, ArrowRight, Zap, Globe, Brain, Users, MousePointerClick, Newspaper, Home, Languages, Heart, Code, Database, Eye, BookOpen, Scroll, Crown, Bomb, Grid3X3, Grid, Lock, Terminal, CheckCircle2, Smartphone, Shield, Library, Clapperboard, Fingerprint, ScanQrCode, Target, MapPin, Braces, BarChart2, Swords, Car, Siren, MessageSquare, Gavel, CloudLightning, Trees, Activity, ChevronUp, AlarmClock, Hourglass, MessagesSquare, Radio, Layout, History, ChevronDown, Compass, Presentation, Stars, Layers, Moon, Spade, Dice5, HeartPulse, Share2, Megaphone } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { trackEvent } from './firebase';
 
@@ -106,6 +106,12 @@ const PROJECT_CATEGORIES = [
         translationKey: 'projects.fileDrop',
         url: 'https://toydogcat.github.io/file-drop-webrtc/',
         icon: <Share2 size={24} />
+      },
+      {
+        id: 'collab-chatroom',
+        translationKey: 'projects.collabChatroom',
+        url: 'https://toydogcat.github.io/collaborative-chatroom/',
+        icon: <MessagesSquare size={24} />
       }
     ]
   },

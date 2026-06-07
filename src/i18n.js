@@ -17,7 +17,10 @@ const resources = {
         games: '🎮 Gaming Arcade',
         multiplayer: '👥 Multiplayer Games',
         simulation: '🚥 Simulations',
-        leisure: '🎭 Leisure Zone'
+        leisure: '🎭 Leisure Zone',
+        tools: '🛠️ 工具與生活',
+        aistudio: '☁️ AI Studio 雲端應用',
+        localExperimental: '⚠️ 本地模型實驗區 (效能受限)'
       },
       hero: {
         badge: 'The Future Unified Ecosystem',
@@ -210,6 +213,14 @@ const resources = {
           title: '3D Cosmos Simulator',
           desc: 'An immersive 3D space odyssey. Explore the vastness of the cosmos and stellar formations in real-time.'
         },
+        simHourglass: {
+          title: 'Simulation Hourglass',
+          desc: 'A mesmerizing physics-based hourglass simulation, exploring granular flow and time visualization.'
+        },
+        simFireworks: {
+          title: 'Simulation Fireworks',
+          desc: 'Visually stunning digital firework simulator showcasing vibrant colors and physics-driven particle collisions.'
+        },
         cognitiveAssessment: {
           title: 'AI Cognitive Assessment',
           desc: 'Interactive cognitive screening tool featuring MMSE, MoCA, CDT, and CASI tests with Gemini-synthesized clinical reports.'
@@ -233,6 +244,10 @@ const resources = {
         fileDrop: {
           title: 'File Drop: WebRTC P2P Transfer',
           desc: 'Real-time multi-user file sharing tool powered by WebRTC. Serverless, secure, and fast peer-to-peer file transfer.'
+        },
+        collabChatroom: {
+          title: 'Collaborative Chatroom',
+          desc: 'Real-time multi-user chat space for seamless group communication and instant interaction.'
         },
         publicAnnouncement: {
           title: 'Public Announcements',
@@ -600,6 +615,10 @@ const resources = {
           title: '多人檔案快傳',
           desc: '基於 WebRTC 的即時多人檔案分享工具。免伺服器儲存，安全快速的點對點傳輸。'
         },
+        collabChatroom: {
+          title: '多人連線聊天室',
+          desc: '即時多人在線協作聊天空間，支援流暢的群組溝通與即時訊息互動。'
+        },
         publicAnnouncement: {
           title: '公告項目',
           desc: '整合即時公告與重要資訊的通知中心，隨時掌握最新發布動態。'
@@ -719,7 +738,7 @@ const resources = {
         q3: '本地模型與雲端模型有什麼區別？',
         a3: '本地模型在您的設備上運行，具備極高隱私；雲端模型（如 Gemini）則具備更強的邏輯推演能力。',
         q4: 'Luna Hub 適合企業整合使用嗎？',
-        a4: '是的。模組化架構專為 B2B 智能聚合與集中式服務管理場景而設計。'
+        a4: '是的。模組化架構專為 B2B 智能聚合與集中式服務 management 場景而設計。'
       },
       footer: '© {{year}} Luna AI 儀表板。所有專案均透過 Firebase 引擎追蹤。'
     }
@@ -738,5 +757,3 @@ i18n
   });
 
 export default i18n;
-i18n;
-i18n;
