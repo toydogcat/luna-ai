@@ -82,6 +82,12 @@ const PROJECT_CATEGORIES = [
         translationKey: 'projects.aiHeartRate',
         url: 'https://toydogcat.github.io/ai-heart-rate-monitor/',
         icon: <HeartPulse size={24} />
+      },
+      {
+        id: 'ai-tarot',
+        translationKey: 'projects.aiTarot',
+        url: 'https://toydogcat.github.io/ai-tarot/',
+        icon: <Stars size={24} />
       }
     ]
   },

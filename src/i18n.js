@@ -241,6 +241,10 @@ const resources = {
           title: 'AI Biometric Heart Monitor',
           desc: 'Real-time contactless heart rate detection using advanced computer vision and camera-based pulse analysis.'
         },
+        aiTarot: {
+          title: 'AI Tarot & Fortune Teller',
+          desc: 'Explore your destiny through AI-powered Tarot readings and personalized fortune insights.'
+        },
         fileDrop: {
           title: 'File Drop: WebRTC P2P Transfer',
           desc: 'Real-time multi-user file sharing tool powered by WebRTC. Serverless, secure, and fast peer-to-peer file transfer.'
@@ -607,6 +611,10 @@ const resources = {
           title: 'AI 視覺心率監測',
           desc: '即時非接觸式心率偵測，結合進階電腦視覺技術，僅透過相機鏡頭即可精準分析生理脈搏。'
         },
+        aiTarot: {
+          title: 'AI 塔羅占卜與命理',
+          desc: '透過 AI 驅動的塔羅占卜與個性化命理分析，探索您的命運與內在引導。'
+        },
         nfcShowInfo: {
           title: 'NFC 顯示資訊',
           desc: '網頁端 NFC 讀取與資訊顯示小工具，輕鬆掃描並解析 NFC 卡片的原始資料與 Payload。'
@@ -757,3 +765,4 @@ i18n
   });
 
 export default i18n;
+8n;
