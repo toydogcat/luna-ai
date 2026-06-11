@@ -215,6 +215,12 @@ const PROJECT_CATEGORIES = [
         translationKey: 'projects.brickBreaking',
         url: 'https://toydogcat.github.io/brick-breaking-game/',
         icon: <Grid3X3 size={24} />
+      },
+      {
+        id: 'towers-of-hanoi',
+        translationKey: 'projects.towersOfHanoi',
+        url: 'https://toydogcat.github.io/3d-towers-of-hanoi/',
+        icon: <Boxes size={24} />
       }
     ]
   },

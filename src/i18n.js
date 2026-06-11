@@ -177,6 +177,10 @@ const resources = {
           title: 'Classic Brick Breaker',
           desc: 'A nostalgic arcade experience. Destroy all bricks with your paddle and ball while mastering power-ups and physics.'
         },
+        towersOfHanoi: {
+          title: '3D Towers of Hanoi',
+          desc: 'A classic spatial logic puzzle revamped with immersive 3D physics and intuitive stacking mechanics.'
+        },
         unoMultiplayer: {
           title: 'UNO Multiplayer: Card Master',
           desc: 'Real-time multiplayer UNO experience. Challenge players worldwide or friends in this fast-paced classic card game.'
@@ -547,6 +551,10 @@ const resources = {
           title: '經典打磚塊',
           desc: '重溫街機經典！控制彈板擊碎所有磚塊，體驗物理反彈與道具收集的爽快感。'
         },
+        towersOfHanoi: {
+          title: '3D 遞迴河內塔',
+          desc: '結合經典空間邏輯謎題與 3D 物理引擎，特有遞迴巨集錄製與同構位移轉換功能，挑戰您的空間邏輯極限。'
+        },
         unoMultiplayer: {
           title: 'UNO 多人線上對戰',
           desc: '即時連線的多人 UNO 體驗！與全球玩家或好友展開腦力激盪，享受極速出牌的桌遊快感。'
@@ -765,4 +773,3 @@ i18n
   });
 
 export default i18n;
-8n;
